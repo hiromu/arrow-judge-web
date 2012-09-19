@@ -1,0 +1,734 @@
+2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 166]
+Trace:
+h - CORE/Cake/basics.php, line 166
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 172]
+Trace:
+h - CORE/Cake/basics.php, line 172
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 190]
+Trace:
+h - CORE/Cake/basics.php, line 190
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:44:06 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 25]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 25
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:46:47 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:46:47 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:04 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:04 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:05 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:05 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:46 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:47:46 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:48:11 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:48:11 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:48:45 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:00 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:21 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:25 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:25 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:27 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:27 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:28 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:28 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:37 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:50:56 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:51:22 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:51:30 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:51:59 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:52:00 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:52:23 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:52:39 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 16:59:35 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:00:01 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 27
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:02:02 Notice: Notice (8): Undefined index: outputs in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:04:13 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
+Trace:
+SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
+Trace:
+SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 31
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 34
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:07:26 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
+Trace:
+SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
+2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
+Trace:
+include - APP/View/Submissions/detail.ctp, line 28
+View::_evaluate() - CORE/Cake/View/View.php, line 910
+View::_render() - CORE/Cake/View/View.php, line 874
+View::render() - CORE/Cake/View/View.php, line 465
+Controller::render() - CORE/Cake/Controller/Controller.php, line 959
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
+[main] - APP/webroot/index.php, line 92
+
