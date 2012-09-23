@@ -21,9 +21,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $title; ?>
-	</title>
+	<title><?php echo h($title); ?></title>
 	<?php
 		echo $this->Html->meta('icon');
 
@@ -52,7 +50,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</a>
-						<a class="brand" href="<?php echo $this->Html->url('/', true); ?>"><?php echo $title; ?></a>
+						<a class="brand" href="<?php echo $this->Html->url('/', true); ?>"><?php echo h($title); ?></a>
 						<div class="nav-collapse">
 							<ul class="nav">
 								<li><?php echo $this->Html->link('Contests', '/contests'); ?></li>

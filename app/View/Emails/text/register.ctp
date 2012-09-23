@@ -1,4 +1,4 @@
-Hi, <?php echo $username."\n"; ?>
+Hi, <?php echo $username."\n"; ?>/
 
 You have recently registered with <?php echo $title; ?>.
 To confirm your registration, please copy this link into your browser's address bar and open it:

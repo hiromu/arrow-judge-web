@@ -18,8 +18,6 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Registration Confirmation</h1>
-<?php
-	echo $this->Session->flash();
-?>
-<h3>Registration Completed!</h3>
+<?php echo $this->Session->flash(); ?>
+<h2>Registration Completed!</h2>
 <p>Please login from <?php echo $this->Html->link('here', '/users/login'); ?></p>

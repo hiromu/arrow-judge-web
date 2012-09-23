@@ -22,24 +22,26 @@ $syntax = json_decode($syntax, true);
 <h2>Source Code</h2>
 <textarea id="source" rows="<?php echo substr_count($submission['Submission']['source'], "\n") + 1; ?>" readonly="readonly"><?php echo h($submission['Submission']['source']); ?></textarea>
 <br />
+<?php if(count($output) > 0): ?>
 <h2>Testcases</h2>
 <div class="statement">
-<?php for($i = 0; $i < count($output); $i++): ?>
-<h3><?php echo h(sprintf("#%d: CPU %fsec, Memory %dKB", $i, $cpu[$i], $memor[$i])); ?></h3>
-<div class="row-fluid">
-<div class="span6">
-<pre><?php echo h($input[$i]); ?></pre>
-</div>
-<div class="span6">
-<pre><?php echo h($output[$i]); ?></pre>
-</div>
-</div>
-<?php endfor; ?>
+	<?php for($i = 0; $i < count($output); $i++): ?>
+	<h3><?php echo h(sprintf("#%d: CPU %fsec, Memory %dKB", $i, $cpu[$i], $memory[$i])); ?></h3>
+	<div class="row-fluid">
+		<div class="span6">
+			<pre><?php echo h($input[$i]); ?></pre>
+		</div>
+		<div class="span6">
+			<pre><?php echo h($output[$i]); ?></pre>
+		</div>
+	</div>
+	<?php endfor; ?>
+<?php endif; ?>
 <script type="text/javascript">
 	editAreaLoader.init({
 		id: 'source',
 		is_editable: false,
 		start_highlight: true,
 		syntax: "<?php echo h($syntax[$submission['Language']['name']]); ?>"
-	});
+	});	
 </script>

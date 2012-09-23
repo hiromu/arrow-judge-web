@@ -29,6 +29,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->flash['element'] = 'error';
 	}
 
 	public function login() {

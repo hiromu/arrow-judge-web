@@ -50,6 +50,3 @@ $status = json_decode($status, true);
 		<?php endforeach; ?>
 	</tbody>
 </table>
-<script type="text/javascript">
-	setInterval('location.reload()', 5000);
-</script>

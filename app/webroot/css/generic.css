@@ -126,7 +126,7 @@ div.actions {
 	width:16%;
 	padding:10px 1.5%;
 }
-div.actions h3 {
+div.actions h2 {
 	padding-top:0;
 	color:#777;
 }
@@ -134,8 +134,23 @@ div.append {
 	float: right;
 	margin-right: 10px;
 }
+div.append.progress {
+	margin-top: 20px;
+	width: 300px;
+}
 div.statement {
 	margin-left: 20px;
+}
+
+.normal-pre pre {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.submit-button a {
+	margin: 5px;
 }
 
 /** Tables **/
@@ -302,6 +317,9 @@ form .required label:after {
 	content: '*';
 	display:inline;
 }
+form .required label.norequire:after {
+	content: none;
+}
 form div.submit {
 	border: 0;
 	clear: both;
@@ -366,6 +384,7 @@ form .submit input[type=submit] {
 	background-image: -moz-linear-gradient(top, #76BF6B, #3B8230);
 	border-color: #2d6324;
 	color: #fff;
+	font-weight: bold;
 	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
 	padding: 8px 10px;
 }
@@ -567,14 +586,6 @@ input[type=submit]:active,
 }
 
 /** Debugging **/
-pre {
-	color: #000;
-	background: #f0f0f0;
-	padding: 15px;
-	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
 .cake-debug-output {
 	padding: 0;
 	position: relative;

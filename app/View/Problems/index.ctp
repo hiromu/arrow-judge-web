@@ -21,6 +21,8 @@ App::uses('Debugger', 'Utility');
 	<i class="icon-plus-sign"></i>
 	<?php echo $this->Html->link('Add new problem', 'create'); ?>
 </div>
+<?php if(count($privates) > 0): ?>
+<h1>Private Problems</h1>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -34,16 +36,50 @@ App::uses('Debugger', 'Utility');
 		</tr>
 	</thead>
 	<tbody>
-		<?php foreach($problems as $problem): ?>
+		<?php foreach($privates as $private): ?>
 		<tr>
-			<td><?php echo h($problem['Problem']['id']); ?></td>
-			<td><?php echo $this->Html->link($problem['Problem']['name'], 'view/'.$problem['Problem']['id']); ?></td>
-			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
-			<td><?php echo h($problem['Problem']['stack']); ?> MB</td>
-			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
-			<td><?php echo h($problem['User']['username']); ?></td>
-			<?php if($problem['Problem']['user_id'] == $userid): ?>
-			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$problem['Problem']['id']); ?></td>
+			<td><?php echo h($private['Problem']['id']); ?></td>
+			<td><?php echo $this->Html->link($private['Problem']['name'], 'view/'.$private['Problem']['id']); ?></td>
+			<td><?php echo h($private['Problem']['cpu']); ?> sec</td>
+			<td><?php echo h($private['Problem']['stack']); ?> MB</td>
+			<td><?php echo h($private['Problem']['memory']); ?> MB</td>
+			<td><?php echo h($private['User']['username']); ?></td>
+			<?php if($private['Problem']['user_id'] == $userid): ?>
+			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$private['Problem']['id']); ?></td>
+			<?php else: ?>
+			<td></td>
+			<?php endif; ?>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+<h1>Public Problems</h1>
+<?php else: ?>
+<h1>Problems</h1>
+<?php endif; ?>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Problem ID</th>
+			<th>Problem Name</th>
+			<th>CPU Limit</th>
+			<th>Stack Limit</th>
+			<th>Memory Limit</th>
+			<th>Author</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($publics as $public): ?>
+		<tr>
+			<td><?php echo h($public['Problem']['id']); ?></td>
+			<td><?php echo $this->Html->link($public['Problem']['name'], 'view/'.$public['Problem']['id']); ?></td>
+			<td><?php echo h($public['Problem']['cpu']); ?> sec</td>
+			<td><?php echo h($public['Problem']['stack']); ?> MB</td>
+			<td><?php echo h($public['Problem']['memory']); ?> MB</td>
+			<td><?php echo h($public['User']['username']); ?></td>
+			<?php if($public['Problem']['user_id'] == $userid): ?>
+			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$public['Problem']['id']); ?></td>
 			<?php else: ?>
 			<td></td>
 			<?php endif; ?>

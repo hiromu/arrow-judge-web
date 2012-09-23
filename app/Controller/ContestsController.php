@@ -24,32 +24,36 @@ App::uses('AppController', 'Controller');
 class ContestsController extends AppController {
 	public $name = 'Contests';
 	public $helpers = array('Form');
-	public $uses = array('Contest', 'User', 'Regsitration');
+	public $uses = array('Contest', 'User', 'Registration');
+	public $components = array('Session');
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->deny('*');
+		$this->Auth->allow('index', 'problem', 'standings');
+		$this->Auth->flash['element'] = 'error';
+	}
 
 	public function index() {
-		$contests = $this->Contest->find('all');
+		$contests = $this->Contest->find('all', array('conditions' => array('OR' => array('Contest.public' => 1, 'AND' => array('Contest.public' => 0, 'Contest.user_id' => $this->Auth->user('id')))), 'order' => 'Contest.created DESC'));
 		$this->set('contests', $contests);
 	}
 
 	public function create() {
 		if(!empty($this->request->data)) {
-			$contest = array();
-			$contest['name'] = $this->data['Contest']['name'];
-
 			$admin = $this->User->find('first', array('conditions' => array('User.username' => $this->request->data['Contest']['admin'])));
 			if($admin) {
-				$contest['user_id'] = $admin['User']['id'];
+				$this->request->data['Contest']['user_id'] = $admin['User']['id'];
+				$this->request->data['Contest']['public'] = 0;
 
-				$contest['start'] = $this->Contest->deconstruct('Contest.start', $this->data['Contest']['start']);
-				$contest['end'] = $this->Contest->deconstruct('Contest.end', $this->data['Contest']['end']);
-				$start = new DateTime($contest['start']);
-				$end = new DateTime($contest['end']);
+				$this->request->data['Contest']['start'] = $this->Contest->deconstruct('Contest.start', $this->request->data['Contest']['start']);
+				$this->request->data['Contest']['end'] = $this->Contest->deconstruct('Contest.end', $this->request->data['Contest']['end']);
 
-				if($this->Contest->save($contest)) {
-					$this->redirect('setting/'.$this->Contest->id);
+				if($this->Contest->save($this->request->data)) {
+					$this->redirect('index');
 				}
 			} else {
-					$this->Contest->invalidate('admin', 'User not found');
+				$this->Contest->invalidate('admin', 'User not found');
 			}
 		}
 	}
@@ -58,37 +62,104 @@ class ContestsController extends AppController {
 		if(!$id) {
 			$this->redirect('/');
 		}
+
 		$contest = $this->Contest->findById($id);
-		if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+		if(!$contest) {
+			$this->redirect('/');
+		}
+		if($contest['Contest']['user_id'] != $this->Auth->user('id')) {
 			$this->redirect('/');
 		}
 
-		if(empty($this->request->data)) {
-			$this->request->data = $this->Contest->findById($id);
-			$admin = $this->User->findById($this->request->data['Contest']['user_id']);
-			$this->request->data['Contest']['admin'] = $admin['User']['username'];
-		} else {
-			$contest['Contest']['name'] = $this->data['Contest']['name'];
+		if($this->request->data) {
+			$this->request->data['Contest']['id'] = $id;
 
-			$admin = $this->User->find('first', array('conditions' => array('User.username' => $this->request->data['Contest']['admin'])));
-			if($admin) {
-				$contest['Contest']['user_id'] = $admin['User']['id'];
-				$contest['Contest']['start'] = $this->Contest->deconstruct('Contest.start', $this->data['Contest']['start']);
-				$contest['Contest']['end'] = $this->Contest->deconstruct('Contest.end', $this->data['Contest']['end']);
-
-				$this->Contest->save($contest, true, array('name', 'user_id', 'start', 'end', 'description'));
-			} else {
-					$this->Contest->invalidate('admin', 'User not found');
+			if($contest['Contest']['public'] == 1) {
+				$this->request->data['Contest']['public'] = 1;
 			}
+
+			$this->request->data['Contest']['start'] = $this->Contest->deconstruct('Contest.start', $this->request->data['Contest']['start']);
+			$this->request->data['Contest']['end'] = $this->Contest->deconstruct('Contest.end', $this->request->data['Contest']['end']);
+
+			if($this->Contest->save($this->request->data)) {
+				$this->redirect('index');
+			}
+		} else {
+			$this->request->data = $contest;
 		}
+		$this->set('contest', $contest);
 	}
 
-	public function redirect($id = null) {
+	public function register($id = null) {
 		if(!$id) {
 			$this->redirect('/');
 		}
 
-		$registration = array();
-		$this->Registration->save();
+		$contest = $this->Contest->findById($id);
+		if(!$contest) {
+			$this->redirect('/');
+		}
+		if($contest['Contest']['user_id'] == $this->Auth->user('id')) {
+			$this->redirect('/');
+		}
+		if($contest['Contest']['public'] == 0) {
+			$this->redirect('/');
+		}
+
+		if(strtotime($contest['Contest']['start']) > time()) {
+			$register = $this->Registration->find('first', array('conditions' => array('AND' => array('Registration.contest_id' => $id, 'Registration.user_id' => $this->Auth->user('id')))));
+			if($register) {
+				$this->Session->setFlash('You have already registered', 'error');
+			} else {
+				if($this->request->data) {
+					$register = array();
+					$register['Registration']['contest_id'] = $id;
+					$register['Registration']['user_id'] = $this->Auth->user('id');
+					$register['Registration']['score'] = json_encode(array_fill(0, count($contest['Problem']), ''));
+	
+					if($this->Registration->save($register)) {
+						$this->redirect('index/'.$id);
+					}
+				}
+			}
+		} else {
+			$this->Session->setFlash('Contest has already started, you can not register', 'error');
+		}
+
+		$this->set('contest', $contest);
+	}
+
+	public function problem($id = null) {
+		if(!$id) {
+			$this->redirect('/');
+		}
+
+		$contest = $this->Contest->findById($id);
+		if(!$contest) {
+			$this->redirect('/');
+		}
+		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
+			$this->redirect('/');
+		}
+
+		$this->set('contest', $contest);
+	}
+
+	public function standings($id = null) {
+		if(!$id) {
+			$this->redirect('/');
+		}
+
+		$contest = $this->Contest->findById($id);
+		if(!$contest) {
+			$this->redirect('/');
+		}
+		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
+			$this->redirect('/');
+		}
+		$this->set('contest', $contest);
+
+		$registration = $this->Registration->find('all', array('conditions' => array('Registration.contest_id' => $id)));
+		$this->set('registration', $registration);
 	}
 }

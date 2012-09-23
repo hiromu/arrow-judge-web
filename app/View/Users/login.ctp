@@ -23,17 +23,17 @@ App::uses('Debugger', 'Utility');
 	echo $this->Session->flash('auth');
 ?>
 <div class="row-fluid">
-<div class="login span6">
-<?php
-	echo $this->Form->create('User');
-	echo $this->Form->input('username', array('type' => 'text'));
-	echo $this->Form->input('password');
-	echo $this->Form->input('active', array('type' => 'hidden', 'value' => '1'));
-	echo $this->Form->end('Login');
-?>
-</div>
-<div class="well span6">
-	<h3>Don't you have an account?</h3>
-	<?php echo $this->Html->link('Create an account', '/users/register', array('class' => 'btn')); ?>
-</div>
+	<div class="login span6">
+	<?php
+		echo $this->Form->create('User');
+		echo $this->Form->input('username', array('type' => 'text'));
+		echo $this->Form->input('password');
+		echo $this->Form->input('active', array('type' => 'hidden', 'value' => '1'));
+		echo $this->Form->end('Login');
+	?>
+	</div>
+	<div class="well span6">
+		<h3>Don't you have an account?</h3>
+		<?php echo $this->Html->link('Create an account', '/users/register', array('class' => 'btn')); ?>
+	</div>
 </div>

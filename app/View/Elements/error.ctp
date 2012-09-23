@@ -1,4 +1,4 @@
 <div class="alert alert-error">
 	<button class="close" data-dismiss="alert">×</button>
-	<?php echo $message; ?>
+	<?php echo h($message); ?>
 </div>

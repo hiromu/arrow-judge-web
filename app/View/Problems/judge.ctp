@@ -42,6 +42,21 @@ $status = json_decode($status, true);
 	</tbody>
 </table>
 <textarea id="source" rows="<?php echo substr_count($problem['Problem']['source'], "\n") + 1; ?>" readonly="readonly"><?php echo h($problem['Problem']['source']); ?></textarea>
+<?php if(count($answers) > 0): ?>
+<h1>Testcases</h1>
+<div class="statement">
+	<?php for($i = 0; $i < count($answers); $i++): ?>
+	<h3><?php echo h(sprintf("#%d: CPU %fsec, Memory %dKB", $i, $cpu[$i], $memory[$i])); ?></h3>
+	<div class="row-fluid">
+		<div class="span6">
+			<pre><?php echo h($testcases[$i]); ?></pre>
+		</div>
+		<div class="span6">
+			<pre><?php echo h($answers[$i]); ?></pre>
+		</div>
+	</div>
+	<?php endfor; ?>
+<?php endif; ?>
 <script type="text/javascript">
 	editAreaLoader.init({
 		id: 'source',
@@ -49,5 +64,7 @@ $status = json_decode($status, true);
 		start_highlight: true,
 		syntax: "<?php echo h($syntax[$problem['Language']['name']]); ?>"
 	});
+<?php if($problem['Problem']['status'] == 0): ?>
 	setInterval('location.reload()', 5000);
+<?php endif; ?>
 </script>

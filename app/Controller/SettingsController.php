@@ -33,6 +33,10 @@ class SettingsController extends AppController {
 	}
 
 	public function index() {
+		if(!$this->Auth->user('admin')) {
+			$this->redirect('/');
+		}
+
 		if(!$this->request->data) {
 			foreach($this->options as $key => $value) {
 				$this->request->data['Setting'][$key] = $value;

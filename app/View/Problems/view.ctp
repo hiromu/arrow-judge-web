@@ -50,6 +50,9 @@ App::uses('Debugger', 'Utility');
 <?php endif; ?>
 <?php endfor; ?>
 </div>
+<div class="submit-button">
 <?
 	echo $this->Html->link('Submit', '/submissions/submit/'.$problem['Problem']['id'], array('class' => 'btn btn-primary btn-large'));
+	echo $this->Html->link('Question', '/questions/index/'.$problem['Problem']['id'], array('class' => 'btn btn-large'));
 ?>
+</div>

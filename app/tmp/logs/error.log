@@ -1614,3 +1614,331 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
 [main] - APP/webroot/index.php, line 92
 
+2012-09-19 22:01:12 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`problems`, CONSTRAINT `problem_language` FOREIGN KEY (`language_id`) REFERENCES `languages` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Problem), Array, Array)
+#4 /usr/share/judge/app/Controller/ProblemsController.php(49): Model->save(Array)
+#5 [internal function]: ProblemsController->create()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-19 22:02:16 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`problems`, CONSTRAINT `problem_language` FOREIGN KEY (`language_id`) REFERENCES `languages` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Problem), Array, Array)
+#4 /usr/share/judge/app/Controller/ProblemsController.php(48): Model->save(Array)
+#5 [internal function]: ProblemsController->create()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-19 22:02:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`problems`, CONSTRAINT `problem_language` FOREIGN KEY (`language_id`) REFERENCES `languages` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Problem), Array, Array)
+#4 /usr/share/judge/app/Controller/ProblemsController.php(48): Model->save(Array)
+#5 [internal function]: ProblemsController->create()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-19 22:02:36 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('9')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(49): Controller->redirect('setting', '9', 'source')
+#2 [internal function]: ProblemsController->create()
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 22:04:44 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('10')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(49): Controller->redirect('setting', '10', 'source')
+#2 [internal function]: ProblemsController->create()
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 22:05:32 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('11')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(49): Controller->redirect('setting', '11', 'source')
+#2 [internal function]: ProblemsController->create()
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 22:05:46 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('12')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(49): Controller->redirect('setting', '12', 'source')
+#2 [internal function]: ProblemsController->create()
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 22:06:34 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('13')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(50): Controller->redirect('setting', '13', 'source')
+#2 [internal function]: ProblemsController->create()
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 22:52:30 Error: [CakeException] Unknown status code
+#0 /usr/share/judge/lib/Cake/Controller/Controller.php(785): CakeResponse->statusCode('17')
+#1 /usr/share/judge/app/Controller/ProblemsController.php(99): Controller->redirect('setting', '17', 'sample')
+#2 [internal function]: ProblemsController->setting('17')
+#3 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#4 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#5 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#6 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2012-09-19 23:07:22 Error: [MissingActionException] Action JudgesController::17() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-19 23:07:26 Error: [MissingControllerException] Controller class JudgeController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-19 23:07:32 Error: [MissingControllerException] Controller class JudgeController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-19 23:07:35 Error: [MissingActionException] Action JudgesController::view() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-19 23:08:02 Error: [MissingActionException] Action JudgesController::17() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-19 23:54:25 Error: [MissingActionException] Action UsersController::setting() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-20 07:38:22 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Pronlem.modified' in 'order clause'
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('SELECT `Problem...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(647): DboSource->execute('SELECT `Problem...', Array, Array)
+#3 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(1058): DboSource->fetchAll('SELECT `Problem...', false)
+#4 /usr/share/judge/lib/Cake/Model/Model.php(2698): DboSource->read(Object(Problem), Array)
+#5 /usr/share/judge/app/Controller/ProblemsController.php(38): Model->find('all', Array)
+#6 [internal function]: ProblemsController->index()
+#7 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProblemsController), Array)
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProblemsController), Object(CakeRequest), Object(CakeResponse))
+#10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-20 16:08:56 Error: [MissingActionException] Action ContestsController::register() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 07:01:35 Error: [MissingActionException] Action QuestionsController::17() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 07:35:26 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/index.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 07:40:34 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/submit.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 11:32:23 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/submit.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 12:55:09 Error: [MissingActionException] Action QuestionsController::answer() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 12:55:13 Error: [MissingActionException] Action QuestionsController::answer() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 12:55:16 Error: [MissingActionException] Action QuestionsController::answer() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 12:55:43 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/remove.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 13:09:38 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/answer.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 13:30:58 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`questions`, CONSTRAINT `question_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Question), Array, Array)
+#4 /usr/share/judge/app/Controller/QuestionsController.php(83): Model->save(Array)
+#5 [internal function]: QuestionsController->answer('2')
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(QuestionsController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-21 14:26:08 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/remove.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 14:29:15 Error: [MissingViewException] View file "/usr/share/judge/app/View/Questions/remove.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-21 18:53:54 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 19:05:35 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 19:22:37 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 19:23:17 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 19:23:18 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-21 19:23:36 Error: [MissingActionException] Action ContestsController::problems() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-22 04:50:36 Error: [MissingActionException] Action ContestsController::register() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-22 10:00:38 Error: [MissingViewException] View file "/usr/share/judge/app/View/Contests/register.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-22 10:24:14 Error: [MissingViewException] View file "/usr/share/judge/app/View/Contests/register.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-22 11:12:04 Error: [MissingActionException] Action UsersController::setting() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-22 16:51:55 Error: [MissingViewException] View file "/usr/share/judge/app/View/Users/index.ctp" is missing.
+#0 /usr/share/judge/lib/Cake/View/View.php(462): View->_getViewFileName(NULL)
+#1 /usr/share/judge/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-22 17:22:16 Error: [MissingActionException] Action ContestsController::view() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 10:50:55 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 10:51:56 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 10:53:00 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 12:05:52 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 13:53:38 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-09-23 14:46:55 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-23 14:47:03 Error: [MissingActionException] Action ContestsController::submission() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ContestsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

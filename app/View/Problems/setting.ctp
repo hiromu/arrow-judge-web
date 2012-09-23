@@ -17,10 +17,15 @@
  */
 App::uses('Debugger', 'Utility');
 ?>
-<div class="row-fluid">
-<h1>Problem Setting <?php echo sprintf('#%d', $problem['Problem']['id']); ?></h1>
-<?php
-	echo $this->element('problem');
-	echo $this->Form->end('Update');
-?>
+<div class="append progress progress-striped active">
+	<div class="bar" style="width: <?php echo h($percentage); ?>;">
+		<p><?php echo h($percentage); ?></p>
+	</div>
 </div>
+<h1>Problem Setting <?php echo h(sprintf('#%d', $problem['Problem']['id'])); ?></h1>
+<?php
+	echo $this->Session->flash();
+	echo $this->Form->create('Problem');
+	echo $this->element($element);
+	echo $this->Form->end('Submit');
+?>

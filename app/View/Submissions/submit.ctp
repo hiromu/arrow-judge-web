@@ -17,7 +17,7 @@
  */
 App::uses('Debugger', 'Utility');
 ?>
-<h1><?php echo sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name']); ?></h1>
+<h1><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
 <?php
 	echo $this->Session->flash();
 	echo $this->Form->create('Submission');

@@ -17,10 +17,15 @@
  */
 App::uses('Debugger', 'Utility');
 ?>
-<div class="row-fluid">
+<div class="append progress progress-striped active">
+	<div class="bar" style="width: 25%;">
+		<p>25%</p>
+	</div>
+</div>
 <h1>Create Problem</h1>
 <?php
-	echo $this->element('problem');
-	echo $this->Form->end('Create');
+	echo $this->Session->flash();
+	echo $this->Form->create('Problem');
+	echo $this->element('problem_statement');
+	echo $this->Form->end('Submit');
 ?>
-</div>
