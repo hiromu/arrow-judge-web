@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class ContestsController extends AppController {
 	public $name = 'Contests';
 	public $helpers = array('Form');
-	public $uses = array('Contest', 'User', 'Registration');
+	public $uses = array('Contest', 'User', 'Registration', 'Problem', 'Submission', 'Language');
 	public $components = array('Session');
 
 	public function beforeFilter() {
@@ -50,6 +50,7 @@ class ContestsController extends AppController {
 				$this->request->data['Contest']['end'] = $this->Contest->deconstruct('Contest.end', $this->request->data['Contest']['end']);
 
 				if($this->Contest->save($this->request->data)) {
+					$this->Session->setFlash('New contest are created', 'success');
 					$this->redirect('index');
 				}
 			} else {
@@ -60,15 +61,15 @@ class ContestsController extends AppController {
 
 	public function setting($id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($id);
 		if(!$contest) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		if($contest['Contest']['user_id'] != $this->Auth->user('id')) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		if($this->request->data) {
@@ -82,6 +83,7 @@ class ContestsController extends AppController {
 			$this->request->data['Contest']['end'] = $this->Contest->deconstruct('Contest.end', $this->request->data['Contest']['end']);
 
 			if($this->Contest->save($this->request->data)) {
+				$this->Session->setFlash('Contest settings are updated', 'success');
 				$this->redirect('index');
 			}
 		} else {
@@ -92,18 +94,18 @@ class ContestsController extends AppController {
 
 	public function register($id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($id);
 		if(!$contest) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		if($contest['Contest']['user_id'] == $this->Auth->user('id')) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		if($contest['Contest']['public'] == 0) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		if(strtotime($contest['Contest']['start']) > time()) {
@@ -118,7 +120,8 @@ class ContestsController extends AppController {
 					$register['Registration']['score'] = json_encode(array_fill(0, count($contest['Problem']), ''));
 	
 					if($this->Registration->save($register)) {
-						$this->redirect('index/'.$id);
+						$this->Session->setFlash('Registration completed', 'success');
+						$this->redirect('index');
 					}
 				}
 			}
@@ -131,31 +134,63 @@ class ContestsController extends AppController {
 
 	public function problem($id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($id);
 		if(!$contest) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$this->set('contest', $contest);
 	}
 
-	public function standings($id = null) {
+	public function submission($id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($id);
 		if(!$contest) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-			$this->redirect('/');
+			$this->redirect('index');
+		}
+		$this->set('contest', $contest);
+
+		$problems = array();
+		$problem_suggest = array();
+		foreach($contest['Problem'] as $problem) {
+			$problems[] = $problem['id'];
+			$problem_suggest[$problem['id']] = sprintf('#%d: %s', $problem['id'], $problem['name']);
+		}
+		$submissions = $this->Submission->find('all', array('conditions' => array('AND' => array('Submission.user_id' => $this->Auth->user('id'), 'Submission.problem_id' => $problems)), 'order' => 'Submission.created DESC'));
+		$this->set('problem_suggest', $problem_suggest);
+		$this->set('submissions', $submissions);
+
+		$languages = $this->Language->find('all');
+		$lang = array();
+		foreach($languages as $language) {
+			$lang[$language['Language']['id']] = $language['Language']['name'];
+		}
+		$this->set('lang', $lang);
+	}
+
+	public function standings($id = null) {
+		if(!$id) {
+			$this->redirect('index');
+		}
+
+		$contest = $this->Contest->findById($id);
+		if(!$contest) {
+			$this->redirect('index');
+		}
+		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
+			$this->redirect('index');
 		}
 		$this->set('contest', $contest);
 

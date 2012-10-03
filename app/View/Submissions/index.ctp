@@ -18,35 +18,8 @@
 App::uses('Debugger', 'Utility');
 $status = json_decode($status, true);
 ?>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Problem ID</th>
-			<th>User Name</th>
-			<th>Language</th>
-			<th>Status</th>
-			<th>CPU</th>
-			<th>Memory</th>
-			<th>Length</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php foreach($submissions as $submission): ?>
-		<tr>
-			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $submission['Problem']['id'], $submission['Problem']['name'])), '/problems/view/'.$submission['Problem']['id']); ?></td>
-			<td><?php echo h($submission['User']['username']); ?></td>
-			<td><?php echo h($submission['Language']['name']); ?></td>
-			<td><?php echo h($status[$submission['Submission']['status']]); ?></td>
-			<td><?php echo h($submission['Submission']['max_cpu']); ?> sec</td>
-			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
-			<td><?php echo h(mb_strlen($submission['Submission']['source'])); ?> B</td>
-			<?php if($submission['User']['id'] == $userid): ?>
-			<td><?php echo $this->Html->link('Detail =>', 'detail/'.$submission['Submission']['id']); ?></td>
-			<?php else: ?>
-			<td></td>
-			<?php endif; ?>
-		</tr>
-		<?php endforeach; ?>
-	</tbody>
-</table>
+<h1>Submissions</h1>
+<h2>Search</h2>
+<?php echo $this->Element('submission_search', array('contest_id' => null, 'user_id' => null)); ?>
+<h2>Latest Submissions</h2>
+<?php echo $this->Element('submission', array('user_show' => true, 'contest_id' => null)); ?>

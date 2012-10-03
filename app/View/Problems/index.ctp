@@ -43,7 +43,7 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo h($private['Problem']['cpu']); ?> sec</td>
 			<td><?php echo h($private['Problem']['stack']); ?> MB</td>
 			<td><?php echo h($private['Problem']['memory']); ?> MB</td>
-			<td><?php echo h($private['User']['username']); ?></td>
+			<td><?php echo $this->Html->link($private['User']['username'], '/users/index/'.$private['User']['id']); ?></td>
 			<?php if($private['Problem']['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$private['Problem']['id']); ?></td>
 			<?php else: ?>
@@ -77,7 +77,7 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo h($public['Problem']['cpu']); ?> sec</td>
 			<td><?php echo h($public['Problem']['stack']); ?> MB</td>
 			<td><?php echo h($public['Problem']['memory']); ?> MB</td>
-			<td><?php echo h($public['User']['username']); ?></td>
+			<td><?php echo $this->Html->link($public['User']['username'], '/users/index/'.$public['User']['id']); ?></td>
 			<?php if($public['Problem']['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$public['Problem']['id']); ?></td>
 			<?php else: ?>

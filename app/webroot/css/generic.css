@@ -153,6 +153,18 @@ div.statement {
 	margin: 5px;
 }
 
+.form-inline {
+	margin: 5px;
+}
+
+.form-inline label {
+	margin-right: 5px;
+}
+
+.form-inline select, input {
+	margin-right: 10px;
+}
+
 /** Tables **/
 table {
 	border-right:0;

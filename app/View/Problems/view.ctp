@@ -16,6 +16,9 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
+if($contest_id) {
+	echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $contest_id));
+}
 ?>
 <h1><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
 <h4>CPU Limit</h4>
@@ -41,10 +44,10 @@ App::uses('Debugger', 'Utility');
 	<h5>#<?php echo h($i); ?></h5>
 	<div class="row-fluid">
 		<div class="span6">
-			<pre><?php echo $sample_inputs[$i - 1]; ?></pre>
+			<pre><?php echo h($sample_inputs[$i - 1]); ?></pre>
 		</div>
 		<div class="span6">
-			<pre><?php echo $sample_outputs[$i - 1]; ?></pre>
+			<pre><?php echo h($sample_outputs[$i - 1]); ?></pre>
 		</div>
 	</div>
 <?php endif; ?>
@@ -52,7 +55,8 @@ App::uses('Debugger', 'Utility');
 </div>
 <div class="submit-button">
 <?
-	echo $this->Html->link('Submit', '/submissions/submit/'.$problem['Problem']['id'], array('class' => 'btn btn-primary btn-large'));
-	echo $this->Html->link('Question', '/questions/index/'.$problem['Problem']['id'], array('class' => 'btn btn-large'));
+	echo $this->Html->link('Submit', '/submissions/submit/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-primary btn-large'));
+	echo $this->Html->link('Question', '/questions/index/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
+	echo $this->Html->link('Submissions', 'submission/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
 ?>
 </div>

@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class ProblemsController extends AppController {
 	public $name = 'Problems';
 	public $helpers = array('Form');
-	public $uses = array('Contest', 'Problem', 'Language');
+	public $uses = array('Contest', 'Problem', 'Language', 'Submission');
 	public $components = array('Session');
 
 	public function beforeFilter() {
@@ -35,8 +35,8 @@ class ProblemsController extends AppController {
 	}
 
 	public function index() {
-		$publics = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.public' => '1', 'Problem.status' => '6')), 'order' => 'Problem.modified DESC'));
-		$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.user_id' => $this->Auth->user('id'), 'AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0')))), 'order' => 'Problem.modified DESC'));
+		$publics = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.public' => '1', 'Problem.status' => '6')), 'order' => 'Problem.created DESC'));
+		$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.user_id' => $this->Auth->user('id'), 'AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0')))), 'order' => 'Problem.created DESC'));
 		$this->set('publics', $publics);
 		$this->set('privates', $privates);
 	}
@@ -79,12 +79,12 @@ class ProblemsController extends AppController {
 
 	public function setting($id = null, $phase = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$problem = $this->Problem->findById($id);
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		if($this->request->data) {
@@ -158,12 +158,12 @@ class ProblemsController extends AppController {
 
 	public function judge($id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$problem = $this->Problem->findById($id);
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 		$this->set('problem', $problem);
 
@@ -173,9 +173,9 @@ class ProblemsController extends AppController {
 		$this->set('memory', json_decode($problem['Problem']['submit_memory'], true));
 	}
 
-	public function view($id = null) {
+	public function view($id = null, $contest_id = null) {
 		if(!$id) {
-			$this->redirect('/');
+			$this->redirect('index');
 		}
 
 		$problem = $this->Problem->findById($id);
@@ -183,15 +183,56 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if(($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] == null) || $problem['Problem']['status'] != 6) {
+			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] == null) {
+				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+				if($contest && strtotime($contest['Problem']['start']) > time()) {
+				$this->redirect('index');
+				}
+			}
+			if($problem['Problem']['status'] != 6) {
 				$this->redirect('index');
 			}
-		}		
+		}
 
 		$sample_inputs = json_decode($problem['Problem']['sample_inputs'], true);
 		$sample_outputs = json_decode($problem['Problem']['sample_outputs'], true);
 		$this->set('problem', $problem);
+		$this->set('contest_id', $contest_id);
 		$this->set('sample_inputs', $sample_inputs);
 		$this->set('sample_outputs', $sample_outputs);
+	}
+
+	function submission($id = null, $contest_id = null) {
+		if(!$id) {
+			$this->redirect('index');
+		}
+
+		$problem = $this->Problem->findById($id);
+		if(!$problem) {
+			$this->redirect('index');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
+			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] == null) {
+				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+				if($contest && strtotime($contest['Problem']['start']) > time()) {
+				$this->redirect('index');
+				}
+			}
+			if($problem['Problem']['status'] != 6) {
+				$this->redirect('index');
+			}
+		}
+
+		$languages = $this->Language->find('all');
+		$lang = array();
+		foreach($languages as $language) {
+			$lang[$language['Language']['id']] = $language['Language']['name'];
+		}
+		$this->set('lang', $lang);
+
+		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.problem_id' => $id), 'limit' => 100, 'order' => 'Submission.created DESC'));
+		$this->set('submissions', $submissions);
+		$this->set('contest_id', $contest_id);
+		$this->set('problem_id', $problem['Problem']['id']);
 	}
 }

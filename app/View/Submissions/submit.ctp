@@ -16,6 +16,9 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
+if($contest_id) {
+	echo $this->Element('contest', array('mode' => 'submission', 'contest_id' => $contest_id));
+}
 ?>
 <h1><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
 <?php

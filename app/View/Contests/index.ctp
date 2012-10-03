@@ -18,6 +18,7 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Contests</h1>
+<?php echo $this->Session->flash(); ?>
 <?php if($admin): ?>
 <div class="append">
 	<i class="icon-plus-sign"></i>
@@ -44,7 +45,11 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo h($contest['Contest']['end']); ?></td>
 			<?php if($contest['Contest']['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$contest['Contest']['id']); ?></td>
+			<?php if(strtotime($contest['Contest']['start']) > time()): ?>
 			<td><?php echo $this->Html->link('Set Problems =>', 'problem/'.$contest['Contest']['id']); ?></td>
+			<?php else: ?>
+			<td><?php echo $this->Html->link('Enter =>', 'problem/'.$contest['Contest']['id']); ?></td>
+			<?php endif; ?>
 			<?php elseif(strtotime($contest['Contest']['start']) > time()): ?>
 			<td><?php echo $this->Html->link('Register =>', 'register/'.$contest['Contest']['id']); ?></td>
 			<td></td>

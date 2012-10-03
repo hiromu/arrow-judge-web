@@ -24,12 +24,35 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	public $name = 'Users';
 	public $helpers = array('Form');
-	public $uses = array('User');
+	public $uses = array('User', 'Submission', 'Language');
 	public $components = array('Email', 'Session');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->flash['element'] = 'error';
+	}
+
+	public function index($id = null) {
+		if(!$id) {
+			$this->redirect('/');
+		}
+
+		$user = $this->User->findById($id);
+		if(!$user) {
+			$this->redirect('/');
+		}
+
+		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.user_id' => $id), 'limit' => 100, 'order' => 'Submission.created DESC'));
+
+		$this->set('user', $user);
+		$this->set('submissions', $submissions);
+
+		$languages = $this->Language->find('all');
+		$lang = array();
+		foreach($languages as $language) {
+			$lang[$language['Language']['id']] = $language['Language']['name'];
+		}
+		$this->set('lang', $lang);
 	}
 
 	public function login() {
@@ -81,6 +104,7 @@ class UsersController extends AppController {
 		if(!$id) {
 			$this->redirect('/');
 		}
+
 		$userdata = $this->User->find('first', array('conditions' => array('User.confirm' => $id)));
 		if($userdata) {
 			$userdata['User']['active'] = 1;
@@ -88,6 +112,27 @@ class UsersController extends AppController {
 			$this->User->save($userdata, true, array('active', 'confirm'));
 		} else {
 			$this->redirect('/');
+		}
+	}
+
+	public function setting() {
+		if(!$this->Auth->user()) {
+			$this->redirect('/');
+		}
+
+		$id = $this->Auth->user('id');
+		if($this->request->data) {
+			$this->request->data['User']['id'] = $id;
+			if($this->User->save($this->request->data)) {
+				$user = $this->User->findById($id);
+				unset($user['User']['password']);
+				$this->Session->write('Auth', $user);
+				$this->Session->setFlash('User settings are updated', 'success');
+			}
+		} else {
+			$user = $this->User->findById($id);
+			unset($user['User']['password']);
+			$this->request->data = $user;
 		}
 	}
 }

@@ -56,10 +56,13 @@
 								<li><?php echo $this->Html->link('Contests', '/contests'); ?></li>
 								<li><?php echo $this->Html->link('Problems', '/problems'); ?></li>
 								<li><?php echo $this->Html->link('Submissions', '/submissions'); ?></li>
+								<?php if($admin): ?>
+								<li><?php echo $this->Html->link('Site Config', '/settings'); ?></li>
+								<?php endif; ?>
 							</ul>
 							<ul class="nav pull-right">
 								<?php if($userid && $username): ?>
-								<li><p><?php echo h($username); ?></p></li>
+								<li><p><?php echo $this->Html->link($username, '/users/index/'.$userid); ?></p></li>
 								<li class="divider-vertical"></li>
 								<li><?php echo $this->Html->link('Settings', '/users/setting'); ?></li>
 								<li><?php echo $this->Html->link('Logout', '/users/logout'); ?></li>

@@ -25,6 +25,7 @@ class SettingsController extends AppController {
 	public $name = 'Settings';
 	public $helpers = array('Form');
 	public $uses = array('Setting');
+	public $components = array('Session');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -43,7 +44,9 @@ class SettingsController extends AppController {
 			}
 		} else {
 			foreach($this->request->data['Setting'] as $key => $value) {
-				$this->Setting->updateAll(array('value' => "'".$value."'"), array('key' => $key));
+				if($this->Setting->updateAll(array('value' => "'".$value."'"), array('key' => $key))) {
+					$this->Session->setFlash('Settings are updated', 'success');
+				}
 			}
 		}
 	}
