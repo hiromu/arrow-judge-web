@@ -57,8 +57,6 @@ class SubmissionsController extends AppController {
 
 		$this->set('contest_id', $contest_id);
 		$this->set('submission', $submission);
-		$this->set('input', json_decode($submission['Problem']['testcases']));
-		$this->set('output', json_decode($submission['Submission']['output']));
 		$this->set('cpu', json_decode($submission['Submission']['cpu']));
 		$this->set('memory', json_decode($submission['Submission']['memory']));
 	}

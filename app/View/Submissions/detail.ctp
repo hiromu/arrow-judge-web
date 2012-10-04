@@ -48,25 +48,30 @@ if($contest_id) {
 <br />
 <?php if($submission['Submission']['status'] == 2): ?>
 <h2>Compiler Output</h2>
-<pre><?php echo h($submission['Submission']['output']); ?></pre>
-<?php elseif($submission['Submission']['status'] == 3 && $submission['Submission']['output']): ?>
+<pre><?php echo h($submission['Submission']['error']); ?></pre>
+<?php elseif($submission['Submission']['status'] == 3 && $submission['Submission']['error']): ?>
 <h2>Execution Output<h2>
-<pre><?php echo h($submission['Submission']['output']); ?></pre>
+<pre><?php echo h($submission['Submission']['error']); ?></pre>
 <?php else: ?>
-<?php if(count($output) > 0): ?>
+<?php if(count($cpu) > 0): ?>
 <h2>Testcases</h2>
 <div class="statement">
-	<?php for($i = 0; $i < count($output); $i++): ?>
-	<h3><?php echo h(sprintf("#%d: CPU %fsec, Memory %dKB", $i, $cpu[$i], $memory[$i])); ?></h3>
-	<div class="row-fluid">
-		<div class="span6">
-			<pre><?php echo h($input[$i]); ?></pre>
-		</div>
-		<div class="span6">
-			<pre><?php echo h($output[$i]); ?></pre>
-		</div>
-	</div>
-	<?php endfor; ?>
+	<table>
+		<tr>
+			<th>Testcase</th>
+			<th>CPU</th>
+			<th>Memory</th>
+			<th></th>
+		</tr>
+		<?php for($i = 0; $i < count($cpu); $i++): ?>
+		<tr>
+			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
+			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
+			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
+			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$submission['Submission']['id'].'/'.$i); ?>
+		</tr>
+		<?php endfor; ?>
+	</table>
 <?php endif; ?>
 <?php endif; ?>
 <script type="text/javascript">

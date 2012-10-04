@@ -42,20 +42,33 @@ $status = json_decode($status, true);
 	</tbody>
 </table>
 <textarea id="source" rows="<?php echo substr_count($problem['Problem']['source'], "\n") + 1; ?>" readonly="readonly"><?php echo h($problem['Problem']['source']); ?></textarea>
-<?php if(count($answers) > 0): ?>
+<?php if($problem['Problem']['status'] == 2): ?>
+<h2>Compiler Output</h2>
+<pre><?php echo h($problem['Problem']['error']); ?></pre>
+<?php elseif($problem['Problem']['status'] == 3 && $problem['Problem']['error']): ?>
+<h2>Execution Output<h2>
+<pre><?php echo h($problem['Problem']['error']); ?></pre>
+<?php else: ?>
+<?php if(count($cpu) > 0): ?>
 <h1>Testcases</h1>
 <div class="statement">
-	<?php for($i = 0; $i < count($answers); $i++): ?>
-	<h3><?php echo h(sprintf("#%d: CPU %fsec, Memory %dKB", $i, $cpu[$i], $memory[$i])); ?></h3>
-	<div class="row-fluid">
-		<div class="span6">
-			<pre><?php echo h($testcases[$i]); ?></pre>
-		</div>
-		<div class="span6">
-			<pre><?php echo h($answers[$i]); ?></pre>
-		</div>
-	</div>
-	<?php endfor; ?>
+	<table>
+		<tr>
+			<th>Testcase</th>
+			<th>CPU</th>
+			<th>Memory</th>
+			<th></th>
+		</tr>
+		<?php for($i = 0; $i < count($cpu); $i++): ?>
+		<tr>
+			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
+			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
+			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
+			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$problem['Problem']['id'].'/'.$i); ?></td>
+		</tr>
+		<?php endfor; ?>
+	</table>
+<?php endif; ?>
 <?php endif; ?>
 <script type="text/javascript">
 	editAreaLoader.init({

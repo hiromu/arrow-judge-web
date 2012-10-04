@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class ProblemsController extends AppController {
 	public $name = 'Problems';
 	public $helpers = array('Form');
-	public $uses = array('Contest', 'Problem', 'Language', 'Submission');
+	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Testcase', 'Answer');
 	public $components = array('Session');
 
 	public function beforeFilter() {
@@ -50,7 +50,6 @@ class ProblemsController extends AppController {
 			$problem['Problem']['memory'] = 0;
 			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, 50, ''));
 			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, 50, ''));
-			$problem['Problem']['testcases'] = json_encode(array_fill(0, 100, ''));
 			$problem['Problem']['status'] = -1;
 			if($id) {
 				$contest = $this->Contest->findById($id);
@@ -58,6 +57,18 @@ class ProblemsController extends AppController {
 					if($contest['Contest']['user_id'] == $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
 						$problem['Problem']['contest_id'] = $id;
 						$problem['Problem']['public'] = 0;
+						for($i = 0; $i < 100; $i++) {
+							$this->Testcase->create();
+							$testcase['Testcase']['problem_id'] = $id;
+							$testcase['Testcase']['index'] = $i;
+							$this->Testcase->save($testcase);
+						}
+						for($i = 0; $i < 100; $i++) {
+							$this->Answer->create();
+							$answer['Answer']['problem_id'] = $id;
+							$answer['Answer']['index'] = $i;
+							$this->Answer->save($answer);
+						}
 						if($this->Problem->save($problem)) {
 							$this->redirect('setting/'.$this->Problem->getLastInsertID().'/source');
 						}
@@ -107,13 +118,11 @@ class ProblemsController extends AppController {
 					$this->redirect('setting/'.$id.'/testcase');
 				}
 			 } else if($phase == 'testcase') {
-				$testcases = array();
-				for($i = 1; isset($problem['Problem']['testcase'.$i]); $i++) {
-					$testcases[] = $problem['Problem']['testcase'.$i];
-				}
-				$problem['Problem']['testcases'] = json_encode($testcases);
 				$problem['Problem']['status'] = 0;
 				if($this->Problem->save($problem)) {
+					for($i = 1; isset($problem['Problem']['testcase'.$i]); $i++) {
+						$this->Testcase->updateAll(array('testcase' => sprintf('"%s"', $problem['Problem']['testcase'.$i])), array('problem_id' => $id, 'index' => $i - 1));
+					}
 					$this->redirect('judge/'.$id);
 				}
 			} else {
@@ -141,9 +150,11 @@ class ProblemsController extends AppController {
 				$this->set('element', 'problem_sample');
 				$this->set('percentage', '75%');
 			} else if($phase == 'testcase') {
-				$problem['Problem']['testcases'] = json_decode($problem['Problem']['testcases'], true);
-				for($i = 1; $i <= count($problem['Problem']['testcases']); $i++) {
-					$problem['Problem']['testcase'.$i] = $problem['Problem']['testcases'][$i - 1];
+				$testcase = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $id), 'order' => 'Testcase.index'));
+				$problem['Problem']['testcases'] = array();
+				for($i = 1; $i <= count($testcase); $i++) {
+					$problem['Problem']['testcases'][] = $testcase[$i - 1]['Testcase']['testcase'];
+					$problem['Problem']['testcase'.$i] = $testcase[$i - 1]['Testcase']['testcase'];
 				}
 				$this->set('element', 'problem_testcase');
 				$this->set('percentage', '100%');
@@ -167,8 +178,6 @@ class ProblemsController extends AppController {
 		}
 		$this->set('problem', $problem);
 
-		$this->set('testcases', json_decode($problem['Problem']['testcases'], true));
-		$this->set('answers', json_decode($problem['Problem']['answers'], true));
 		$this->set('cpu', json_decode($problem['Problem']['submit_cpu'], true));
 		$this->set('memory', json_decode($problem['Problem']['submit_memory'], true));
 	}

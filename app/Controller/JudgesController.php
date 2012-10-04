@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class JudgesController extends AppController {
 	public $name = 'Judges';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Client');
+	public $uses = array('Problem', 'Submission', 'Client', 'Testcase', 'Answer', 'Output');
 
 	public function beforeFilter() {
 		//$this->Auth->authenticate = array('Basic' => array('userModel' => 'Client', 'fields' => array('username' => 'id', 'password' => 'password')));
@@ -45,9 +45,15 @@ class JudgesController extends AppController {
 			$judge['Problem']['modified'] = null;
 			$this->Problem->save($judge, true, array('status', 'modified'));
 
+			$tests = array();
+			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.index'));
+			foreach($testcases as $testcase) {
+				$tests[] = $testcase['Testcase']['testcase'];
+			}
+
 			$json = array();
 			$json['problem'] = '1';
-			$json['input'] = json_decode($judge['Problem']['testcases'], true);
+			$json['input'] = $tests;
 			foreach(array('id', 'cpu', 'stack', 'memory', 'source') as $key) {
 				$json[$key] = $judge['Problem'][$key];
 			}
@@ -64,10 +70,22 @@ class JudgesController extends AppController {
 			$judge['Problem']['modified'] = null;
 			$this->Submission->save($judge, true, array('status', 'modified'));
 
+			$tests = array();
+			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.index'));
+			foreach($testcases as $testcase) {
+				$tests[] = $testcases['Testcase']['testcase'];
+			}
+
+			$ans = array();
+			$answers = $this->Answer->find('all', array('conditions' => array('Answer.problem_id' => $judge['Problem']['id']), 'order' => 'Answer.index'));
+			foreach($answers as $answer) {
+				$ans[] = $answer['Answer']['answer'];
+			}
+
 			$json = array();
 			$json['problem'] = '0';
-			$json['input'] = json_decode($judge['Problem']['testcases'], true);
-			$json['answer'] = json_decode($judge['Problem']['answers'], true);
+			$json['input'] = json_decode($tests, true);
+			$json['answer'] = json_decode($ans, true);
 			foreach(array('id', 'source') as $key) {
 				$json[$key] = $judge['Submission'][$key];
 			}
@@ -94,21 +112,21 @@ class JudgesController extends AppController {
 
 		if($post['status'] == 2 || $post['status'] == 3) {
 			if($post['problem'] == '1') {
-				$submission['answers'] = $post['error'];
+				$submission['error'] = $post['error'];
 			} else {
-				$submission['output'] = $post['error'];
+				$submission['error'] = $post['error'];
 				$submission['max_cpu'] = 'N/A';
 				$submission['max_memory'] = 'N/A';
 			}
 		} else if($post['status'] == 4 || $post['status'] == 5 || $post['status'] == 6) {
 			if($post['problem'] == '1') {
-				$submission['answers'] = $post['output'];
+				$answers = json_decode($post['output'], true);
 				$submission['submit_cpu'] = $post['cpu'];
 				$submission['submit_memory'] = $post['memory'];
 			} else {
-				foreach(array('output', 'cpu', 'memory') as $key) {
-					$submission[$key] = $post[$key];
-				}
+				$outputs = json_decode($post['output'], true);
+				$submission['cpu'] = $post['cpu'];
+				$submission['memory'] = $post['memory'];
 				$submission['max_cpu'] = max(json_decode($post['cpu'], true));
 				$submission['max_memory'] = max(json_decode($post['memory'], true));
 			}
@@ -118,9 +136,19 @@ class JudgesController extends AppController {
 		if($post['problem'] == '1') {
 			$result['Problem'] = $submission;
 			$this->Problem->save($result);
+			for($i = 0; $i < count($answers); $i++) {
+				$this->Answer->updateAll(array('answer' => $answers[$i]), array('problem_id' => $submission['id'], 'index' => $i));
+			}
 		} else {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);
+			for($i = 0; $i < count($outputs); $i++) {
+				$this->Output->create();
+				$output['Output']['submission_id'] = $submission['id'];
+				$output['Output']['index'] = $i;
+				$output['Output']['output'] = $outputs[$i];
+				$this->Output->save($output);
+			}
 		}
 	}
 }
