@@ -1,734 +1,1092 @@
-2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 166]
-Trace:
-h - CORE/Cake/basics.php, line 166
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 172]
-Trace:
-h - CORE/Cake/basics.php, line 172
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:44:06 Notice: Notice (8): Undefined variable: text in [/usr/share/judge/lib/Cake/basics.php, line 190]
-Trace:
-h - CORE/Cake/basics.php, line 190
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:44:06 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 25]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 25
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:46:47 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:46:47 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:04 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:04 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:05 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:05 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:46 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:47:46 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:48:11 Notice: Notice (8): Undefined index: title in [/usr/share/judge/app/View/Submissions/detail.ctp, line 21]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 21
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:48:11 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:48:45 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:00 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:21 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:25 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:25 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:27 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:27 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:28 Notice: Notice (8): Undefined index: Problems in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:28 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:37 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:50:56 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:51:22 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:51:30 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:51:59 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:52:00 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:52:23 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:52:39 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 16:59:35 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:00:01 Notice: Notice (8): Undefined index: answers in [/usr/share/judge/app/View/Submissions/detail.ctp, line 27]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 27
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:02:02 Notice: Notice (8): Undefined index: outputs in [/usr/share/judge/app/View/Submissions/detail.ctp, line 26]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 26
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:04:13 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
-Trace:
-SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
-ReflectionMethod::invokeArgs() - [internal], line ??
-Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
-Trace:
-SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
-ReflectionMethod::invokeArgs() - [internal], line ??
-Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 31
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 31
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 31
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 31
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 31]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 31
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Use of undefined constant i - assumed 'i' in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:07 Notice: Notice (8): Undefined index: i in [/usr/share/judge/app/View/Submissions/detail.ctp, line 34]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 34
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:07:26 Notice: Notice (8): Undefined index: testcase in [/usr/share/judge/app/Controller/SubmissionsController.php, line 52]
-Trace:
-SubmissionsController::detail() - APP/Controller/SubmissionsController.php, line 52
-ReflectionMethod::invokeArgs() - [internal], line ??
-Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 485
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 103
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:10:41 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:07 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
-
-2012-08-26 17:11:26 Notice: Notice (8): Undefined variable: memor in [/usr/share/judge/app/View/Submissions/detail.ctp, line 28]
-Trace:
-include - APP/View/Submissions/detail.ctp, line 28
-View::_evaluate() - CORE/Cake/View/View.php, line 910
-View::_render() - CORE/Cake/View/View.php, line 874
-View::render() - CORE/Cake/View/View.php, line 465
-Controller::render() - CORE/Cake/Controller/Controller.php, line 959
-Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 110
-Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 85
-[main] - APP/webroot/index.php, line 92
+2012-10-08 15:57:47 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 15:57:48 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 15:57:49 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 15:57:49 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 15:57:50 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:55 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:56 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:57 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:57 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:57 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:58 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:58 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:59 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:00:59 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:01:00 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:01:00 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:01:00 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:01:01 Debug: Array
+(
+    [Answer] => Array
+        (
+            [id] => 101
+            [problem_id] => 4
+            [index] => 0
+            [answer] => 
+            [created] => 2012-10-04 05:29:49
+            [modified] => 2012-10-04 05:29:49
+        )
+
+)
+
+2012-10-08 16:08:09 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:09 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:09 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:10 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:10 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:11 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:11 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:12 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:12 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:12 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:13 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:13 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:13 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:14 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:14 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:14 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:15 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:15 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:16 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:16 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:16 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:17 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:17 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:17 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:18 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:18 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:18 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:19 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:19 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:19 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:20 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:20 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:21 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:21 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:21 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:22 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:23 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:23 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:23 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:24 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:24 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:24 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:25 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:25 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:26 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:26 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:26 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:27 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:27 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:28 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:28 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:28 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:29 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:29 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:29 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:30 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:30 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:33 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:33 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:36 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:36 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:40 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:40 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:43 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:54 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:54 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:55 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:55 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:56 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:56 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:57 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:57 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:57 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:58 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:58 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:58 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:59 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:08:59 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:00 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:00 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:00 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:01 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:01 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:02 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:03 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:03 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:04 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:05 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:06 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:06 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:07 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:08 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:08 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:09 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:10 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:10 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:11 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:12 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:12 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:13 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:14 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:14 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:15 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:16 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:17 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:17 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:18 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:19 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:20 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:20 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:21 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:22 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:22 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:23 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:24 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:24 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:25 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:26 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:27 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:27 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:28 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:29 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:29 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:30 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:33 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:36 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:40 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:40 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:43 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:43 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:53 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:54 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:54 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:54 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:55 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:55 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:55 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:56 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:56 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:09:57 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:31 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:32 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:33 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:33 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:34 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:35 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:36 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:36 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:37 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:38 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:39 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:40 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:41 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:42 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:43 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:43 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:44 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:45 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:46 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:47 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:48 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:49 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:50 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:51 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:52 Debug: 0: Hello, world!
+Hello, world!
+
+2012-10-08 16:10:52 Debug: 0: Hello, world!
+Hello, world!
 

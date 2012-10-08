@@ -73,7 +73,7 @@ class JudgesController extends AppController {
 			$tests = array();
 			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.index'));
 			foreach($testcases as $testcase) {
-				$tests[] = $testcases['Testcase']['testcase'];
+				$tests[] = $testcase['Testcase']['testcase'];
 			}
 
 			$ans = array();
@@ -84,8 +84,8 @@ class JudgesController extends AppController {
 
 			$json = array();
 			$json['problem'] = '0';
-			$json['input'] = json_decode($tests, true);
-			$json['answer'] = json_decode($ans, true);
+			$json['input'] = $tests;
+			$json['answer'] = $ans;
 			foreach(array('id', 'source') as $key) {
 				$json[$key] = $judge['Submission'][$key];
 			}
@@ -134,11 +134,11 @@ class JudgesController extends AppController {
 
 		$result = array();
 		if($post['problem'] == '1') {
+			for($i = 0; $i < count($answers); $i++) {
+				$this->Answer->updateAll(array('answer' => '"'.$answers[$i].'"'), array('AND' => array('Answer.problem_id' => $submission['id'], 'Answer.index' => $i)));
+			}
 			$result['Problem'] = $submission;
 			$this->Problem->save($result);
-			for($i = 0; $i < count($answers); $i++) {
-				$this->Answer->updateAll(array('answer' => $answers[$i]), array('problem_id' => $submission['id'], 'index' => $i));
-			}
 		} else {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);

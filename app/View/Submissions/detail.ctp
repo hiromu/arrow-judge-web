@@ -16,7 +16,6 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
-$syntax = json_decode($syntax, true);
 $status = json_decode($status, true);
 if($contest_id) {
 	echo $this->Element('contest', array('mode' => 'submission', 'contest_id' => $contest_id));
@@ -68,7 +67,7 @@ if($contest_id) {
 			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
 			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
 			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
-			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$submission['Submission']['id'].'/'.$i); ?>
+			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$submission['Submission']['id'].'/'.($i + 1).'/'.$contest_id); ?>
 		</tr>
 		<?php endfor; ?>
 	</table>
@@ -79,7 +78,7 @@ if($contest_id) {
 		id: 'source',
 		is_editable: false,
 		start_highlight: true,
-		syntax: "<?php echo h($syntax[$submission['Language']['name']]); ?>"
+		syntax: "<?php echo h($submission['Language']['coloring']); ?>"
 	});
 <?php if($submission['Submission']['status'] == 0): ?>
 	setInterval('location.reload()', 5000);

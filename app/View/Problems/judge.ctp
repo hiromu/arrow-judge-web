@@ -16,7 +16,6 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
-$syntax = json_decode($syntax, true);
 $status = json_decode($status, true);
 ?>
 <table class="table table-striped">
@@ -48,7 +47,7 @@ $status = json_decode($status, true);
 <?php elseif($problem['Problem']['status'] == 3 && $problem['Problem']['error']): ?>
 <h2>Execution Output<h2>
 <pre><?php echo h($problem['Problem']['error']); ?></pre>
-<?php else: ?>
+<?php elseif($problem['Problem']['status'] == 4 || $problem['Problem']['status'] == 5 || $problem['Problem']['status'] == 6): ?>
 <?php if(count($cpu) > 0): ?>
 <h1>Testcases</h1>
 <div class="statement">
@@ -64,7 +63,7 @@ $status = json_decode($status, true);
 			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
 			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
 			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
-			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$problem['Problem']['id'].'/'.$i); ?></td>
+			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$problem['Problem']['id'].'/'.($i + 1)); ?></td>
 		</tr>
 		<?php endfor; ?>
 	</table>
@@ -75,7 +74,8 @@ $status = json_decode($status, true);
 		id: 'source',
 		is_editable: false,
 		start_highlight: true,
-		syntax: "<?php echo h($syntax[$problem['Language']['name']]); ?>"
+		font_size: 12,
+		syntax: "<?php echo h($problem['Language']['coloring']); ?>"
 	});
 <?php if($problem['Problem']['status'] == 0): ?>
 	setInterval('location.reload()', 5000);

@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration');
+	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -66,14 +66,14 @@ class SubmissionsController extends AppController {
 			$this->redirect('/problems/index');
 		}
 
-		$problem = $this->Problem->findById($id);
-		if(!$problem) {
+		$submission = $this->Problem->findById($id);
+		if(!$submission) {
 			$this->redirect('/problems/index');
 		}
 
 		$submit = $this->request->data;
-		if($problem['Problem']['contest_id'] != null && $problem['Problem']['public'] == 0) {
-			$register = $this->Registration->find('first', array('condition' => array('AND' => array('Registration.contest_id' => $problem['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id')))));
+		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
+			$register = $this->Registration->find('first', array('condition' => array('AND' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id')))));
 			if(!$register) {
 				$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest');
 				$submit = null;
@@ -95,11 +95,14 @@ class SubmissionsController extends AppController {
 
 		$languages = $this->Language->find('all');
 		$lang = array();
+		$coloring = array();
 		foreach($languages as $language) {
 			$lang[$language['Language']['id']] = $language['Language']['name'];
+			$coloring[$language['Language']['id']] = $language['Language']['coloring'];
 		}
 		$this->set('lang', $lang);
-		$this->set('problem', $problem);
+		$this->set('coloring', json_encode($coloring, true));
+		$this->set('problem', $submission);
 		$this->set('contest_id', $contest_id);
 	}
 
@@ -116,8 +119,8 @@ class SubmissionsController extends AppController {
 				$contest = $this->Contest->findById($contest_id);
 				if($contest) {
 					$contest_problem = array();
-					foreach($contest['Problem'] as $problem) {
-						$contest_problem[] = $problem['id'];
+					foreach($contest['Problem'] as $submission) {
+						$contest_problem[] = $submission['id'];
 					}
 					$conditions['Submission.problem_id'] = $contest_problem;
 				}
@@ -138,5 +141,46 @@ class SubmissionsController extends AppController {
 		$submissions = $this->Submission->find('all', array('conditions' => $conditions, 'limit' => '100', 'order' => 'Submission.created DESC'));
 		$this->set('contest_id', $contest_id);
 		$this->set('submissions', $submissions);
+	}
+
+	function testcase($id = null, $testcase_id = null, $contest_id = null) {
+		if(!$id) {
+			$this->redirect('index');
+		}
+
+		$submission = $this->Submission->findById($id);
+		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+			$this->redirect('index');
+		}
+		$this->set('submission', $submission);
+		$this->set('contest_id', $contest_id);
+
+		$testcase_id -= 1;
+
+		$input = $this->Testcase->find('first', array('conditions' => array('AND' => array('Testcase.problem_id' => $submission['Problem']['id'], 'Testcase.index' => $testcase_id))));
+		if(!$input) {
+			$this->redirect('index');
+		}
+		$this->set('input', $input['Testcase']['testcase']);
+
+		$output = $this->Output->find('first', array('conditions' => array('AND' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id))));
+		if(!$output) {
+			$this->redirect('index');
+		}
+		$this->set('output', $output['Output']['output']);
+
+		$cpu = json_decode($submission['Submission']['cpu']);
+		if(count($cpu) <= $testcase_id || !$cpu[$testcase_id]) {
+			$this->redirect('index');
+		}
+		$this->set('cpu', $cpu[$testcase_id]);
+
+		$memory = json_decode($submission['Submission']['memory']);
+		if(count($memory) <= $testcase_id || !$memory[$testcase_id]) {
+			$this->redirect('index');
+		}
+		$this->set('memory', $memory[$testcase_id]);
+
+		$this->set('testcase_id', $testcase_id);
 	}
 }

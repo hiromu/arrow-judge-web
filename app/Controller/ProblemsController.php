@@ -118,11 +118,11 @@ class ProblemsController extends AppController {
 					$this->redirect('setting/'.$id.'/testcase');
 				}
 			 } else if($phase == 'testcase') {
+				for($i = 1; isset($problem['Problem']['testcase'.$i]); $i++) {
+					$this->Testcase->updateAll(array('testcase' => sprintf('"%s"', $problem['Problem']['testcase'.$i])), array('problem_id' => $id, 'index' => $i - 1));
+				}
 				$problem['Problem']['status'] = 0;
 				if($this->Problem->save($problem)) {
-					for($i = 1; isset($problem['Problem']['testcase'.$i]); $i++) {
-						$this->Testcase->updateAll(array('testcase' => sprintf('"%s"', $problem['Problem']['testcase'.$i])), array('problem_id' => $id, 'index' => $i - 1));
-					}
 					$this->redirect('judge/'.$id);
 				}
 			} else {
@@ -134,10 +134,13 @@ class ProblemsController extends AppController {
 		} else {
 			if($phase == 'source') {
 				$lang = array();
+				$coloring = array();
 				foreach($this->Language->find('all') as $language) {
 					$lang[$language['Language']['id']] = $language['Language']['name'];
+					$coloring[$language['Language']['id']] = $language['Language']['coloring'];
 				}
 				$this->set('lang', $lang);
+				$this->set('coloring', json_encode($coloring, true));
 				$this->set('element', 'problem_source');
 				$this->set('percentage', '50%');
 			} else if($phase == 'sample') {
@@ -243,5 +246,45 @@ class ProblemsController extends AppController {
 		$this->set('submissions', $submissions);
 		$this->set('contest_id', $contest_id);
 		$this->set('problem_id', $problem['Problem']['id']);
+	}
+
+	function testcase($id = null, $testcase_id = null) {
+		if(!$id) {
+			$this->redirect('index');
+		}
+
+		$problem = $this->Problem->findById($id);
+		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
+			$this->redirect('index');
+		}
+		$this->set('problem', $problem);
+
+		$testcase_id -= 1;
+
+		$input = $this->Testcase->find('first', array('conditions' => array('AND' => array('Testcase.problem_id' => $id, 'Testcase.index' => $testcase_id))));
+		if(!$input) {
+			$this->redirect('index');
+		}
+		$this->set('input', $input['Testcase']['testcase']);
+
+		$output = $this->Answer->find('first', array('conditions' => array('AND' => array('Answer.problem_id' => $id, 'Answer.index' => $testcase_id))));
+		if(!$output) {
+			$this->redirect('index');
+		}
+		$this->set('output', $output['Answer']['answer']);
+
+		$cpu = json_decode($problem['Problem']['submit_cpu']);
+		if(count($cpu) <= $testcase_id || !$cpu[$testcase_id]) {
+			$this->redirect('index');
+		}
+		$this->set('cpu', $cpu[$testcase_id]);
+
+		$memory = json_decode($problem['Problem']['submit_memory']);
+		if(count($memory) <= $testcase_id || !$memory[$testcase_id]) {
+			$this->redirect('index');
+		}
+		$this->set('memory', $memory[$testcase_id]);
+
+		$this->set('testcase_id', $testcase_id);
 	}
 }

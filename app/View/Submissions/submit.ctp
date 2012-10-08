@@ -29,9 +29,16 @@ if($contest_id) {
 	echo $this->Form->end('Submit');
 ?>
 <script type="text/javascript">
+	var coloring = <?php echo($coloring); ?>;
+	function changeLang() {
+		var lang_id = $('#SubmissionLanguageId').val();
+		editAreaLoader.execCommand('source', 'change_syntax', coloring[lang_id]);
+	}
 	editAreaLoader.init({
 		id: 'source',
 		toolbar: 'search, go_to_line, |, undo, redo, |, syntax_selection, highlight, reset_highlight, |, help',
 		start_highlight: true,
+		syntax: coloring[$('#SubmissionLanguageId').val()],
 	});
+	$('#SubmissionLanguageId').bind('change', changeLang);
 </script>
