@@ -35,6 +35,7 @@
 		}
 	}
 </script>
+<?php echo $this->Form->create('Problem'); ?>
 <div class="testcases">
 	<label>Testcases</label>
 	<?php for($i = 1; $i <= count($problem['Problem']['testcases']); $i++): ?>
@@ -48,6 +49,12 @@
 	<div>
 		<p onclick="addTestcaseField()"><i class="icon-plus-sign"></i>Add Testcase</p>
 	</div>
+</div>
+<div class="submit submit-button">
+<?php
+	echo $this->Form->submit('Submit', array('div' => false));
+	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/sample', array('class' => 'btn btn-large'));
+?>
 </div>
 <script type="text/javascript">
 	initField();

@@ -109,7 +109,7 @@ class ContestsController extends AppController {
 		}
 
 		if(strtotime($contest['Contest']['start']) > time()) {
-			$register = $this->Registration->find('first', array('conditions' => array('AND' => array('Registration.contest_id' => $id, 'Registration.user_id' => $this->Auth->user('id')))));
+			$register = $this->Registration->find('first', array('conditions' => array('Registration.contest_id' => $id, 'Registration.user_id' => $this->Auth->user('id'))));
 			if($register) {
 				$this->Session->setFlash('You have already registered', 'error');
 			} else {
@@ -117,7 +117,14 @@ class ContestsController extends AppController {
 					$register = array();
 					$register['Registration']['contest_id'] = $id;
 					$register['Registration']['user_id'] = $this->Auth->user('id');
-					$register['Registration']['score'] = json_encode(array_fill(0, count($contest['Problem']), ''));
+					$register['Registration']['solved'] = 0;
+					$register['Registration']['penalty'] = 0;
+
+					$score = array();
+					for($i = 0; $i < count($contest['Problem']); $i++) {
+						$score[$contest['Problem'][$i]['id']] = '';
+					}
+					$register['Registration']['score'] = json_encode($score);
 	
 					if($this->Registration->save($register)) {
 						$this->Session->setFlash('Registration completed', 'success');
@@ -168,7 +175,7 @@ class ContestsController extends AppController {
 			$problems[] = $problem['id'];
 			$problem_suggest[$problem['id']] = sprintf('#%d: %s', $problem['id'], $problem['name']);
 		}
-		$submissions = $this->Submission->find('all', array('conditions' => array('AND' => array('Submission.user_id' => $this->Auth->user('id'), 'Submission.problem_id' => $problems)), 'order' => 'Submission.created DESC'));
+		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.user_id' => $this->Auth->user('id'), 'Submission.problem_id' => $problems), 'order' => 'Submission.created DESC'));
 		$this->set('problem_suggest', $problem_suggest);
 		$this->set('submissions', $submissions);
 
@@ -194,7 +201,7 @@ class ContestsController extends AppController {
 		}
 		$this->set('contest', $contest);
 
-		$registration = $this->Registration->find('all', array('conditions' => array('Registration.contest_id' => $id)));
+		$registration = $this->Registration->find('all', array('conditions' => array('Registration.contest_id' => $id), 'order' => array('Registration.solved' => 'desc', 'Registration.penalty' => 'asc')));
 		$this->set('registration', $registration);
 	}
 }

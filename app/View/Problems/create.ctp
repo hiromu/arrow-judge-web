@@ -25,7 +25,5 @@ App::uses('Debugger', 'Utility');
 <h1>Create Problem</h1>
 <?php
 	echo $this->Session->flash();
-	echo $this->Form->create('Problem');
 	echo $this->element('problem_statement');
-	echo $this->Form->end('Submit');
 ?>

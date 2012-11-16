@@ -20757,3 +20757,1688 @@ Hello, world!
 #9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(SubmissionsController), Object(CakeRequest), Object(CakeResponse))
 #10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2012-10-14 12:53:58 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-10-14 12:54:01 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-10-15 06:33:53 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-11 05:19:59 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-11 05:20:02 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-11 05:20:05 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-11 05:20:09 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-11 05:20:12 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)" is missing, or could not be created.
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(245): Mysql->connect()
+#1 /usr/share/judge/lib/Cake/Model/ConnectionManager.php(101): DboSource->__construct(Array)
+#2 /usr/share/judge/lib/Cake/Model/Model.php(3417): ConnectionManager::getDataSource('default')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1083): Model->setDataSource('default')
+#4 /usr/share/judge/lib/Cake/Model/Model.php(3443): Model->setSource('settings')
+#5 /usr/share/judge/lib/Cake/Model/Model.php(2698): Model->getDataSource()
+#6 /usr/share/judge/app/Controller/AppController.php(47): Model->find('all')
+#7 /usr/share/judge/app/Controller/AppController.php(61): AppController->setOptions()
+#8 /usr/share/judge/app/Controller/JudgesController.php(34): AppController->beforeFilter()
+#9 [internal function]: JudgesController->beforeFilter(Object(CakeEvent))
+#10 /usr/share/judge/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#11 /usr/share/judge/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#12 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(100): Controller->startupProcess()
+#13 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#14 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-11-12 19:08:27 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 0))    LIMIT 1' at line 1
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('SELECT `Output`...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(647): DboSource->execute('SELECT `Output`...', Array, Array)
+#3 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(1058): DboSource->fetchAll('SELECT `Output`...', false)
+#4 /usr/share/judge/lib/Cake/Model/Model.php(2698): DboSource->read(Object(Output), Array)
+#5 /usr/share/judge/app/Controller/JudgesController.php(146): Model->find('first', Array)
+#6 [internal function]: JudgesController->post()
+#7 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-11-12 19:09:19 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 0))    LIMIT 1' at line 1
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('SELECT `Output`...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(647): DboSource->execute('SELECT `Output`...', Array, Array)
+#3 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(1058): DboSource->fetchAll('SELECT `Output`...', false)
+#4 /usr/share/judge/lib/Cake/Model/Model.php(2698): DboSource->read(Object(Output), Array)
+#5 /usr/share/judge/app/Controller/JudgesController.php(146): Model->find('first', Array)
+#6 [internal function]: JudgesController->post()
+#7 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-11-12 19:10:52 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 0))    LIMIT 1' at line 1
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('SELECT `Output`...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(647): DboSource->execute('SELECT `Output`...', Array, Array)
+#3 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(1058): DboSource->fetchAll('SELECT `Output`...', false)
+#4 /usr/share/judge/lib/Cake/Model/Model.php(2698): DboSource->read(Object(Output), Array)
+#5 /usr/share/judge/app/Controller/JudgesController.php(146): Model->find('first', Array)
+#6 [internal function]: JudgesController->post()
+#7 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-11-12 19:10:55 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 0))    LIMIT 1' at line 1
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('SELECT `Output`...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(647): DboSource->execute('SELECT `Output`...', Array, Array)
+#3 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(1058): DboSource->fetchAll('SELECT `Output`...', false)
+#4 /usr/share/judge/lib/Cake/Model/Model.php(2698): DboSource->read(Object(Output), Array)
+#5 /usr/share/judge/app/Controller/JudgesController.php(146): Model->find('first', Array)
+#6 [internal function]: JudgesController->post()
+#7 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#9 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#10 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-11-15 13:07:31 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Submission), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(145): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 16:56:27 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(172): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 16:56:29 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(172): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:13:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(172): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:13:41 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(172): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:16:07 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:16:08 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:17:06 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:17:07 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:17:59 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:18:00 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:21:39 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(175): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:21:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(175): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:22:50 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(176): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:22:51 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(176): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:23:41 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(176): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:23:42 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(176): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:26:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:26:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(173): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:30:09 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:30:10 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:31:26 Error: Array
+(
+    [Registration] => Array
+        (
+            [score] => {"1":false}
+        )
+
+)
+
+2012-11-15 17:31:27 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:31:27 Error: Array
+(
+    [Registration] => Array
+        (
+            [score] => {"1":false}
+        )
+
+)
+
+2012-11-15 17:31:27 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:36:41 Error: Array
+(
+    [Registration] => Array
+        (
+            [score] => {"1":false}
+        )
+
+)
+
+2012-11-15 17:36:41 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:36:42 Error: Array
+(
+    [Registration] => Array
+        (
+            [score] => {"1":false}
+        )
+
+)
+
+2012-11-15 17:36:42 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`judge`.`registrations`, CONSTRAINT `registration_contest` FOREIGN KEY (`contest_id`) REFERENCES `contests` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(437): PDOStatement->execute(Array)
+#1 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(403): DboSource->_execute('INSERT INTO `ju...', Array)
+#2 /usr/share/judge/lib/Cake/Model/Datasource/DboSource.php(985): DboSource->execute('INSERT INTO `ju...')
+#3 /usr/share/judge/lib/Cake/Model/Model.php(1721): DboSource->create(Object(Registration), Array, Array)
+#4 /usr/share/judge/app/Controller/JudgesController.php(174): Model->save(Array)
+#5 [internal function]: JudgesController->post()
+#6 /usr/share/judge/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(JudgesController), Array)
+#7 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#8 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(JudgesController), Object(CakeRequest), Object(CakeResponse))
+#9 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-11-15 17:43:42 Error: [MissingControllerException] Controller class JudgesController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-15 17:45:32 Error: 
+2012-11-15 17:45:33 Error: 
+2012-11-15 17:46:59 Error: Array
+(
+    [Submission] => Array
+        (
+            [id] => 98
+            [user_id] => 25
+            [problem_id] => 18
+            [language_id] => 1
+            [status] => 3
+            [source] => #include <stdio.h>
+
+int main(void)
+{
+	puts("h");
+}
+            [cpu] => 
+            [max_cpu] => N/A
+            [memory] => 
+            [max_memory] => N/A
+            [error] => 
+            [created] => 2012-11-13 23:43:35
+            [modified] => 2012-11-15 17:46:59
+        )
+
+    [Problem] => Array
+        (
+            [id] => 18
+            [user_id] => 25
+            [contest_id] => 1
+            [name] => A + B Problem
+            [cpu] => 1
+            [stack] => 100
+            [memory] => 100
+            [statement] => <p>2つの整数A, Bが与えられるので、A+Bを出力しなさい。</p>
+<p><strong>Input</strong></p>
+<p>入力の1行目には、2つの整数A, B(1≦A, B≦100000)がスペース区切りで書かれている。</p>
+<p><strong>Output</strong></p>
+<p>出力の1行目にA+Bの結果を表示せよ。</p>
+<p>出力の最後には改行が必要である。</p>
+            [sample_inputs] => ["1 2","1000 2000","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+            [sample_outputs] => ["3","3000\r\n","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+            [language_id] => 1
+            [source] => #include <stdio.h>
+
+int main(void)
+{
+	int A, B;
+	scanf("%d%d", &A, &B);
+	printf("%d\n", A + B);
+	return 0;
+}
+            [public] => 
+            [status] => 6
+            [error] => 
+            [submit_cpu] => [22.273391, 22.309393, 22.341395]
+            [submit_memory] => [38136, 38136, 38136]
+            [created] => 2012-09-22 12:38:48
+            [modified] => 2012-11-15 00:34:04
+        )
+
+    [User] => Array
+        (
+            [id] => 25
+            [username] => hiromu
+            [password] => 0eccd2d423add7c68640cdc64f0bfe3b5a3e0811
+            [email] => hiromu1996@gmail.com
+            [confirm] => f7d7176bbccef65ce58bdfa03ec18109
+            [active] => 1
+            [admin] => 
+        )
+
+    [Language] => Array
+        (
+            [id] => 1
+            [name] => C
+            [extension] => c
+            [coloring] => c
+            [compile] => gcc Main.c -o Main
+            [execute] => ./Main
+        )
+
+)
+
+2012-11-15 17:47:00 Error: Array
+(
+    [Submission] => Array
+        (
+            [id] => 99
+            [user_id] => 25
+            [problem_id] => 18
+            [language_id] => 4
+            [status] => 3
+            [source] => print "a"
+            [cpu] => 
+            [max_cpu] => N/A
+            [memory] => 
+            [max_memory] => N/A
+            [error] => Segmentation fault (core dumped)
+
+            [created] => 2012-11-13 23:46:41
+            [modified] => 2012-11-15 17:46:59
+        )
+
+    [Problem] => Array
+        (
+            [id] => 18
+            [user_id] => 25
+            [contest_id] => 1
+            [name] => A + B Problem
+            [cpu] => 1
+            [stack] => 100
+            [memory] => 100
+            [statement] => <p>2つの整数A, Bが与えられるので、A+Bを出力しなさい。</p>
+<p><strong>Input</strong></p>
+<p>入力の1行目には、2つの整数A, B(1≦A, B≦100000)がスペース区切りで書かれている。</p>
+<p><strong>Output</strong></p>
+<p>出力の1行目にA+Bの結果を表示せよ。</p>
+<p>出力の最後には改行が必要である。</p>
+            [sample_inputs] => ["1 2","1000 2000","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+            [sample_outputs] => ["3","3000\r\n","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
+            [language_id] => 1
+            [source] => #include <stdio.h>
+
+int main(void)
+{
+	int A, B;
+	scanf("%d%d", &A, &B);
+	printf("%d\n", A + B);
+	return 0;
+}
+            [public] => 
+            [status] => 6
+            [error] => 
+            [submit_cpu] => [22.273391, 22.309393, 22.341395]
+            [submit_memory] => [38136, 38136, 38136]
+            [created] => 2012-09-22 12:38:48
+            [modified] => 2012-11-15 00:34:04
+        )
+
+    [User] => Array
+        (
+            [id] => 25
+            [username] => hiromu
+            [password] => 0eccd2d423add7c68640cdc64f0bfe3b5a3e0811
+            [email] => hiromu1996@gmail.com
+            [confirm] => f7d7176bbccef65ce58bdfa03ec18109
+            [active] => 1
+            [admin] => 
+        )
+
+    [Language] => Array
+        (
+            [id] => 4
+            [name] => Python
+            [extension] => py
+            [coloring] => python
+            [compile] => 
+            [execute] => python Main.py
+        )
+
+)
+
+2012-11-15 17:48:39 Error: 25 1
+2012-11-15 17:48:39 Error: 25 1
+2012-11-15 17:49:37 Error: 26 1
+2012-11-15 17:49:38 Error: 25 1
+2012-11-15 17:49:38 Error: 25 1
+2012-11-15 17:49:39 Error: 27 1
+2012-11-15 17:49:40 Error: 33 1
+2012-11-15 17:49:41 Error: 25 1
+2012-11-15 17:49:41 Error: 25 1
+2012-11-15 17:49:42 Error: 27 1
+2012-11-15 17:49:44 Error: 29 1
+2012-11-15 17:49:44 Error: 27 1
+2012-11-15 17:49:45 Error: 31 1
+2012-11-15 17:49:46 Error: 33 1
+2012-11-15 17:49:47 Error: 31 1
+2012-11-15 17:49:47 Error: 33 1
+2012-11-15 17:49:48 Error: 29 1
+2012-11-15 17:49:49 Error: 32 1
+2012-11-15 17:49:50 Error: 32 1
+2012-11-15 17:49:51 Error: 27 1
+2012-11-15 17:49:52 Error: 31 1
+2012-11-15 17:49:53 Error: 32 1
+2012-11-15 17:49:53 Error: 27 1
+2012-11-15 17:49:54 Error: 25 1
+2012-11-15 17:49:55 Error: 25 1
+2012-11-15 17:49:55 Error: 25 1
+2012-11-15 17:51:27 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 1
+            [contest_id] => 1
+            [user_id] => 26
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-22 12:52:39
+            [modified] => 2012-09-22 12:52:39
+        )
+
+    [User] => Array
+        (
+            [id] => 26
+            [username] => admin
+            [password] => 0eccd2d423add7c68640cdc64f0bfe3b5a3e0811
+            [email] => hiromu@yumetaro.ddo.jp
+            [confirm] => 9cee75b627539c71c305a98d040cbbba
+            [active] => 1
+            [admin] => 1
+        )
+
+)
+
+2012-11-15 17:51:28 Error: 
+2012-11-15 17:51:28 Error: 
+2012-11-15 17:51:29 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 3
+            [contest_id] => 1
+            [user_id] => 27
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 22:55:54
+            [modified] => 2012-09-24 22:55:54
+        )
+
+    [User] => Array
+        (
+            [id] => 27
+            [username] => catupper
+            [password] => 79829faeec3d6fdcefe2287d65c3721daf7f1760
+            [email] => nekarugo628@gmail.com
+            [confirm] => 16631652aef0640af8f02b8c7f8f064d
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:30 Error: 
+2012-11-15 17:51:31 Error: 
+2012-11-15 17:51:31 Error: 
+2012-11-15 17:51:32 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 3
+            [contest_id] => 1
+            [user_id] => 27
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 22:55:54
+            [modified] => 2012-09-24 22:55:54
+        )
+
+    [User] => Array
+        (
+            [id] => 27
+            [username] => catupper
+            [password] => 79829faeec3d6fdcefe2287d65c3721daf7f1760
+            [email] => nekarugo628@gmail.com
+            [confirm] => 16631652aef0640af8f02b8c7f8f064d
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:33 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 5
+            [contest_id] => 1
+            [user_id] => 29
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:28:50
+            [modified] => 2012-09-24 23:28:50
+        )
+
+    [User] => Array
+        (
+            [id] => 29
+            [username] => satashun
+            [password] => 91adfd6ea031b9c4770b44f3ed8bd237f050fc33
+            [email] => sata5yoko3kyo@gmail.com
+            [confirm] => 7b830c728666d18e865d1e3d49fce2f4
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:34 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 3
+            [contest_id] => 1
+            [user_id] => 27
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 22:55:54
+            [modified] => 2012-09-24 22:55:54
+        )
+
+    [User] => Array
+        (
+            [id] => 27
+            [username] => catupper
+            [password] => 79829faeec3d6fdcefe2287d65c3721daf7f1760
+            [email] => nekarugo628@gmail.com
+            [confirm] => 16631652aef0640af8f02b8c7f8f064d
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:36 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 7
+            [contest_id] => 1
+            [user_id] => 31
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:46:04
+            [modified] => 2012-09-24 23:46:04
+        )
+
+    [User] => Array
+        (
+            [id] => 31
+            [username] => snuke
+            [password] => 26840e61241c0245f7e4814db6ebbfe11ba3c4b0
+            [email] => kent@c-g-tea.jp
+            [confirm] => 8de0b4e32413b4c4b63a6b9a0c67b288
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:37 Error: 
+2012-11-15 17:51:38 Error: 
+2012-11-15 17:51:39 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 7
+            [contest_id] => 1
+            [user_id] => 31
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:46:04
+            [modified] => 2012-09-24 23:46:04
+        )
+
+    [User] => Array
+        (
+            [id] => 31
+            [username] => snuke
+            [password] => 26840e61241c0245f7e4814db6ebbfe11ba3c4b0
+            [email] => kent@c-g-tea.jp
+            [confirm] => 8de0b4e32413b4c4b63a6b9a0c67b288
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:40 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 5
+            [contest_id] => 1
+            [user_id] => 29
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:28:50
+            [modified] => 2012-09-24 23:28:50
+        )
+
+    [User] => Array
+        (
+            [id] => 29
+            [username] => satashun
+            [password] => 91adfd6ea031b9c4770b44f3ed8bd237f050fc33
+            [email] => sata5yoko3kyo@gmail.com
+            [confirm] => 7b830c728666d18e865d1e3d49fce2f4
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:40 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 6
+            [contest_id] => 1
+            [user_id] => 32
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:40:39
+            [modified] => 2012-09-24 23:40:39
+        )
+
+    [User] => Array
+        (
+            [id] => 32
+            [username] => yingtai
+            [password] => 4febf161422215f8779e60ba7a9d6debd661cf9c
+            [email] => eitasugimoto444@gmail.com
+            [confirm] => a19bad0073bb2b1e2e0c7e36e753ce1c
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:41 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 6
+            [contest_id] => 1
+            [user_id] => 32
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:40:39
+            [modified] => 2012-09-24 23:40:39
+        )
+
+    [User] => Array
+        (
+            [id] => 32
+            [username] => yingtai
+            [password] => 4febf161422215f8779e60ba7a9d6debd661cf9c
+            [email] => eitasugimoto444@gmail.com
+            [confirm] => a19bad0073bb2b1e2e0c7e36e753ce1c
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:41 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 3
+            [contest_id] => 1
+            [user_id] => 27
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 22:55:54
+            [modified] => 2012-09-24 22:55:54
+        )
+
+    [User] => Array
+        (
+            [id] => 27
+            [username] => catupper
+            [password] => 79829faeec3d6fdcefe2287d65c3721daf7f1760
+            [email] => nekarugo628@gmail.com
+            [confirm] => 16631652aef0640af8f02b8c7f8f064d
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:42 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 7
+            [contest_id] => 1
+            [user_id] => 31
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:46:04
+            [modified] => 2012-09-24 23:46:04
+        )
+
+    [User] => Array
+        (
+            [id] => 31
+            [username] => snuke
+            [password] => 26840e61241c0245f7e4814db6ebbfe11ba3c4b0
+            [email] => kent@c-g-tea.jp
+            [confirm] => 8de0b4e32413b4c4b63a6b9a0c67b288
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:43 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 6
+            [contest_id] => 1
+            [user_id] => 32
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 23:40:39
+            [modified] => 2012-09-24 23:40:39
+        )
+
+    [User] => Array
+        (
+            [id] => 32
+            [username] => yingtai
+            [password] => 4febf161422215f8779e60ba7a9d6debd661cf9c
+            [email] => eitasugimoto444@gmail.com
+            [confirm] => a19bad0073bb2b1e2e0c7e36e753ce1c
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:44 Error: Array
+(
+    [Registration] => Array
+        (
+            [id] => 3
+            [contest_id] => 1
+            [user_id] => 27
+            [score] => {"18":"","19":""}
+            [created] => 2012-09-24 22:55:54
+            [modified] => 2012-09-24 22:55:54
+        )
+
+    [User] => Array
+        (
+            [id] => 27
+            [username] => catupper
+            [password] => 79829faeec3d6fdcefe2287d65c3721daf7f1760
+            [email] => nekarugo628@gmail.com
+            [confirm] => 16631652aef0640af8f02b8c7f8f064d
+            [active] => 1
+            [admin] => 
+        )
+
+)
+
+2012-11-15 17:51:45 Error: 
+2012-11-15 17:51:45 Error: 
+2012-11-15 17:51:46 Error: 
+2012-11-15 17:52:09 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:11 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:13 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:14 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:15 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:18 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:20 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:20 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:22 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:23 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:23 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:52:24 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:53:53 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:53:55 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:53:57 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:53:58 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:53:59 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:00 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:01 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:02 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:03 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:04 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:04 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:05 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:06 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:54:06 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:06 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:08 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:10 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:11 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:12 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:13 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:15 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:17 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:18 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:18 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:55:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:09 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:11 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:14 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:15 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:18 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:21 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:21 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:22 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:23 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:56:23 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:12 Error: 
+2012-11-15 17:57:12 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:15 Error: 
+2012-11-15 17:57:15 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:16 Error: 
+2012-11-15 17:57:16 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:17 Error: 
+2012-11-15 17:57:17 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:18 Error: 
+2012-11-15 17:57:18 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:19 Error: 
+2012-11-15 17:57:19 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:21 Error: 
+2012-11-15 17:57:21 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:22 Error: 
+2012-11-15 17:57:22 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:23 Error: 
+2012-11-15 17:57:23 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:24 Error: 
+2012-11-15 17:57:24 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:24 Error: 
+2012-11-15 17:57:24 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:25 Error: 
+2012-11-15 17:57:25 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:25 Error: 
+2012-11-15 17:57:25 Error: Array
+(
+    [18] => 
+    [19] => 
+)
+
+2012-11-15 17:57:26 Error: 
+2012-11-15 17:57:26 Error: Array
+(
+    [18] => -20
+    [19] => 
+)
+
+2012-11-15 17:57:50 Error: 
+2012-11-15 17:57:50 Error: Array
+(
+    [18] => -20
+    [19] => 
+)
+
+2012-11-15 17:57:52 Error: 
+2012-11-15 17:57:52 Error: Array
+(
+    [18] => 
+    [19] => 2883.6333333333
+)
+
+2012-11-15 17:57:54 Error: 
+2012-11-15 17:57:54 Error: Array
+(
+    [18] => 2817.9833333333
+    [19] => 2883.6333333333
+)
+
+2012-11-15 17:57:56 Error: 
+2012-11-15 17:57:56 Error: Array
+(
+    [18] => 
+    [19] => 2889.2
+)
+
+2012-11-15 17:57:57 Error: 2817.9833333333
+2012-11-15 17:57:57 Error: Array
+(
+    [18] => 2817.9833333333
+    [19] => 2883.6333333333
+)
+
+2012-11-15 17:57:57 Error: 
+2012-11-15 17:57:57 Error: Array
+(
+    [18] => -20
+    [19] => 
+)
+
+2012-11-15 17:57:59 Error: 
+2012-11-15 17:57:59 Error: Array
+(
+    [18] => 2888.1666666667
+    [19] => 2889.2
+)
+
+2012-11-15 17:58:00 Error: 
+2012-11-15 17:58:00 Error: Array
+(
+    [18] => -20
+    [19] => 2892.1166666667
+)
+
+2012-11-15 17:58:00 Error: 
+2012-11-15 17:58:00 Error: Array
+(
+    [18] => 
+    [19] => -20
+)
+
+2012-11-15 17:58:01 Error: 
+2012-11-15 17:58:01 Error: Array
+(
+    [18] => -20
+    [19] => -20
+)
+
+2012-11-15 17:58:02 Error: 2817.9833333333
+2012-11-15 17:58:02 Error: Array
+(
+    [18] => 2817.9833333333
+    [19] => 2883.6333333333
+)
+
+2012-11-15 17:58:03 Error: -20
+2012-11-15 17:58:03 Error: Array
+(
+    [18] => 2889.9833333333
+    [19] => 2892.1166666667
+)
+
+2012-11-15 17:58:03 Error: -20
+2012-11-15 17:58:03 Error: Array
+(
+    [18] => -40
+    [19] => -20
+)
+
+2012-11-15 17:58:04 Error: 2817.9833333333
+2012-11-15 17:58:04 Error: Array
+(
+    [18] => 2817.9833333333
+    [19] => 2883.6333333333
+)
+
+2012-11-15 19:27:21 Error: [MissingControllerException] Controller class JudgesController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-15 19:29:36 Error: [MissingControllerException] Controller class JudgesController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-15 20:52:07 Error: [MissingControllerException] Controller class JudgesController could not be found.
+#0 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-11-15 20:56:31 Error: 
+2012-11-15 20:56:34 Error: 
+2012-11-15 20:56:35 Error: 
+2012-11-15 20:56:37 Error: 
+2012-11-15 20:56:39 Error: 
+2012-11-15 20:56:40 Error: 
+2012-11-15 20:56:43 Error: 
+2012-11-15 20:56:45 Error: 
+2012-11-15 20:56:46 Error: 
+2012-11-15 20:56:47 Error: 
+2012-11-15 20:56:48 Error: 
+2012-11-15 20:56:49 Error: 
+2012-11-15 20:56:49 Error: 
+2012-11-15 20:56:51 Error: 
+2012-11-15 20:58:52 Error: 
+2012-11-15 20:58:56 Error: 
+2012-11-15 20:58:57 Error: 
+2012-11-15 20:58:59 Error: 
+2012-11-15 20:59:01 Error: 
+2012-11-15 20:59:01 Error: 
+2012-11-15 20:59:04 Error: 
+2012-11-15 20:59:05 Error: 
+2012-11-15 20:59:05 Error: 
+2012-11-15 20:59:06 Error: 
+2012-11-15 20:59:07 Error: 
+2012-11-15 20:59:07 Error: 
+2012-11-15 20:59:08 Error: 
+2012-11-15 20:59:09 Error: 
+2012-11-15 20:59:55 Error: 
+2012-11-15 20:59:58 Error: 
+2012-11-15 20:59:59 Error: 
+2012-11-15 21:00:02 Error: 
+2012-11-15 21:00:04 Error: 
+2012-11-15 21:00:05 Error: 
+2012-11-15 21:00:08 Error: 
+2012-11-15 21:00:09 Error: 
+2012-11-15 21:00:10 Error: 
+2012-11-15 21:00:12 Error: 
+2012-11-15 21:00:13 Error: 
+2012-11-15 21:00:15 Error: 
+2012-11-15 21:00:16 Error: 
+2012-11-15 21:00:17 Error: 
+2012-11-15 21:01:28 Error: 
+2012-11-15 21:01:32 Error: 
+2012-11-15 21:01:33 Error: 
+2012-11-15 21:01:34 Error: 
+2012-11-15 21:01:37 Error: 
+2012-11-15 21:01:38 Error: 
+2012-11-15 21:01:39 Error: 
+2012-11-15 21:01:40 Error: 
+2012-11-15 21:01:41 Error: 
+2012-11-15 21:01:42 Error: 
+2012-11-15 21:02:06 Error: 
+2012-11-15 21:02:10 Error: 
+2012-11-15 21:02:11 Error: 
+2012-11-15 21:02:12 Error: 
+2012-11-15 21:02:15 Error: 
+2012-11-15 21:02:16 Error: 
+2012-11-15 21:02:16 Error: 
+2012-11-15 21:02:17 Error: 
+2012-11-15 21:02:18 Error: 
+2012-11-15 21:02:19 Error: 
+2012-11-16 16:24:39 Error: [MissingActionException] Action SubmissionsController::1() could not be found.
+#0 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/share/judge/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(SubmissionsController), Object(CakeRequest), Object(CakeResponse))
+#2 /usr/share/judge/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

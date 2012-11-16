@@ -35,7 +35,7 @@ class ProblemsController extends AppController {
 	}
 
 	public function index() {
-		$publics = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.public' => '1', 'Problem.status' => '6')), 'order' => 'Problem.created DESC'));
+		$publics = $this->Problem->find('all', array('conditions' => array('Problem.public' => '1', 'Problem.status' => '6'), 'order' => 'Problem.created DESC'));
 		$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.user_id' => $this->Auth->user('id'), 'AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0')))), 'order' => 'Problem.created DESC'));
 		$this->set('publics', $publics);
 		$this->set('privates', $privates);
@@ -195,10 +195,10 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] == null) {
+			if(!$problem['Problem']['public'] && $problem['Problem']['contest_id']) {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
-				if($contest && strtotime($contest['Problem']['start']) > time()) {
-				$this->redirect('index');
+				if($contest && strtotime($contest['Contest']['start']) > time()) {
+					$this->redirect('index');
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
@@ -245,7 +245,7 @@ class ProblemsController extends AppController {
 		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.problem_id' => $id), 'limit' => 100, 'order' => 'Submission.created DESC'));
 		$this->set('submissions', $submissions);
 		$this->set('contest_id', $contest_id);
-		$this->set('problem_id', $problem['Problem']['id']);
+		$this->set('problem', $problem);
 	}
 
 	function testcase($id = null, $testcase_id = null) {
@@ -261,13 +261,13 @@ class ProblemsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = $this->Testcase->find('first', array('conditions' => array('AND' => array('Testcase.problem_id' => $id, 'Testcase.index' => $testcase_id))));
+		$input = $this->Testcase->find('first', array('conditions' => array('Testcase.problem_id' => $id, 'Testcase.index' => $testcase_id)));
 		if(!$input) {
 			$this->redirect('index');
 		}
 		$this->set('input', $input['Testcase']['testcase']);
 
-		$output = $this->Answer->find('first', array('conditions' => array('AND' => array('Answer.problem_id' => $id, 'Answer.index' => $testcase_id))));
+		$output = $this->Answer->find('first', array('conditions' => array('Answer.problem_id' => $id, 'Answer.index' => $testcase_id)));
 		if(!$output) {
 			$this->redirect('index');
 		}

@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class JudgesController extends AppController {
 	public $name = 'Judges';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Client', 'Testcase', 'Answer', 'Output');
+	public $uses = array('Problem', 'Submission', 'Client', 'Testcase', 'Answer', 'Output', 'Contest', 'Registration');
 
 	public function beforeFilter() {
 		//$this->Auth->authenticate = array('Basic' => array('userModel' => 'Client', 'fields' => array('username' => 'id', 'password' => 'password')));
@@ -114,6 +114,7 @@ class JudgesController extends AppController {
 			if($post['problem'] == '1') {
 				$submission['error'] = $post['error'];
 			} else {
+				$outputs = array();
 				$submission['error'] = $post['error'];
 				$submission['max_cpu'] = 'N/A';
 				$submission['max_memory'] = 'N/A';
@@ -139,15 +140,59 @@ class JudgesController extends AppController {
 			}
 			$result['Problem'] = $submission;
 			$this->Problem->save($result);
+			$this->Submission->updateAll(array('status' => 0), array('Submission.problem_id' => $submission['id']));
 		} else {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);
 			for($i = 0; $i < count($outputs); $i++) {
-				$this->Output->create();
-				$output['Output']['submission_id'] = $submission['id'];
-				$output['Output']['index'] = $i;
+				$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $submission['id'], 'Output.index' => $i)));
+				if(!$output) {
+					$output = array();
+					$output['Output']['id'] = null;
+					$output['Output']['submission_id'] = $submission['id'];
+					$output['Output']['index'] = $i;
+				}
 				$output['Output']['output'] = $outputs[$i];
 				$this->Output->save($output);
+			}
+
+			$problem = $this->Submission->findById($submission['id']);
+			if($problem && $problem['Problem']['contest_id'] && !$problem['Problem']['public']) {
+				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+				if($contest && $contest['Contest']['start'] <= $problem['Submission']['created'] && $problem['Submission']['created'] <= $contest['Contest']['end']) {
+					$register = $this->Registration->find('first', array('conditions' => array('Registration.user_id' => $problem['Submission']['user_id'], 'Registration.contest_id' => $problem['Problem']['contest_id'])));
+					if($register) {
+						$submissions = $this->Submission->find('all', array('conditions' => array('Submission.problem_id' => $problem['Problem']['id'], 'Submission.user_id' => $problem['Submission']['user_id'], 'Submission.created >=' => $contest['Contest']['start'], 'Submission.created <=' => $contest['Contest']['end']), 'order' => array('Submission.created' => 'ASC')));
+
+						$score = json_decode($register['Registration']['score'], true);
+						$score[$problem['Problem']['id']] = '';
+						foreach($submissions as $submission) {
+							if(3 <= $submission['Submission']['status'] && $submission['Submission']['status'] <= 5) {
+								$score[$submission['Problem']['id']] -= 1;
+							} else if($submission['Submission']['status'] == 6) {
+								$penalty = (strtotime($submission['Submission']['created']) - strtotime($contest['Contest']['start'])) / 60 - $score[$submission['Problem']['id']] * 20;
+								$score[$submission['Problem']['id']] = sprintf('%d:%02d (%d)', $penalty / 60, $penalty % 60, $score[$submission['Problem']['id']]);
+								break;
+							}
+						}
+
+						$solved = 0;
+						$penalty = 0;
+						foreach($score as $key => $value) {
+							if($value != '' && $value >= 0) {
+								$solved++;
+								if(preg_match('/^([0-9]*):([0-9]{2}) \([0-9\-]*\)$/', $value, $match)) {
+									$penalty += $match[1] * 60 + $match[2];
+								}
+							}
+						}
+
+						$register['Registration']['solved'] = $solved;
+						$register['Registration']['penalty'] = $penalty;
+						$register['Registration']['score'] = json_encode($score);
+						$this->Registration->save($register);
+					}
+				}
 			}
 		}
 	}

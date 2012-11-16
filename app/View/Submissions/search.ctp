@@ -22,5 +22,18 @@ if($contest_id) {
 	echo $this->Element('contest', array('mode' => 'submission', 'contest_id' => $contest_id));
 }
 ?>
-<h1>Search Result</h1>
+<?php if(isset($contest)): ?>
+<h1>Submissions of <?php echo h($contest['Contest']['name']); ?></h1>
+<h2>Search Submissions</h2>
+<?php echo $this->Element('submission_search', array('contest_id' => $contest_id, 'user_id' => null)); ?>
+<?php elseif(isset($problem)): ?>
+<h1>Submissions of <?php echo sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name']); ?></h1>
+<h2>Search Submissions</h2>
+<?php echo $this->Element('submission_search', array('contest_id' => $contest_id, 'problem_id' => $problem['Problem']['id'], 'user_id' => null)); ?>
+<?php else: ?>
+<h1>Submissions</h1>
+<h2>Search Submissions</h2>
+<?php echo $this->Element('submission_search', array('contest_id' => $contest_id, 'user_id' => null)); ?>
+<?php endif; ?>
+<h2>Search Result</h2>
 <?php echo $this->Element('submission', array('user_show' => true, 'contest_id' => $contest_id)); ?>

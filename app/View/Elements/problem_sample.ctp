@@ -5,11 +5,6 @@
 			sample = $(target[i - 1]);
 			if(sample.find('textarea').val() != '') {
 				sample.css('display', '');
-//				tinyMCE.settings = {
-//					width: '100%'
-//				};
-//				tinyMCE.execCommand('mceAddControl', true, 'sample_input' + i);
-//				tinyMCE.execCommand('mceAddControl', true, 'sample_output' + i);
 			}
 		}
 		showField($('.samples').children('div:visible').find('label'));
@@ -23,8 +18,6 @@
 				break;
 			}
 		}
-//		tinyMCE.execCommand('mceAddControl', true, 'sample_input' + i);
-//		tinyMCE.execCommand('mceAddControl', true, 'sample_output' + i);
 	}
 	function showField(element) {
 		target = $(element).nextAll('div');
@@ -42,6 +35,7 @@
 		}
 	}
 </script>
+<?php echo $this->Form->create('Problem'); ?>
 <div class="samples">
 	<label>Sample Input/Output</label>
 	<?php for($i = 1; $i <= min(count($problem['Problem']['sample_inputs']), count($problem['Problem']['sample_outputs'])); $i++): ?>
@@ -56,6 +50,12 @@
 	<div>
 		<p onclick="addSampleField()"><i class="icon-plus-sign"></i>Add Sample Input/Output</p>
 	</div>
+</div>
+<div class="submit submit-button">
+<?php
+	echo $this->Form->submit('Submit', array('div' => false));
+	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/source', array('class' => 'btn btn-large'));
+?>
 </div>
 <script type="text/javascript">
 	initField();

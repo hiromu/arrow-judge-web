@@ -24,6 +24,7 @@ App::uses('AppController', 'Controller');
 class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form', 'Paginator');
+	public $components = array('Session');
 	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
 
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
@@ -31,7 +32,7 @@ class SubmissionsController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->deny('*');
-		$this->Auth->allow('index');
+		$this->Auth->allow('index', 'search');
 		$this->Auth->flash['element'] = 'error';
 	}
 
@@ -75,9 +76,21 @@ class SubmissionsController extends AppController {
 
 		$submit = $this->request->data;
 		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
-			$register = $this->Registration->find('first', array('condition' => array('AND' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id')))));
+			$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
 			if(!$register) {
-				$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest');
+				$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
+				$submit = null;
+			}
+
+			$start_time = strtotime($submission['Contest']['start']);
+			if(time() < $start_time) {
+				$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
+				$submit = null;
+			}
+
+			$end_time = strtotime($submission['Contest']['end']);
+			if($end_time < time()) {
+				$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
 				$submit = null;
 			}
 		}
@@ -114,35 +127,54 @@ class SubmissionsController extends AppController {
 		}
 
 		$conditions = array();
-		if(isset($this->request->data['Submission']['problem'])) {
-			if($this->request->data['Submission']['problem']) {
-				$conditions['Submission.problem_id'] = $this->request->data['Submission']['problem'];
-			} else if($contest_id) {
-				$contest = $this->Contest->findById($contest_id);
-				if($contest) {
-					$contest_problem = array();
-					foreach($contest['Problem'] as $submission) {
-						$contest_problem[] = $submission['id'];
-					}
+		if($contest_id) {
+			$contest = $this->Contest->findById($contest_id);
+			if($contest) {
+				$contest_problem = array();
+				$problem_suggest = array();
+				foreach($contest['Problem'] as $problem) {
+					$contest_problem[] = $problem['id'];
+					$problem_suggest[$problem['id']] = sprintf('#%d: %s', $problem['id'], $problem['name']);
+				}
+				$this->set('contest', $contest);
+				$this->set('problem_suggest', $problem_suggest);
+
+				if(!isset($this->request->data['Submission']['problem']) || !$this->request->data['Submission']['problem']) {
 					$conditions['Submission.problem_id'] = $contest_problem;
 				}
 			}
 		}
+
+		if(isset($this->request->data['Submission']['problem']) && $this->request->data['Submission']['problem']) {
+			$problem = $this->Problem->findById($this->request->data['Submission']['problem']);
+			if($problem) {
+				$this->set('problem', $problem);
+				$conditions['Submission.problem_id'] = $this->request->data['Submission']['problem'];
+			}
+		}
+
 		if(isset($this->request->data['Submission']['user'])) {
 			if($this->request->data['Submission']['user']) {
 				$conditions['Submission.user_id'] = $this->request->data['Submission']['user'];
 			}
 		}
-		if($this->request->data['Submission']['language']) {
+		if(isset($this->request->data['Submission']['language']) && $this->request->data['Submission']['language'] != '') {
 			$conditions['Submission.language_id'] = $this->request->data['Submission']['language'];
 		}
-		if($this->request->data['Submission']['status']) {
+		if(isset($this->request->data['Submission']['status']) && $this->request->data['Submission']['status'] != '') {
 			$conditions['Submission.status'] = $this->request->data['Submission']['status'];
 		}
 
 		$submissions = $this->Submission->find('all', array('conditions' => $conditions, 'limit' => '100', 'order' => 'Submission.created DESC'));
 		$this->set('contest_id', $contest_id);
 		$this->set('submissions', $submissions);
+
+		$languages = $this->Language->find('all');
+		$lang = array();
+		foreach($languages as $language) {
+			$lang[$language['Language']['id']] = $language['Language']['name'];
+		}
+		$this->set('lang', $lang);
 	}
 
 	function testcase($id = null, $testcase_id = null, $contest_id = null) {
@@ -159,13 +191,13 @@ class SubmissionsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = $this->Testcase->find('first', array('conditions' => array('AND' => array('Testcase.problem_id' => $submission['Problem']['id'], 'Testcase.index' => $testcase_id))));
+		$input = $this->Testcase->find('first', array('conditions' => array('Testcase.problem_id' => $submission['Problem']['id'], 'Testcase.index' => $testcase_id)));
 		if(!$input) {
 			$this->redirect('index');
 		}
 		$this->set('input', $input['Testcase']['testcase']);
 
-		$output = $this->Output->find('first', array('conditions' => array('AND' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id))));
+		$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id)));
 		if(!$output) {
 			$this->redirect('index');
 		}

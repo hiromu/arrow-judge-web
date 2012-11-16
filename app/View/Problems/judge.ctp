@@ -70,14 +70,22 @@ $status = json_decode($status, true);
 <?php endif; ?>
 <?php endif; ?>
 <script type="text/javascript">
+	function load_callback() {
+		var edit_area = $('#frame_source').contents();
+		var height = edit_area.find('#container').height();
+		edit_area.find('#result').height(height);
+		$('#frame_source').height(height + 5);
+	}
 	editAreaLoader.init({
 		id: 'source',
 		is_editable: false,
 		start_highlight: true,
 		font_size: 12,
-		syntax: "<?php echo h($problem['Language']['coloring']); ?>"
+		syntax: "<?php echo h($problem['Language']['coloring']); ?>",
+		EA_load_callback: 'load_callback',
+		EA_toggle_on_callback: 'load_callback'
 	});
-<?php if($problem['Problem']['status'] == 0): ?>
-	setInterval('location.reload()', 5000);
+<?php if($problem['Problem']['status'] < 2): ?>
+	setInterval('location.reload()', 3000);
 <?php endif; ?>
 </script>

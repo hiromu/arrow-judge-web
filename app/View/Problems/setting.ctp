@@ -25,7 +25,5 @@ App::uses('Debugger', 'Utility');
 <h1>Problem Setting <?php echo h(sprintf('#%d', $problem['Problem']['id'])); ?></h1>
 <?php
 	echo $this->Session->flash();
-	echo $this->Form->create('Problem');
 	echo $this->element($element);
-	echo $this->Form->end('Submit');
 ?>
