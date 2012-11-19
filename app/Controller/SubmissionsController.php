@@ -26,7 +26,6 @@ class SubmissionsController extends AppController {
 	public $helpers = array('Form', 'Paginator');
 	public $components = array('Session');
 	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
-
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
 	public function beforeFilter() {
@@ -98,6 +97,7 @@ class SubmissionsController extends AppController {
 		if($submit) {
 			$submit['Submission']['user_id'] = $this->Auth->user('id');
 			$submit['Submission']['problem_id'] = $id;
+			$submit['Submission']['length'] = mb_strlen($submit['Submission']['source']);
 			if($this->Submission->save($submit)) {
 				$submission_id = $this->Submission->getLastInsertID();
 				if($contest_id) {
@@ -165,7 +165,7 @@ class SubmissionsController extends AppController {
 			$conditions['Submission.status'] = $this->request->data['Submission']['status'];
 		}
 
-		$submissions = $this->Submission->find('all', array('conditions' => $conditions, 'limit' => '100', 'order' => 'Submission.created DESC'));
+		$submissions = $this->paginate('Submission', $conditions);
 		$this->set('contest_id', $contest_id);
 		$this->set('submissions', $submissions);
 
@@ -185,6 +185,12 @@ class SubmissionsController extends AppController {
 		$submission = $this->Submission->findById($id);
 		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
 			$this->redirect('index');
+		}
+		if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
+			$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+			if($contest && strtotime($contest['Contest']['end']) > time()) {
+				$this->redirect('detail/'.$id.'/'.$contest_id);
+			}
 		}
 		$this->set('submission', $submission);
 		$this->set('contest_id', $contest_id);

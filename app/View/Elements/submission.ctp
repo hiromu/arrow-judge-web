@@ -2,6 +2,19 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<?php if(isset($this->Paginator)): ?>
+			<th><?php echo $this->Paginator->sort('problem_id', 'Problem ID'); ?></th>
+			<?php if($user_show): ?>
+			<th><?php echo $this->Paginator->sort('user_id', 'User Name'); ?></th>
+			<?php endif; ?>
+			<th><?php echo $this->Paginator->sort('language_id', 'Language'); ?></th>
+			<th><?php echo $this->Paginator->sort('status', 'Status'); ?></th>
+			<th><?php echo $this->Paginator->sort('max_cpu', 'CPU'); ?></th>
+			<th><?php echo $this->Paginator->sort('max_memory', 'Memory'); ?></th>
+			<th><?php echo $this->Paginator->sort('length', 'Length'); ?></th>
+			<th><?php echo $this->Paginator->sort('created', 'Submission Date'); ?></th>
+			<th></th>
+			<?php else: ?>
 			<th>Problem ID</th>
 			<?php if($user_show): ?>
 			<th>User Name</th>
@@ -13,6 +26,7 @@
 			<th>Length</th>
 			<th>Submission Date</th>
 			<th></th>
+			<?php endif; ?>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,7 +40,7 @@
 			<td><?php echo h($status[$submission['Submission']['status']]); ?></td>
 			<td><?php echo h($submission['Submission']['max_cpu']); ?> sec</td>
 			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
-			<td><?php echo h(mb_strlen($submission['Submission']['source'])); ?> B</td>
+			<td><?php echo h($submission['Submission']['length']); ?> B</td>
 			<td><?php echo h($submission['Submission']['created']); ?></td>
 			<?php if($submission['User']['id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Detail =>', '/submissions/detail/'.$submission['Submission']['id'].'/'.$contest_id); ?></td>

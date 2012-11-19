@@ -1,2 +1,2 @@
-app/tmp/*
+/app/tmp/*
 .*.swp

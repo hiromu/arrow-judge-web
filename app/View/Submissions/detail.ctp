@@ -37,7 +37,7 @@ if($contest_id) {
 			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $submission['Problem']['id'], $submission['Problem']['name'])), '/problems/view/'.$submission['Problem']['id']); ?></td>
 			<td><?php echo h($submission['Language']['name']); ?></td>
 			<td><?php echo h($submission['Submission']['max_cpu']); ?> sec</td>
-			<td><?php echo h($submission['Submission']['max_memory']); ?> MB</td>
+			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
 			<td><?php echo h($status[$submission['Submission']['status']]); ?></td>
 		</tr>
 	</tbody>

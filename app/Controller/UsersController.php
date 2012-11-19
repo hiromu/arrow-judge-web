@@ -23,9 +23,10 @@ App::uses('AppController', 'Controller');
 
 class UsersController extends AppController {
 	public $name = 'Users';
-	public $helpers = array('Form');
+	public $helpers = array('Form', 'Paginator');
 	public $uses = array('User', 'Submission', 'Language');
 	public $components = array('Email', 'Session');
+	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -42,8 +43,7 @@ class UsersController extends AppController {
 			$this->redirect('/');
 		}
 
-		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.user_id' => $id), 'limit' => 100, 'order' => 'Submission.created DESC'));
-
+		$submissions = $this->paginate('Submission', array('Submission.user_id' => $id));
 		$this->set('user', $user);
 		$this->set('submissions', $submissions);
 

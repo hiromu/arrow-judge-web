@@ -185,10 +185,10 @@ th a {
 	text-decoration: none;
 }
 th a.asc:after {
-	content: ' ⇣';
+	content: ' ▼';
 }
 th a.desc:after {
-	content: ' ⇡';
+	content: ' ▲';
 }
 table tr td {
 	padding: 6px;
@@ -263,6 +263,15 @@ table td.actions a {
 .paging .current {
 	background: #efefef;
 	color: #c73e14;
+}
+
+div.paginate {
+	font-size: 110%;
+	margin-bottom: 10px;
+}
+.paginate span {
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 /** Scaffold View **/

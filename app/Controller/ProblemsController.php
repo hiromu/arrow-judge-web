@@ -23,14 +23,15 @@ App::uses('AppController', 'Controller');
 
 class ProblemsController extends AppController {
 	public $name = 'Problems';
-	public $helpers = array('Form');
+	public $helpers = array('Form', 'Paginator');
 	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Testcase', 'Answer');
 	public $components = array('Session');
+	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->deny('*');
-		$this->Auth->allow('index', 'view');
+		$this->Auth->allow('index', 'view', 'submission');
 		$this->Auth->flash['element'] = 'error';
 	}
 
@@ -195,7 +196,7 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if(!$problem['Problem']['public'] && $problem['Problem']['contest_id']) {
+			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] != null) {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
 				if($contest && strtotime($contest['Contest']['start']) > time()) {
 					$this->redirect('index');
@@ -224,10 +225,10 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] == null) {
+			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] != null) {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
-				if($contest && strtotime($contest['Problem']['start']) > time()) {
-				$this->redirect('index');
+				if($contest && strtotime($contest['Contest']['start']) > time()) {
+					$this->redirect('index');
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
@@ -242,7 +243,7 @@ class ProblemsController extends AppController {
 		}
 		$this->set('lang', $lang);
 
-		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.problem_id' => $id), 'limit' => 100, 'order' => 'Submission.created DESC'));
+		$submissions = $this->paginate('Submission', array('Submission.problem_id' => $id));
 		$this->set('submissions', $submissions);
 		$this->set('contest_id', $contest_id);
 		$this->set('problem', $problem);

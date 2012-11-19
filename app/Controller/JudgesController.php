@@ -36,8 +36,17 @@ class JudgesController extends AppController {
 		$this->layout = 'ajax';
 	}
 
-	public function index() {
-		$limit = sprintf("date_sub('%s', interval %s second)", date('Y-m-d H:m:s'), $this->options['timeout']);
+	public function index($client_id = null) {
+		if(!$client_id) {
+			$this->redirect('/');
+		}
+
+		$client = $this->Client->find('first', array('conditions' => array('client' => $client_id)));
+		if(!$client) {
+			$this->redirect('/');
+		}
+
+		$limit = strftime('%Y-%m-%d %H:%M:%S', time() - $this->options['timeout']);
 
 		$judge = $this->Problem->find('first', array('conditions' => array('OR' => array(array('AND' => array('Problem.status' => '1', 'Problem.modified < ' => $limit)), 'Problem.status' => '0')), 'order' => 'Problem.modified'));
 		if($judge) {
@@ -54,8 +63,11 @@ class JudgesController extends AppController {
 			$json = array();
 			$json['problem'] = '1';
 			$json['input'] = $tests;
-			foreach(array('id', 'cpu', 'stack', 'memory', 'source') as $key) {
+			foreach(array('id', 'cpu', 'source') as $key) {
 				$json[$key] = $judge['Problem'][$key];
+			}
+			foreach(array('stack', 'memory') as $key) {
+				$json[$key] = $judge['Problem'][$key] * 1024;
 			}
 			foreach(array('extension', 'compile', 'execute') as $key) {
 				$json[$key] = $judge['Language'][$key];
@@ -66,8 +78,8 @@ class JudgesController extends AppController {
 
 		$judge = $this->Submission->find('first', array('conditions' => array('OR' => array(array('AND' => array('Submission.status' => '1', 'Submission.modified < ' => $limit)), 'Submission.status' => '0')), 'order' => 'Submission.modified'));
 		if($judge) {
-			$judge['Problem']['status'] = '1';
-			$judge['Problem']['modified'] = null;
+			$judge['Submission']['status'] = '1';
+			$judge['Submission']['modified'] = null;
 			$this->Submission->save($judge, true, array('status', 'modified'));
 
 			$tests = array();
@@ -86,11 +98,12 @@ class JudgesController extends AppController {
 			$json['problem'] = '0';
 			$json['input'] = $tests;
 			$json['answer'] = $ans;
+			$json['cpu'] = $judge['Problem']['cpu'];
 			foreach(array('id', 'source') as $key) {
 				$json[$key] = $judge['Submission'][$key];
 			}
-			foreach(array('cpu', 'stack', 'memory') as $key) {
-				$json[$key] = $judge['Problem'][$key];
+			foreach(array('stack', 'memory') as $key) {
+				$json[$key] = $judge['Problem'][$key] * 1024;
 			}
 			foreach(array('extension', 'compile', 'execute') as $key) {
 				$json[$key] = $judge['Language'][$key];
@@ -102,7 +115,16 @@ class JudgesController extends AppController {
 		$this->set('judge', '');
 	}
 
-	public function post() {
+	public function post($client_id = null) {
+		if(!$client_id) {
+			$this->redirect('/');
+		}
+
+		$client = $this->Client->find('first', array('conditions' => array('client' => $client_id)));
+		if(!$client) {
+			$this->redirect('/');
+		}
+
 		$post = $this->request->data;
 
 		$submission = array();

@@ -26,11 +26,11 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('generic');
-		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('bootstrap/bootstrap');
 
-		echo $this->Html->script('jquery');
-		echo $this->Html->script('jquery-ui');
-		echo $this->Html->script('bootstrap');
+		echo $this->Html->script('jquery/jquery');
+		echo $this->Html->script('jquery/jquery-ui');
+		echo $this->Html->script('bootstrap/bootstrap');
 		echo $this->Html->script('tiny_mce/tiny_mce');
 		echo $this->Html->script('edit_area/edit_area_full');
 
