@@ -20,6 +20,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 	public $name = 'Users';
@@ -86,14 +87,19 @@ class UsersController extends AppController {
 			$rand = md5(uniqid(rand(), 1));
 			$this->request->data['User']['confirm'] = $rand;
 			if($this->User->save($this->request->data)) {
-				$this->set('username', $this->request->data['User']['username']);
-				$this->set('url', Router::url('confirm', true).'/'.$rand);
-				$this->Email->transport = 'Smtp';
-				$this->Email->to = $this->request->data['User']['email'];
-				$this->Email->from = $this->options['email_address'];
-				$this->Email->subject = $this->options['title'].': '.'Registeration Confirmation';
-				$this->Email->template = 'register';
-				$this->Email->send();
+				$contest = array();
+				$content['username'] = $this->request->data['User']['username'];
+				$content['url'] = Router::url('confirm', true).'/'.$rand;
+				$content['top_page'] = Router::url('/', true);
+				$content['title'] = $this->options['title'];
+
+				$email = new CakeEmail('smtp');
+				$email->template('register', 'default');
+				$email->viewVars($content);
+				$email->to($this->request->data['User']['email']);
+				$email->from($this->options['email_address']);
+				$email->subject($this->options['title'].': '.'Registration Confirmation');
+				$email->send();
 
 				$this->Session->setFlash('Please click on the link in an email send for your email address.', 'success');
 			}

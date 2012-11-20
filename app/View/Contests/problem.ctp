@@ -31,7 +31,6 @@ echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $conte
 			<th>Problem ID</th>
 			<th>Problem Name</th>
 			<th>CPU Limit</th>
-			<th>Stack Limit</th>
 			<th>Memory Limit</th>
 			<th></th>
 		</tr>
@@ -42,7 +41,6 @@ echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $conte
 			<td><?php echo h($problem['id']); ?></td>
 			<td><?php echo $this->Html->link($problem['name'], '/problems/view/'.$problem['id'].'/'.$contest['Contest']['id']); ?></td>
 			<td><?php echo h($problem['cpu']); ?> sec</td>
-			<td><?php echo h($problem['stack']); ?> MB</td>
 			<td><?php echo h($problem['memory']); ?> MB</td>
 			<?php if($problem['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', '/problems/setting/'.$problem['id'].'/'.$contest['Contest']['id']); ?></td>

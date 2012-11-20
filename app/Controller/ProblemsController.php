@@ -47,7 +47,6 @@ class ProblemsController extends AppController {
 			$problem = $this->request->data;
 			$problem['Problem']['user_id'] = $this->Auth->user('id');
 			$problem['Problem']['cpu'] = 0;
-			$problem['Problem']['stack'] = 0;
 			$problem['Problem']['memory'] = 0;
 			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, 50, ''));
 			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, 50, ''));
@@ -58,29 +57,26 @@ class ProblemsController extends AppController {
 					if($contest['Contest']['user_id'] == $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
 						$problem['Problem']['contest_id'] = $id;
 						$problem['Problem']['public'] = 0;
-						for($i = 0; $i < 100; $i++) {
-							$this->Testcase->create();
-							$testcase['Testcase']['problem_id'] = $id;
-							$testcase['Testcase']['index'] = $i;
-							$this->Testcase->save($testcase);
-						}
-						for($i = 0; $i < 100; $i++) {
-							$this->Answer->create();
-							$answer['Answer']['problem_id'] = $id;
-							$answer['Answer']['index'] = $i;
-							$this->Answer->save($answer);
-						}
-						if($this->Problem->save($problem)) {
-							$this->redirect('setting/'.$this->Problem->getLastInsertID().'/source');
-						}
 					} else {
 						$this->Session->setFlash(sprintf('Unable to add problem to %s', $contest['Contest']['name']), 'error');
 					}
 				}
-			} else {
-				if($this->Problem->save($problem)) {
-					$this->redirect('setting/'.$this->Problem->getLastInsertID().'/source');
+			}
+			if($this->Problem->save($problem)) {
+				$problem_id = $this->Problem->getLastInsertID();
+				for($i = 0; $i < 100; $i++) {
+					$this->Testcase->create();
+					$testcase['Testcase']['problem_id'] = $problem_id;
+					$testcase['Testcase']['index'] = $i;
+					$this->Testcase->save($testcase);
 				}
+				for($i = 0; $i < 100; $i++) {
+					$this->Answer->create();
+					$answer['Answer']['problem_id'] = $problem_id;
+					$answer['Answer']['index'] = $i;
+					$this->Answer->save($answer);
+				}
+				$this->redirect('setting/'.$problem_id.'/source');
 			}
 		}
 

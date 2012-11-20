@@ -25,10 +25,6 @@ if($contest_id) {
 <div class="statement">
 	<p><?php echo h($problem['Problem']['cpu']); ?> sec</p>
 </div>
-<h4>Stack Limit</h4>
-<div class="statement">
-	<p><?php echo h($problem['Problem']['stack']); ?> MB</p>
-</div>
 <h4>Memory Limit</h4>
 <div class="statement">
 	<p><?php echo h($problem['Problem']['memory']); ?> MB</p>

@@ -28,16 +28,6 @@ class Problem extends AppModel {
 				'message' => 'Must be integer',
 			),
 		),
-		'stack' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Must not be empty',
-			),
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'Must be integer',
-			),
-		),
 		'memory' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),

@@ -63,11 +63,9 @@ class JudgesController extends AppController {
 			$json = array();
 			$json['problem'] = '1';
 			$json['input'] = $tests;
+			$json['memory'] = $judge['Problem']['memory'] * 1024;
 			foreach(array('id', 'cpu', 'source') as $key) {
 				$json[$key] = $judge['Problem'][$key];
-			}
-			foreach(array('stack', 'memory') as $key) {
-				$json[$key] = $judge['Problem'][$key] * 1024;
 			}
 			foreach(array('extension', 'compile', 'execute') as $key) {
 				$json[$key] = $judge['Language'][$key];
@@ -99,11 +97,9 @@ class JudgesController extends AppController {
 			$json['input'] = $tests;
 			$json['answer'] = $ans;
 			$json['cpu'] = $judge['Problem']['cpu'];
+			$json['memory'] = $judge['Problem']['memory'] * 1024;
 			foreach(array('id', 'source') as $key) {
 				$json[$key] = $judge['Submission'][$key];
-			}
-			foreach(array('stack', 'memory') as $key) {
-				$json[$key] = $judge['Problem'][$key] * 1024;
 			}
 			foreach(array('extension', 'compile', 'execute') as $key) {
 				$json[$key] = $judge['Language'][$key];

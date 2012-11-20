@@ -112,7 +112,7 @@ class SubmissionsController extends AppController {
 		$lang = array();
 		$coloring = array();
 		foreach($languages as $language) {
-			$lang[$language['Language']['id']] = $language['Language']['name'];
+			$lang[$language['Language']['id']] = $language['Language']['detail'];
 			$coloring[$language['Language']['id']] = $language['Language']['coloring'];
 		}
 		$this->set('lang', $lang);

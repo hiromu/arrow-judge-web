@@ -24,7 +24,6 @@ $status = json_decode($status, true);
 			<th>Problem ID</th>
 			<th>Language</th>
 			<th>CPU Limit</th>
-			<th>Stack Limit</th>
 			<th>Memory Limit</th>
 			<th>Status</th>
 		</tr>
@@ -34,7 +33,6 @@ $status = json_decode($status, true);
 			<td><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></td>
 			<td><?php echo h($problem['Language']['name']); ?></td>
 			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
-			<td><?php echo h($problem['Problem']['stack']); ?> MB</td>
 			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
 			<td><?php echo h($status[$problem['Problem']['status']]); ?></td>
 		</tr>
@@ -47,7 +45,7 @@ $status = json_decode($status, true);
 <?php elseif($problem['Problem']['status'] == 3 && $problem['Problem']['error']): ?>
 <h2>Execution Output<h2>
 <pre><?php echo h($problem['Problem']['error']); ?></pre>
-<?php elseif($problem['Problem']['status'] == 4 || $problem['Problem']['status'] == 5 || $problem['Problem']['status'] == 6): ?>
+<?php elseif($problem['Problem']['status'] > 3): ?>
 <?php if(count($cpu) > 0): ?>
 <h1>Testcases</h1>
 <div class="statement">
@@ -80,7 +78,6 @@ $status = json_decode($status, true);
 		id: 'source',
 		is_editable: false,
 		start_highlight: true,
-		font_size: 12,
 		syntax: "<?php echo h($problem['Language']['coloring']); ?>",
 		EA_load_callback: 'load_callback',
 		EA_toggle_on_callback: 'load_callback'

@@ -25,7 +25,6 @@ $status = json_decode($status, true);
 			<th>Problem ID</th>
 			<th>Language</th>
 			<th>CPU Limit</th>
-			<th>Stack Limit</th>
 			<th>Memory Limit</th>
 			<th>Status</th>
 		</tr>
@@ -35,7 +34,6 @@ $status = json_decode($status, true);
 			<td><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></td>
 			<td><?php echo h($problem['Language']['name']); ?></td>
 			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
-			<td><?php echo h($problem['Problem']['stack']); ?> MB</td>
 			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
 			<td><?php echo h($status[$problem['Problem']['status']]); ?></td>
 		</tr>

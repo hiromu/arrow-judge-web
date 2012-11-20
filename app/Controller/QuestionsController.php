@@ -20,6 +20,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 class QuestionsController extends AppController {
 	public $name = 'Questions';
@@ -57,15 +58,20 @@ class QuestionsController extends AppController {
 				$this->request->data['Question']['problem_id'] = $id;
 				$this->request->data['Question']['public'] = 2;
 				if($this->Question->save($this->request->data)) {
-					$this->set('problem', $problem);
-					$this->set('question', $this->request->data['Question']['question']);
-					$this->set('url', Router::url('answer', true).'/'.$this->Question->getLastInsertID().'/'.$contest_id);
-					$this->Email->transport = 'Smtp';
-					$this->Email->to = $problem['User']['email'];
-					$this->Email->from = $this->options['email_address'];
-					$this->Email->subject = $this->options['title'].': '.'You recieved a new question';
-					$this->Email->template = 'question';
-					$this->Email->send();
+					$content = array();
+					$content['url'] = Router::url('answer', true).'/'.$this->Question->getLastInsertID().'/'.$contest_id;
+					$content['top_page'] = Router::url('/', true);
+					$content['problem'] = $problem;
+					$content['question'] = $this->request->data['Question']['question'];
+					$content['title'] = $this->options['title'];
+
+					$email = new CakeEmail('smtp');
+					$email->template('question', 'default');
+					$email->viewVars($content);
+					$email->to($problem['User']['email']);
+					$email->from($this->options['email_address']);
+					$email->subject($this->options['title'].': '.'You recieved a new question');
+					$email->send();
 	
 					$this->redirect('index/'.$id.'/'.$contest_id);
 				}
@@ -106,15 +112,20 @@ class QuestionsController extends AppController {
 		if($this->request->data) {
 			$this->request->data['Question']['id'] = $id;
 			if($this->Question->save($this->request->data)) {
-				$this->set('question', $question);
-				$this->set('answer', $this->request->data['Question']['answer']);
-				$this->set('url', Router::url('index', true).'/'.$question['Problem']['id'].'/'.$contest_id);
-				$this->Email->transport = 'Smtp';
-				$this->Email->to = $question['User']['email'];
-				$this->Email->from = $this->options['email_address'];
-				$this->Email->subject = $this->options['title'].': '.'Your question was answered';
-				$this->Email->template = 'answered';
-				$this->Email->send();
+				$content = array();
+				$content['url'] = Router::url('index', true).'/'.$question['Problem']['id'].'/'.$contest_id;
+				$content['top_page'] = Router::url('/', true);
+				$content['question'] = $question;
+				$content['answer'] = $this->request->data['Question']['answer'];
+				$content['title'] = $this->options['title'];
+
+				$email = new CakeEmail('smtp');
+				$email->template('answered', 'default');
+				$email->viewVars($content);
+				$email->to($question['User']['email']);
+				$email->from($this->options['email_address']);
+				$email->subject($this->options['title'].': '.'Your question was answered');
+				$email->send();
 
 				$this->redirect('index/'.$question['Problem']['id'].'/'.$contest_id);
 			}
