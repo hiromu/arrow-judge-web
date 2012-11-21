@@ -38,8 +38,16 @@
 			<?php endif; ?>
 			<td><?php echo h($submission['Language']['name']); ?></td>
 			<td><?php echo h($status[$submission['Submission']['status']]); ?></td>
+			<?php if($submission['Submission']['max_cpu'] == -1): ?>
+			<td>N/A sec</td>
+			<?php else: ?>
 			<td><?php echo h($submission['Submission']['max_cpu']); ?> sec</td>
+			<?php endif; ?>
+			<?php if($submission['Submission']['max_memory'] == -1): ?>
+			<td>N/A KB</td>
+			<?php else: ?>
 			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
+			<?php endif; ?>
 			<td><?php echo h($submission['Submission']['length']); ?> B</td>
 			<td><?php echo h($submission['Submission']['created']); ?></td>
 			<?php if($submission['User']['id'] == $userid): ?>
