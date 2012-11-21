@@ -26,7 +26,7 @@ class SubmissionsController extends AppController {
 	public $helpers = array('Form', 'Paginator');
 	public $components = array('Session');
 	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
-	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
+	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -127,9 +127,10 @@ class SubmissionsController extends AppController {
 	}
 
 	function search($contest_id = null) {
-		if(!$this->request->data) {
+		if(!$this->request->query) {
 			$this->redirect('index');
 		}
+		$this->request->data['Submission'] = $this->request->query;
 
 		$conditions = array();
 		if($contest_id) {

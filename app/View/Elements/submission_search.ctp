@@ -1,6 +1,6 @@
 <pre>
 <?php
-	echo $this->Form->create('Submission', array('controller' => 'Submission', 'action' => 'search', 'url' => array($contest_id), 'class' => 'form-inline'));
+	echo $this->Form->create('Submission', array('controller' => 'Submission', 'action' => 'search', 'url' => array($contest_id), 'class' => 'form-inline', 'type' => 'get'));
 	if(isset($problem_suggest)) {
 		echo $this->Form->input('problem', array('type' => 'select', 'label' => 'Problem', 'options' => $problem_suggest, 'div' => false, 'empty' => '-'));
 	} else if(isset($problem_id)) {
