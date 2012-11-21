@@ -75,7 +75,7 @@ if($contest_id) {
 			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
 			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
 			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
-			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$submission['Submission']['id'].'/'.($i + 1).'/'.$contest_id); ?>
+			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$submission['Submission']['id'].'/'.($i + 1).'/'.$contest_id); ?></td>
 		</tr>
 		<?php endfor; ?>
 	</table>
