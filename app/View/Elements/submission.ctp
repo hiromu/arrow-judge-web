@@ -50,7 +50,7 @@
 			<?php endif; ?>
 			<td><?php echo h($submission['Submission']['length']); ?> B</td>
 			<td><?php echo h($submission['Submission']['created']); ?></td>
-			<?php if($submission['User']['id'] == $userid): ?>
+			<?php if($submission['User']['id'] == $userid || $admin): ?>
 			<td><?php echo $this->Html->link('Detail =>', '/submissions/detail/'.$submission['Submission']['id'].'/'.$contest_id); ?></td>
 			<?php else: ?>
 			<td></td>
