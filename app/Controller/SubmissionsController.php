@@ -199,6 +199,7 @@ class SubmissionsController extends AppController {
 		if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
 			$contest = $this->Contest->findById($submission['Problem']['contest_id']);
 			if($contest && strtotime($contest['Contest']['end']) > time()) {
+				$this->Session->setFlash('You are not permitted to view testcase during contest', 'error');
 				$this->redirect('detail/'.$id.'/'.$contest_id);
 			}
 		}
