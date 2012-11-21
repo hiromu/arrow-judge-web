@@ -53,8 +53,13 @@ class SubmissionsController extends AppController {
 		}
 
 		$submission = $this->Submission->findById($id);
-		if(!$submission || $submission['Submission']['user_id'] != $this->Auth->user('id')) {
+		if(!$submission) {
 			$this->redirect('index');
+		}
+		if(!$this->Auth->user('admin')) {
+			if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+				$this->redirect('index');
+			}
 		}
 
 		$this->set('contest_id', $contest_id);
@@ -183,8 +188,13 @@ class SubmissionsController extends AppController {
 		}
 
 		$submission = $this->Submission->findById($id);
-		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+		if(!$submission) {
 			$this->redirect('index');
+		}
+		if(!$this->Auth->user('admin')) {
+			if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+				$this->redirect('index');
+			}
 		}
 		if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
 			$contest = $this->Contest->findById($submission['Problem']['contest_id']);

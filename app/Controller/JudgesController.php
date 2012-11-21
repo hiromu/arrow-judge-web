@@ -134,8 +134,8 @@ class JudgesController extends AppController {
 			} else {
 				$outputs = array();
 				$submission['error'] = $post['error'];
-				$submission['max_cpu'] = null;
-				$submission['max_memory'] = null;
+				$submission['max_cpu'] = -1;
+				$submission['max_memory'] = -1;
 			}
 		} else if($post['status'] == 4 || $post['status'] == 5 || $post['status'] == 6) {
 			if($post['problem'] == '1') {
