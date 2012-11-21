@@ -20,6 +20,7 @@ $status = json_decode($status, true);
 if($contest_id) {
 	echo $this->Element('contest', array('mode' => 'submission', 'contest_id' => $contest_id));
 }
+echo $this->Session->flash();
 ?>
 <h1>Submission Detail</h1>
 <table class="table table-striped">
