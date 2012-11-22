@@ -68,7 +68,7 @@ class ContestsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
-		if($contest['Contest']['user_id'] != $this->Auth->user('id')) {
+		if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
 			$this->redirect('index');
 		}
 
@@ -148,8 +148,10 @@ class ContestsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
-		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-			$this->redirect('index');
+		if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+			if(strtotime($contest['Contest']['start']) > time()) {
+				$this->redirect('index');
+			}
 		}
 
 		$this->set('contest', $contest);
@@ -164,8 +166,10 @@ class ContestsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
-		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-			$this->redirect('index');
+		if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+			if(strtotime($contest['Contest']['start']) > time()) {
+				$this->redirect('index');
+			}
 		}
 		$this->set('contest', $contest);
 
@@ -196,8 +200,10 @@ class ContestsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
-		if($contest['Contest']['user_id'] != $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-			$this->redirect('index');
+		if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+			if(strtotime($contest['Contest']['start']) > time()) {
+				$this->redirect('index');
+			}
 		}
 		$this->set('contest', $contest);
 
