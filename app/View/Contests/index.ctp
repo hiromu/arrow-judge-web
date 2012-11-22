@@ -43,7 +43,7 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo h($contest['Contest']['name']); ?></td>
 			<td><?php echo h($contest['Contest']['start']); ?></td>
 			<td><?php echo h($contest['Contest']['end']); ?></td>
-			<?php if($contest['Contest']['user_id'] == $userid): ?>
+			<?php if($contest['Contest']['user_id'] == $userid || $admin): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$contest['Contest']['id']); ?></td>
 			<?php if(strtotime($contest['Contest']['start']) > time()): ?>
 			<td><?php echo $this->Html->link('Set Problems =>', 'problem/'.$contest['Contest']['id']); ?></td>
