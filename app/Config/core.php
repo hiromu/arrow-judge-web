@@ -175,6 +175,7 @@
 	Configure::write('Session', array(
 		'defaults' => 'php'
 	));
+	Configure::write('Session.timeout', '1440');
 
 /**
  * The level of CakePHP security.
