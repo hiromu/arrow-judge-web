@@ -76,21 +76,21 @@ class QuestionsController extends AppController {
 					$this->redirect('index/'.$id.'/'.$contest_id);
 				}
 			}
-		} else {
-			if($problem['Problem']['user_id'] == $this->Auth->user('id')) {
-				$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2),  'order' => 'Question.created DESC'));
-			} else {
-				$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2, 'Question.user_id' => $this->Auth->user('id')),  'order' => 'Question.created DESC'));
-			}
-			$this->set('unanswered', $unanswered);
-
-			if($this->Auth->user('id')) {
-				$questions = $this->Question->find('all', array('conditions' => array('AND' => array('Question.problem_id' => $id, 'OR' => array('Question.public' => 0, 'AND' => array('Question.public' => 1, 'OR' => array('Question.user_id' => $this->Auth->user('id'), 'Problem.user_id' => $this->Auth->user('id')))))),  'order' => 'Question.created DESC'));
-			} else {
-				$questions = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 0),  'order' => 'Question.created DESC'));
-			}
-			$this->set('questions', $questions);
 		}
+
+		if($problem['Problem']['user_id'] == $this->Auth->user('id')) {
+			$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2),  'order' => 'Question.created DESC'));
+		} else {
+			$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2, 'Question.user_id' => $this->Auth->user('id')),  'order' => 'Question.created DESC'));
+		}
+		$this->set('unanswered', $unanswered);
+
+		if($this->Auth->user('id')) {
+			$questions = $this->Question->find('all', array('conditions' => array('AND' => array('Question.problem_id' => $id, 'OR' => array('Question.public' => 0, 'AND' => array('Question.public' => 1, 'OR' => array('Question.user_id' => $this->Auth->user('id'), 'Problem.user_id' => $this->Auth->user('id')))))),  'order' => 'Question.created DESC'));
+		} else {
+			$questions = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 0),  'order' => 'Question.created DESC'));
+		}
+		$this->set('questions', $questions);
 	}
 
 	public function answer($id = null, $contest_id = null) {
