@@ -194,8 +194,10 @@ class ProblemsController extends AppController {
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
 			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] != null) {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
-				if($contest && strtotime($contest['Contest']['start']) > time()) {
-					$this->redirect('index');
+				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+					if(strtotime($contest['Contest']['start']) > time()) {
+						$this->redirect('index');
+					}
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
