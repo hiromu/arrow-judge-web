@@ -36,7 +36,7 @@ class SubmissionsController extends AppController {
 	}
 
 	public function index() {
-		$submissions = $this->paginate('Submission');
+		$submissions = $this->paginate('Submission', array('Submission.secret' => 0));
 		$this->set('submissions', $submissions);
 
 		$languages = $this->Language->find('all');
@@ -80,22 +80,27 @@ class SubmissionsController extends AppController {
 
 		$submit = $this->request->data;
 		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
-			$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
-			if(!$register) {
-				$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
-				$submit = null;
-			}
+			$contest = $this->Contest->findById($id);
+			if($contest && (!$this->Auth->user('admin') || $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+				$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
+				if(!$register) {
+					$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
+					$submit = null;
+				}
 
-			$start_time = strtotime($submission['Contest']['start']);
-			if(time() < $start_time) {
-				$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
-				$submit = null;
-			}
+				$start_time = strtotime($submission['Contest']['start']);
+				if(time() < $start_time) {
+					$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
+					$submit = null;
+				}
 
-			$end_time = strtotime($submission['Contest']['end']);
-			if($end_time < time()) {
-				$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
-				$submit = null;
+				$end_time = strtotime($submission['Contest']['end']);
+				if($end_time < time()) {
+					$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
+					$submit = null;
+				}
+			} else if($submit) {
+				$submit['Submission']['secret'] = 0;
 			}
 		}
 
@@ -133,6 +138,8 @@ class SubmissionsController extends AppController {
 		$this->request->data['Submission'] = $this->request->query;
 
 		$conditions = array();
+		$conditions['Submission.secret'] = 0;
+
 		if($contest_id) {
 			$contest = $this->Contest->findById($contest_id);
 			if($contest) {
