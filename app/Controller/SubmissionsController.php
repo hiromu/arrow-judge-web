@@ -81,7 +81,7 @@ class SubmissionsController extends AppController {
 		$submit = $this->request->data;
 		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
 			$contest = $this->Contest->findById($id);
-			if($contest && (!$this->Auth->user('admin') || $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+			if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
 				$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
 				if(!$register) {
 					$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
@@ -99,8 +99,8 @@ class SubmissionsController extends AppController {
 					$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
 					$submit = null;
 				}
-			} else if($submit) {
-				$submit['Submission']['secret'] = 0;
+			} else if($contest && $submit) {
+				$submit['Submission']['secret'] = 1;
 			}
 		}
 
