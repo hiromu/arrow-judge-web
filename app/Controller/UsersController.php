@@ -44,7 +44,7 @@ class UsersController extends AppController {
 			$this->redirect('/');
 		}
 
-		$submissions = $this->paginate('Submission', array('Submission.user_id' => $id));
+		$submissions = $this->paginate('Submission', array('Submission.user_id' => $id, 'Submission.secret' => 0));
 		$this->set('user', $user);
 		$this->set('submissions', $submissions);
 
