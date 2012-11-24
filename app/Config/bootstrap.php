@@ -129,3 +129,4 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+ini_set('session.gc_maxlifetime', 86400);
