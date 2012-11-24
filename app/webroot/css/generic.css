@@ -72,6 +72,22 @@ p {
 	margin: 0 0 1em 0;
 }
 
+/** Submission **/
+p.status_2 {
+	color: #FDDD17;
+}
+p.status_3, p.status_4 {
+	color: #0000AA;
+}
+p.status_5 {
+	color: #CC0000;
+}
+p.status_6 {
+	color: #00AA00;
+	font-weight: bold;
+}
+
+
 /** Layout **/
 #container {
 	text-align: left;
