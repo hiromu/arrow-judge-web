@@ -220,13 +220,21 @@ class SubmissionsController extends AppController {
 		if(!$input) {
 			$this->redirect('index');
 		}
-		$this->set('input', $input['Testcase']['testcase']);
+		$input = $input['Testcase']['testcase'];
+		if(strlen($input) > $this->options['testcase_limit'] * 1024) {
+			$input = substr($input, 0, $this->options['testcase_limit'] * 1024).' ...';
+		}
+		$this->set('input', $input);
 
 		$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id)));
 		if(!$output) {
 			$this->redirect('index');
 		}
-		$this->set('output', $output['Output']['output']);
+		$output = $output['Output']['output'];
+		if(strlen($output) > $this->options['testcase_limit'] * 1024) {
+			$output = substr($output, 0, $this->options['testcase_limit'] * 1024).' ...';
+		}
+		$this->set('output', $output);
 
 		$cpu = json_decode($submission['Submission']['cpu']);
 		if(count($cpu) <= $testcase_id || !$cpu[$testcase_id]) {
