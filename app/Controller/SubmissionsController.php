@@ -80,7 +80,7 @@ class SubmissionsController extends AppController {
 
 		$submit = $this->request->data;
 		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
-			$contest = $this->Contest->findById($id);
+			$contest = $this->Contest->findById($submission['Problem']['contest_id']);
 			if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
 				$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
 				if(!$register) {
