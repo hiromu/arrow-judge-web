@@ -24,7 +24,7 @@ if($contest_id) {
 <?php
 	echo $this->Session->flash();
 	echo $this->Form->create('Submission');
-	echo $this->Form->input('language_id', array('type' => 'select', 'label' => 'Language', 'options' => $lang, 'empty' => false));
+	echo $this->Form->input('language_id', array('type' => 'select', 'label' => 'Language', 'options' => $lang, 'empty' => false, 'selected' => $latest));
 	echo $this->Form->input('source', array('type' => 'textarea', 'label' => 'Source', 'id' => 'source', 'rows' => '20'));
 	echo $this->Form->end('Submit');
 ?>
