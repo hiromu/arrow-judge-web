@@ -144,7 +144,7 @@ class QuestionsController extends AppController {
 		if(!$question) {
 			$this->redirect('/problems/index');
 		}
-		if($question['Problem']['user_id'] != $this->Auth->user('id')) {
+		if($question['Problem']['user_id'] != $this->Auth->user('id') && !$this->Auth->user('admin')) {
 			$this->redirect('index/'.$id.'/'.$contest_id);
 		}
 		if($question['Question']['public'] != 2) {
