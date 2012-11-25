@@ -73,16 +73,16 @@ p {
 }
 
 /** Submission **/
-p.status_2 {
+td.status_2 {
 	color: #FDDD17;
 }
-p.status_3, p.status_4 {
+td.status_3, td.status_4 {
 	color: #0000AA;
 }
-p.status_5 {
+td.status_5 {
 	color: #CC0000;
 }
-p.status_6 {
+td.status_6 {
 	color: #00AA00;
 	font-weight: bold;
 }

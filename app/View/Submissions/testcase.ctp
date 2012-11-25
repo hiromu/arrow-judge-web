@@ -46,7 +46,7 @@ if($contest_id) {
 			<?php else: ?>
 			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
 			<?php endif; ?>
-			<td><p class="status_<?php echo h($submission['Submission']['status']);?>"><?php echo h($status[$submission['Submission']['status']]); ?></p></td>
+			<td class="status_<?php echo h($submission['Submission']['status']);?>"><?php echo h($status[$submission['Submission']['status']]); ?></td>
 		</tr>
 	</tbody>
 </table>

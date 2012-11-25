@@ -34,7 +34,7 @@ $status = json_decode($status, true);
 			<td><?php echo h($problem['Language']['name']); ?></td>
 			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
 			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
-			<td><p class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></p></td>
+			<td class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></td>
 		</tr>
 	</tbody>
 </table>
