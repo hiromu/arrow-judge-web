@@ -175,7 +175,7 @@ class JudgesController extends AppController {
 			}
 
 			$problem = $this->Submission->findById($submission['id']);
-			if($problem && $problem['Problem']['contest_id'] && !$problem['Problem']['public']) {
+			if($problem && $problem['Problem']['contest_id']) {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
 				if($contest && $contest['Contest']['start'] <= $problem['Submission']['created'] && $problem['Submission']['created'] <= $contest['Contest']['end']) {
 					$register = $this->Registration->find('first', array('conditions' => array('Registration.user_id' => $problem['Submission']['user_id'], 'Registration.contest_id' => $problem['Problem']['contest_id'])));
