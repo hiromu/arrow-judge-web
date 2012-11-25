@@ -78,7 +78,7 @@ class QuestionsController extends AppController {
 			}
 		}
 
-		if($problem['Problem']['user_id'] == $this->Auth->user('id')) {
+		if($problem['Problem']['user_id'] == $this->Auth->user('id') || $this->Auth->user('admin')) {
 			$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2),  'order' => 'Question.created DESC'));
 		} else {
 			$unanswered = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 2, 'Question.user_id' => $this->Auth->user('id')),  'order' => 'Question.created DESC'));
@@ -102,7 +102,7 @@ class QuestionsController extends AppController {
 		if(!$question) {
 			$this->redirect('/problems/index');
 		}
-		if($question['Problem']['user_id'] != $this->Auth->user('id')) {
+		if($question['Problem']['user_id'] != $this->Auth->user('id') && !$this->Auth->user('admin')) {
 			$this->redirect('index/'.$id.'/'.$contest_id);
 		}
 		if($question['Question']['public'] != 2) {
