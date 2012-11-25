@@ -173,7 +173,7 @@ class ProblemsController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($id);
-		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') && !$this->Auth->user('admin')) {
 			$this->redirect('index');
 		}
 		$this->set('problem', $problem);
