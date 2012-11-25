@@ -37,7 +37,7 @@
 			<td><?php echo $this->Html->link($submission['User']['username'], '/users/index/'.$submission['User']['id']); ?></td>
 			<?php endif; ?>
 			<td><?php echo h($submission['Language']['name']); ?></td>
-			<td><p class="status_<?php echo h($submission['Submission']['status']); ?>"><?php echo h($status[$submission['Submission']['status']]); ?></p></td>
+			<td class="status_<?php echo h($submission['Submission']['status']); ?>"><?php echo h($status[$submission['Submission']['status']]); ?></td>
 			<?php if($submission['Submission']['max_cpu'] == -1): ?>
 			<td>N/A sec</td>
 			<?php else: ?>
