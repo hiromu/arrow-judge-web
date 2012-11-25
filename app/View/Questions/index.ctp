@@ -45,7 +45,7 @@ if($contest_id) {
 		<tr>
 			<td><?php echo $this->Html->link($question['User']['username'], '/users/index/'.$question['User']['id']); ?></td>
 			<td><pre><?php echo h($question['Question']['question']); ?></pre></td>
-			<?php if($question['Problem']['user_id'] == $userid): ?>
+			<?php if($question['Problem']['user_id'] == $userid || $admin): ?>
 			<td><?php echo $this->Html->link('Answer =>', 'answer/'.$question['Question']['id']); ?></td>
 			<td><?php echo $this->Html->link('Delete =>', 'remove/'.$question['Question']['id']); ?></td>
 			<?php else: ?>
