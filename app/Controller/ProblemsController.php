@@ -51,6 +51,7 @@ class ProblemsController extends AppController {
 			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, 50, ''));
 			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, 50, ''));
 			$problem['Problem']['status'] = -1;
+
 			if($id) {
 				$contest = $this->Contest->findById($id);
 				if($contest) {
@@ -59,23 +60,29 @@ class ProblemsController extends AppController {
 						$problem['Problem']['public'] = 0;
 					} else {
 						$this->Session->setFlash(sprintf('Unable to add problem to %s', $contest['Contest']['name']), 'error');
+						$problem = null;
 					}
 				}
 			}
-			if($this->Problem->save($problem)) {
+
+			if($problem && $this->Problem->save($problem)) {
 				$problem_id = $this->Problem->getLastInsertID();
+
+				$testcase = array();
 				for($i = 0; $i < 100; $i++) {
-					$this->Testcase->create();
-					$testcase['Testcase']['problem_id'] = $problem_id;
-					$testcase['Testcase']['index'] = $i;
-					$this->Testcase->save($testcase);
+					$testcase[$i]['problem_id'] = $problem_id;
+					$testcase[$i]['index'] = $i;
 				}
+				$this->Testcase->saveAll($testcase);
+
+				$answer = array();
 				for($i = 0; $i < 100; $i++) {
 					$this->Answer->create();
-					$answer['Answer']['problem_id'] = $problem_id;
-					$answer['Answer']['index'] = $i;
-					$this->Answer->save($answer);
+					$answer[$i]['problem_id'] = $problem_id;
+					$answer[$i]['index'] = $i;
 				}
+				$this->Answer->saveAll($answer);
+
 				$this->redirect('setting/'.$problem_id.'/source');
 			}
 		}

@@ -19,7 +19,6 @@ App::uses('Debugger', 'Utility');
 ?>
 <h1>New Contest</h1>
 <?php
-	echo $this->Session->flash();
 	echo $this->Form->create('Contest');
 	echo $this->Form->input('name', array('type' => 'text', 'label' => 'Contest Name'));
 	echo $this->Form->input('admin', array('type' => 'text', 'label' => 'Admin Username', 'div' => 'required'));

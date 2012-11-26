@@ -23,7 +23,4 @@ App::uses('Debugger', 'Utility');
 	</div>
 </div>
 <h1>Problem Setting <?php echo h(sprintf('#%d', $problem['Problem']['id'])); ?></h1>
-<?php
-	echo $this->Session->flash();
-	echo $this->element($element);
-?>
+<?php echo $this->element($element); ?>

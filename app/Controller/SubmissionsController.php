@@ -31,7 +31,7 @@ class SubmissionsController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->deny('*');
-		$this->Auth->allow('index', 'search');
+		$this->Auth->allow('index', 'search', 'detail', 'testcase');
 		$this->Auth->flash['element'] = 'error';
 	}
 
@@ -56,9 +56,15 @@ class SubmissionsController extends AppController {
 		if(!$submission) {
 			$this->redirect('index');
 		}
-		if(!$this->Auth->user('admin')) {
-			if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
-				$this->redirect('index');
+		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+			if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
+				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+					if(strtotime($contest['Contest']['end']) > time()) {
+						$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
+						$this->redirect('index');
+					}
+				}
 			}
 		}
 
@@ -204,17 +210,14 @@ class SubmissionsController extends AppController {
 		if(!$submission) {
 			$this->redirect('index');
 		}
-		if(!$this->Auth->user('admin')) {
-			if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
-				$this->redirect('index');
-			}
-		}
-		if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
-			$contest = $this->Contest->findById($submission['Problem']['contest_id']);
-			if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-				if(strtotime($contest['Contest']['end']) > time()) {
-					$this->Session->setFlash('You are not permitted to view testcase during contest', 'error');
-					$this->redirect('detail/'.$id.'/'.$contest_id);
+		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+			if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
+				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+					if(strtotime($contest['Contest']['end']) > time()) {
+						$this->Session->setFlash('You are not permitted to view testcase during contest', 'error');
+						$this->redirect('detail/'.$id.'/'.$contest_id);
+					}
 				}
 			}
 		}
@@ -235,9 +238,10 @@ class SubmissionsController extends AppController {
 
 		$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id)));
 		if(!$output) {
-			$this->redirect('index');
+			$output = '';
+		} else {
+			$output = $output['Output']['output'];
 		}
-		$output = $output['Output']['output'];
 		if(strlen($output) > $this->options['testcase_limit'] * 1024) {
 			$output = substr($output, 0, $this->options['testcase_limit'] * 1024).' ...';
 		}

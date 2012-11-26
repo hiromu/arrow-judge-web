@@ -18,7 +18,6 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Register to <?php echo h($contest['Contest']['name']); ?></h1>
-<?php echo $this->Session->flash(); ?>
 <table class="table table-striped normal-pre">
 	<thead>
 		<tr>

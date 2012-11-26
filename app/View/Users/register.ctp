@@ -18,7 +18,6 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Registration</h1>
-<?php echo $this->Session->flash(); ?>
 <div class="row-fluid">
 <?php
 	echo $this->Form->create('User');

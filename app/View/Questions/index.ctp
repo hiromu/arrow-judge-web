@@ -23,7 +23,6 @@ if($contest_id) {
 <?php if($problem['Problem']['user_id'] != $userid && $userid): ?>
 <h1><?php echo h(sprintf('Question for #%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
 <?php
-	echo $this->Session->flash();
 	echo $this->Form->create('Question');
 	echo $this->Form->input('question', array('type' => 'textarea', 'label' => 'Question', 'rows' => '3'));
 	echo $this->Form->end('Submit');

@@ -18,10 +18,7 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Login</h1>
-<?php
-	echo $this->Session->flash();
-	echo $this->Session->flash('auth');
-?>
+<?php echo $this->Session->flash('auth'); ?>
 <div class="row-fluid">
 	<div class="login span6">
 	<?php

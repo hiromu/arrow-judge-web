@@ -19,7 +19,6 @@ App::uses('Debugger', 'Utility');
 ?>
 <h1>Contest Settings</h1>
 <?php
-	echo $this->Session->flash();
 	echo $this->Form->create('Contest');
 	echo $this->Form->input('name', array('type' => 'text', 'label' => 'Contest Name'));
 	echo $this->Form->input('start', array('type' => 'datetime', 'label' => 'Start', 'dateFormat' => 'YMD', 'timeFormat' => 24,'monthNames' => false, 'minYear' => date('Y'), 'maxYear' => date('Y') + 3));

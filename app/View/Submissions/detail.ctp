@@ -22,7 +22,6 @@ if($contest_id) {
 }
 ?>
 <h1>Submission Detail</h1>
-<?php echo $this->Session->flash(); ?>
 <table class="table table-striped">
 	<thead>
 		<tr>

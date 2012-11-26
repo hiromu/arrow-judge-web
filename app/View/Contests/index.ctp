@@ -18,7 +18,6 @@
 App::uses('Debugger', 'Utility');
 ?>
 <h1>Contests</h1>
-<?php echo $this->Session->flash(); ?>
 <?php if($admin): ?>
 <div class="append">
 	<i class="icon-plus-sign"></i>

@@ -23,7 +23,4 @@ App::uses('Debugger', 'Utility');
 	</div>
 </div>
 <h1>Create Problem</h1>
-<?php
-	echo $this->Session->flash();
-	echo $this->element('problem_statement');
-?>
+<?php echo $this->element('problem_statement'); ?>

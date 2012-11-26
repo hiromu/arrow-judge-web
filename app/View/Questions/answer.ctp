@@ -21,7 +21,6 @@ if($contest_id) {
 }
 ?>
 <h1><?php echo h(sprintf('Question for #%d: %s', $question['Problem']['id'], $question['Problem']['name'])); ?></h1>
-<?php echo $this->Session->flash(); ?>
 <table class="table table-striped normal-pre">
 	<thead>
 		<tr>

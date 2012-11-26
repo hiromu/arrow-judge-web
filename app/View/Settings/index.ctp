@@ -19,7 +19,6 @@ App::uses('Debugger', 'Utility');
 ?>
 <h1>Settings</h1>
 <?php
-	echo $this->Session->flash();
 	echo $this->Form->create('Setting');
 	echo $this->Form->input('title', array('type' => 'text', 'label' => 'Name of this site'));
 	echo $this->Form->input('top_page', array('type' => 'textarea', 'label' => 'Contents of top page', 'id' => 'top_page'));
