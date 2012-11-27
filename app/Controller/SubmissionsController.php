@@ -84,37 +84,39 @@ class SubmissionsController extends AppController {
 			$this->redirect('/problems/index');
 		}
 
-		$submission = $this->Problem->findById($id);
-		if(!$submission) {
+		$problem = $this->Problem->findById($id);
+		if(!$problem) {
 			$this->redirect('/problems/index');
 		}
 
 		$submit = $this->request->data;
-		if($submission['Problem']['public'] == 0) {
-			if($submission['Problem']['contest_id']) {
-				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
-				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-					$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
-					if(!$register) {
-						$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
-						$submit = null;
-					}
+		if($submit && ($problem['Problem']['public'] == 0 || $problem['Problem']['status'] != 6)) {
+			if($problem['Problem']['contest_id']) {
+				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+				if($contest) {
+					if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+						$register = $this->Registration->find('first', array('conditions' => array('Registration.contest_id' => $problem['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
+						if(!$register) {
+							$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
+							$submit = null;
+						}
 
-					$start_time = strtotime($submission['Contest']['start']);
-					if(time() < $start_time) {
-						$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
-						$submit = null;
-					}
+						$start_time = strtotime($problem['Contest']['start']);
+						if(time() < $start_time) {
+							$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
+							$submit = null;
+						}
 
-					$end_time = strtotime($submission['Contest']['end']);
-					if($end_time < time()) {
-						$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
-						$submit = null;
+						$end_time = strtotime($problem['Contest']['end']);
+						if($end_time < time()) {
+							$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
+							$submit = null;
+						}
+					} else {
+						$submit['Submission']['secret'] = 1;
 					}
-				} else if($contest && $submit) {
-					$submit['Submission']['secret'] = 1;
 				}
-			} else if($this->Auth->user('admin') || $submission['Problem']['user_id'] == $this->Auth->user('id')) {
+			} else if($this->Auth->user('admin') || $problem['Problem']['user_id'] == $this->Auth->user('id')) {
 				$submit['Submission']['secret'] = 1;
 			}
 		}
@@ -147,7 +149,7 @@ class SubmissionsController extends AppController {
 		}
 		$this->set('lang', $lang);
 		$this->set('coloring', json_encode($coloring, true));
-		$this->set('problem', $submission);
+		$this->set('problem', $problem);
 		$this->set('contest_id', $contest_id);
 	}
 
