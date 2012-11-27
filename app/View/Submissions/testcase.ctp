@@ -22,34 +22,7 @@ if($contest_id) {
 }
 ?>
 <h1>Submission Detail</h1>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Problem ID</th>
-			<th>Language</th>
-			<th>CPU Limit</th>
-			<th>Memory Limit</th>
-			<th>Status</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $submission['Problem']['id'], $submission['Problem']['name'])), '/problems/view/'.$submission['Problem']['id']); ?></td>
-			<td><?php echo h($submission['Language']['name']); ?></td>
-			<?php if($submission['Submission']['max_cpu'] == -1): ?>
-			<td>N/A sec</td>
-			<?php else: ?>
-			<td><?php echo h($submission['Submission']['max_cpu']); ?> sec</td>
-			<?php endif; ?>
-			<?php if($submission['Submission']['max_memory'] == -1): ?>
-			<td>N/A KB</td>
-			<?php else: ?>
-			<td><?php echo h($submission['Submission']['max_memory']); ?> KB</td>
-			<?php endif; ?>
-			<td class="status_<?php echo h($submission['Submission']['status']);?>"><?php echo h($status[$submission['Submission']['status']]); ?></td>
-		</tr>
-	</tbody>
-</table>
+<?php echo $this->Element('submissions', array('link_hide' => true, 'contest_id' => null, 'submissions' => array($submission))); ?>
 <h2>Testcase <?php echo h(sprintf('#%d', $testcase_id + 1)); ?></h2>
 <h3>CPU: <?php echo h(sprintf('%f sec', $cpu)); ?>, Memory: <?php echo h(sprintf('%d KB', $memory)); ?></h3>
 <div class="row-fluid">

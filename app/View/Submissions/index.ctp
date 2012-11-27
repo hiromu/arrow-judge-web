@@ -22,13 +22,4 @@ $status = json_decode($status, true);
 <h2>Search Submissions</h2>
 <?php echo $this->Element('submission_search', array('contest_id' => null, 'user_id' => null)); ?>
 <h2>Latest Submissions</h2>
-<div class="paginate">
-	<?php
-		if($this->Paginator->numbers()) {
-			echo $this->Paginator->prev('« Prev', null, null, array('class' => 'disabled'));
-			echo $this->Paginator->numbers();
-			echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'));
-		}
-	?>
-</div>
-<?php echo $this->Element('submission', array('user_show' => true, 'contest_id' => null)); ?>
+<?php echo $this->Element('submissions', array('contest_id' => null, 'paginate' => true)); ?>

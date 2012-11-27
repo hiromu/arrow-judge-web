@@ -37,7 +37,11 @@ class ProblemsController extends AppController {
 
 	public function index() {
 		$publics = $this->Problem->find('all', array('conditions' => array('Problem.public' => '1', 'Problem.status' => '6'), 'order' => 'Problem.created DESC'));
-		$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.user_id' => $this->Auth->user('id'), 'AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0')))), 'order' => 'Problem.created DESC'));
+		if($this->Auth->user('admin')) {
+			$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0'))), 'order' => 'Problem.created DESC'));
+		} else {
+			$privates = $this->Problem->find('all', array('conditions' => array('AND' => array('Problem.user_id' => $this->Auth->user('id'), 'AND' => array('Problem.contest_id' => null, 'OR' => array('Problem.status !=' => '6', 'Problem.public' => '0')))), 'order' => 'Problem.created DESC'));
+		}
 		$this->set('publics', $publics);
 		$this->set('privates', $privates);
 	}
@@ -198,13 +202,17 @@ class ProblemsController extends AppController {
 		if(!$problem) {
 			$this->redirect('index');
 		}
-		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] != null) {
-				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
-				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-					if(strtotime($contest['Contest']['start']) > time()) {
-						$this->redirect('index');
+		if(!$this->Auth->user('admin') && $problem['Problem']['user_id'] != $this->Auth->user('id')) {
+			if($problem['Problem']['public'] == 0) {
+				if($problem['Problem']['contest_id']) {
+					$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+					if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+						if(strtotime($contest['Contest']['start']) > time()) {
+							$this->redirect('index');
+						}
 					}
+				} else {
+					$this->redirect('index');
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
@@ -229,10 +237,16 @@ class ProblemsController extends AppController {
 		if(!$problem) {
 			$this->redirect('index');
 		}
-		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
-			if($problem['Problem']['public'] == 0 && $problem['Problem']['contest_id'] != null) {
-				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
-				if($contest && strtotime($contest['Contest']['start']) > time()) {
+		if(!$this->Auth->user('admin') && $problem['Problem']['user_id'] != $this->Auth->user('id')) {
+			if($problem['Problem']['public'] == 0) {
+				if($problem['Problem']['contest_id']) {
+					$contest = $this->Contest->findById($problem['Problem']['contest_id']);
+					if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+						if(strtotime($contest['Contest']['start']) > time()) {
+							$this->redirect('index');
+						}
+					}
+				} else {
 					$this->redirect('index');
 				}
 			}

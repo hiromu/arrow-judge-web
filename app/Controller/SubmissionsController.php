@@ -56,14 +56,19 @@ class SubmissionsController extends AppController {
 		if(!$submission) {
 			$this->redirect('index');
 		}
-		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
-			if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
-				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
-				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-					if(strtotime($contest['Contest']['end']) > time()) {
-						$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
-						$this->redirect('index');
+		if($submission['Problem']['public'] == 0) {
+			if(!$this->Auth->user('admin') && $submission['Submission']['user_id'] != $this->Auth->user('id')) {
+				if($submission['Problem']['contest_id']) {
+					$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+					if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+						if(strtotime($contest['Contest']['end']) > time()) {
+							$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
+							$this->redirect('index');
+						}
 					}
+				} else {
+					$this->Session->setFlash('You are not permitted to view submissions of the secret problem', 'error');
+					$this->redirect('index');
 				}
 			}
 		}
@@ -85,27 +90,31 @@ class SubmissionsController extends AppController {
 		}
 
 		$submit = $this->request->data;
-		if($submission['Problem']['contest_id'] != null && $submission['Problem']['public'] == 0) {
-			$contest = $this->Contest->findById($submission['Problem']['contest_id']);
-			if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-				$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
-				if(!$register) {
-					$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
-					$submit = null;
-				}
+		if($submission['Problem']['public'] == 0) {
+			if($submission['Problem']['contest_id']) {
+				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
+					$register = $this->Registration->find('first', array('condition' => array('Registration.contest_id' => $submission['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
+					if(!$register) {
+						$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
+						$submit = null;
+					}
 
-				$start_time = strtotime($submission['Contest']['start']);
-				if(time() < $start_time) {
-					$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
-					$submit = null;
-				}
+					$start_time = strtotime($submission['Contest']['start']);
+					if(time() < $start_time) {
+						$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
+						$submit = null;
+					}
 
-				$end_time = strtotime($submission['Contest']['end']);
-				if($end_time < time()) {
-					$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
-					$submit = null;
+					$end_time = strtotime($submission['Contest']['end']);
+					if($end_time < time()) {
+						$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
+						$submit = null;
+					}
+				} else if($contest && $submit) {
+					$submit['Submission']['secret'] = 1;
 				}
-			} else if($contest && $submit) {
+			} else if($this->Auth->user('admin') || $submission['Problem']['user_id'] == $this->Auth->user('id')) {
 				$submit['Submission']['secret'] = 1;
 			}
 		}
@@ -210,14 +219,19 @@ class SubmissionsController extends AppController {
 		if(!$submission) {
 			$this->redirect('index');
 		}
-		if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
-			if($submission['Problem']['public'] == 0 && $submission['Problem']['contest_id'] != null) {
-				$contest = $this->Contest->findById($submission['Problem']['contest_id']);
-				if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
-					if(strtotime($contest['Contest']['end']) > time()) {
-						$this->Session->setFlash('You are not permitted to view testcase during contest', 'error');
-						$this->redirect('detail/'.$id.'/'.$contest_id);
+		if($submission['Problem']['public'] == 0) {
+			if(!$this->Auth->user('admin') && $submission['Submission']['user_id'] != $this->Auth->user('id')) {
+				if($submission['Problem']['contest_id']) {
+					$contest = $this->Contest->findById($submission['Problem']['contest_id']);
+					if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
+						if(strtotime($contest['Contest']['end']) > time()) {
+							$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
+							$this->redirect('index');
+						}
 					}
+				} else {
+					$this->Session->setFlash('You are not permitted to view submissions of the secret problem', 'error');
+					$this->redirect('index');
 				}
 			}
 		}

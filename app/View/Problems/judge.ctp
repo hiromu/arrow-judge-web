@@ -23,18 +23,18 @@ $status = json_decode($status, true);
 		<tr>
 			<th>Problem ID</th>
 			<th>Language</th>
+			<th>Status</th>
 			<th>CPU Limit</th>
 			<th>Memory Limit</th>
-			<th>Status</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></td>
 			<td><?php echo h($problem['Language']['name']); ?></td>
+			<td class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></td>
 			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
 			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
-			<td class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></td>
 		</tr>
 	</tbody>
 </table>

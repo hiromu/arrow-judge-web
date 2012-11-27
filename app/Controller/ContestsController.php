@@ -26,6 +26,7 @@ class ContestsController extends AppController {
 	public $helpers = array('Form');
 	public $uses = array('Contest', 'User', 'Registration', 'Problem', 'Submission', 'Language');
 	public $components = array('Session');
+	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -179,7 +180,7 @@ class ContestsController extends AppController {
 			$problems[] = $problem['id'];
 			$problem_suggest[$problem['id']] = sprintf('#%d: %s', $problem['id'], $problem['name']);
 		}
-		$submissions = $this->Submission->find('all', array('conditions' => array('Submission.user_id' => $this->Auth->user('id'), 'Submission.problem_id' => $problems), 'order' => 'Submission.created DESC'));
+		$submissions = $this->paginate('Submission', array('Submission.user_id' => $this->Auth->user('id'), 'Submission.problem_id' => $problems, 'Submission.created <' => $contest['Contest']['end']));
 		$this->set('problem_suggest', $problem_suggest);
 		$this->set('submissions', $submissions);
 

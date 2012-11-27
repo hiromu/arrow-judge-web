@@ -24,13 +24,4 @@ if($contest_id) {
 <h2>Search Submissions</h2>
 <?php echo $this->Element('submission_search', array('problem_id' => $problem['Problem']['id'], 'contest_id' => $contest_id)); ?>
 <h2>All Submissions</h2>
-<div class="paginate">
-	<?php
-		if($this->Paginator->numbers()) {
-			echo $this->Paginator->prev('« Prev', null, null, array('class' => 'disabled'));
-			echo $this->Paginator->numbers();
-			echo $this->Paginator->next('Next »', null, null, array('class' => 'disabled'));
-		}
-	?>
-</div>
-<?php echo $this->Element('submission', array('user_show' => true, 'contest_id' => $contest_id)); ?>
+<?php echo $this->Element('submissions', array('contest_id' => $contest_id, 'paginate' => true)); ?>
