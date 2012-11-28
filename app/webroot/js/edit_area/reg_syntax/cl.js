@@ -5,7 +5,7 @@ editAreaLoader.load_syntax["cl"] = {
     ,'QUOTEMARKS' : ['"']
     ,'KEYWORD_CASE_SENSITIVE' : false
     ,'KEYWORDS' : {
-	'special-operators' : [
+	'spoperators' : [
 	    'block', 'let*', 'return-from', 'catch', 'load-time-value', 'setq',
 	    'eval-when', 'locally', 'symbol-macrolet', 'flet', 'macrolet',
 	    'tagbody', 'function', 'multiple-value-call', 'the', 'go',
@@ -27,8 +27,8 @@ editAreaLoader.load_syntax["cl"] = {
 	'COMMENTS': 'color: #D46633;'
 	,'QUOTESMARKS': 'color: #009933;'
 	,'KEYWORDS' : {
-	    'special-operators' : 'color: #00BBDD;'
-	    ,'macros' : 'color: #00BBDD;'
+		'spoperators' : 'color: #00BBDD;'
+		,'macros' : 'color: #00BBDD;'
 	}
 	,'OPERATORS' : 'color: #FF00FF;'
 	,'DELIMITERS' : 'color: #0038E1;'
