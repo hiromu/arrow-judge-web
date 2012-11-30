@@ -7,7 +7,7 @@ Question:
 <?php echo $question; ?>
 
 
-To answer to the question, please copy this link into your browser's address bar and open it:
+To answer the question, please copy this link into your browser's address bar and open it:
 
 <?php echo $url."\n"; ?>
 
