@@ -6,8 +6,18 @@ class UsersController extends AppController {
 	public $name = 'Users';
 	public $helpers = array('Form', 'Paginator');
 	public $uses = array('User', 'Submission', 'Language');
-	public $components = array('Email', 'Session', 'Security');
+	public $components = array('Email', 'Session', 'Security' => array('validatePost' => false));
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
+
+	public function beforeFilter() {
+		$this->Security->blackHoleCallback = 'blackhole';
+		parent::beforeFilter();
+	}
+
+	public function blackhole() {
+		$this->Session->setFlash('Invalid request was detected. Please resubmit.', 'error');
+		$this->redirect($this->referer());
+	}
 
 	public function index($id = null) {
 		if(!$id) {
