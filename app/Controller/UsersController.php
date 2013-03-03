@@ -96,6 +96,65 @@ class UsersController extends AppController {
 		}
 	}
 
+	public function request() {
+		if($this->Auth->user()) {
+			$this->redirect('/');
+		}
+
+		if($this->request->data) {
+			$user = $this->User->find('first', array('conditions' => array('User.email' => $this->request->data['User']['username'])));
+			if(!$user) {
+				$user = $this->User->find('first', array('conditions' => array('User.username' => $this->request->data['User']['username'])));
+			}
+
+			if(!$user) {
+				$this->Session->setFlash($this->request->data['User']['username'].' was not found', 'error');
+			} else {
+				$rand = md5(uniqid(rand(), 1));
+				$user['User']['confirm'] = $rand;
+				if($this->User->save($user, false, array('confirm'))) {
+					$contest = array();
+					$content['username'] = $user['User']['username'];
+					$content['url'] = Router::url('reset', true).'/'.$rand;
+					$content['top_page'] = Router::url('/', true);
+					$content['title'] = $this->options['title'];
+
+					$email = new CakeEmail('smtp');
+					$email->template('reset', 'default');
+					$email->viewVars($content);
+					$email->to($user['User']['email']);
+					$email->from($this->options['email_address']);
+					$email->subject($this->options['title'].': '.'Password Reset Confirmation');
+					$email->send();
+
+					$this->Session->setFlash('Please click on the link in an email send for your email address.', 'success');
+				}
+			}
+		}
+	}
+
+	public function reset($id = null) {
+		if(!$id) {
+			$this->redirect('/');
+		}
+
+		$user = $this->User->find('first', array('conditions' => array('User.confirm' => $id)));
+		if(!$user) {
+			$this->redirect('/');
+		}
+
+		if($this->request->data) {
+			$user['User']['confirm'] = md5(uniqid(rand(), 1));
+			$user['User']['password'] = $this->request->data['User']['password'];
+			$user['User']['confirm_password'] = $this->request->data['User']['confirm_password'];
+
+			if($this->User->save($user)) {
+				$this->Session->setFlash('Your password was changed successfully.', 'success');
+				$this->redirect('login');
+			}
+		}
+	}
+
 	public function setting() {
 		if(!$this->Auth->user()) {
 			$this->redirect('/');
