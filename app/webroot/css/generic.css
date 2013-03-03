@@ -130,8 +130,7 @@ td.status_6 {
 
 /** containers **/
 div.form,
-div.index,
-div.view {
+div.index,div.view {
 	float:right;
 	width:76%;
 	border-left:1px solid #666;
@@ -340,7 +339,7 @@ fieldset fieldset div {
 form div {
 	clear: both;
 	margin-bottom: 1em;
-	padding-bottom: .5em;
+	padding: .5em;
 	vertical-align: text-top;
 }
 form .input {
