@@ -6,7 +6,7 @@ class UsersController extends AppController {
 	public $name = 'Users';
 	public $helpers = array('Form', 'Paginator');
 	public $uses = array('User', 'Submission', 'Language');
-	public $components = array('Email', 'Session');
+	public $components = array('Email', 'Session', 'Security');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
 	public function index($id = null) {

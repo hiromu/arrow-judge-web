@@ -24,7 +24,7 @@ App::uses('AppController', 'Controller');
 class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form', 'Paginator');
-	public $components = array('Session', 'Security');
+	public $components = array('Session');
 	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
