@@ -139,9 +139,17 @@ class JudgesController extends AppController {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);
 
-			$output_dir = ROOT.'/app/Data/Output/'.$submission['id'].'/';
+			$output_dir = ROOT.'/app/Data/Output/'.$submission['id'];
+			if(file_exists($output_dir)) {
+				if(!is_dir($output_dir)) {
+					unlink($output_dir);
+					mkdir($output_dir);
+				}
+			} else {
+				mkdir($output_dir);
+			}
 			for($i = 0; $i < count($outputs); $i++) {
-				file_put_contents($output_dir.$i, $outputs[$i]);
+				file_put_contents($output_dir.'/'.$i, $outputs[$i]);
 			}
 
 			$problem = $this->Submission->findById($submission['id']);
