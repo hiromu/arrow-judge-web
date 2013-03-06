@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class JudgesController extends AppController {
 	public $name = 'Judges';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Client', 'Testcase', 'Answer', 'Output', 'Contest', 'Registration');
+	public $uses = array('Problem', 'Submission', 'Client', 'Contest', 'Registration');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -30,7 +30,7 @@ class JudgesController extends AppController {
 			$this->Problem->save($judge, true, array('status', 'modified'));
 
 			$testcases = array();
-			$testcase_dir = ROOT.'/Data/Testcase/'.$judge['Problem']['id'];
+			$testcase_dir = ROOT.'/app/Data/Testcase/'.$judge['Problem']['id'];
 			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
 				$testcases[] = file_get_contents($testcase_dir.'/'.$i);
 			}
@@ -56,13 +56,13 @@ class JudgesController extends AppController {
 			$this->Submission->save($judge, true, array('status', 'modified'));
 
 			$testcases = array();
-			$testcase_dir = ROOT.'/Data/Testcase/'.$judge['Problem']['id'];
+			$testcase_dir = ROOT.'/app/Data/Testcase/'.$judge['Problem']['id'];
 			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
 				$testcases[] = file_get_contents($testcase_dir.'/'.$i);
 			}
 
 			$answers = array();
-			$answer_dir = ROOT.'/Data/Answer/'.$judge['Problem']['id'];
+			$answer_dir = ROOT.'/app/Data/Answer/'.$judge['Problem']['id'];
 			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
 				$answers[] = file_get_contents($answer_dir.'/'.$i);
 			}
@@ -128,7 +128,7 @@ class JudgesController extends AppController {
 
 		$result = array();
 		if($post['problem'] == '1') {
-			$answer_dir = ROOT.'/Data/Answer/'.$submission['id'].'/';
+			$answer_dir = ROOT.'/app/Data/Answer/'.$submission['id'].'/';
 			for($i = 0; $i < count($answers); $i++) {
 				file_put_contents($answer_dir.$i, $answers[$i]);
 			}
@@ -139,7 +139,7 @@ class JudgesController extends AppController {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);
 
-			$output_dir = ROOT.'/Data/Output/'.$submission['id'].'/';
+			$output_dir = ROOT.'/app/Data/Output/'.$submission['id'].'/';
 			for($i = 0; $i < count($outputs); $i++) {
 				file_put_contents($output_dir.$i, $outputs[$i]);
 			}

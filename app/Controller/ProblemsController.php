@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class ProblemsController extends AppController {
 	public $name = 'Problems';
 	public $helpers = array('Form', 'Paginator');
-	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Testcase', 'Answer');
+	public $uses = array('Contest', 'Problem', 'Language', 'Submission');
 	public $components = array('Session');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
@@ -145,10 +145,10 @@ class ProblemsController extends AppController {
 				$this->set('element', 'problem_sample');
 				$this->set('percentage', '75%');
 			} else if($phase == 'testcase') {
-				$testcase_dir = ROOT.'/Data/Testcase/'.$id.'/';
+				$testcase_dir = ROOT.'/app/Data/Testcase/'.$id.'/';
 				$problem['Problem']['testcases'] = array();
 				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-					$problem['Problem']['testcase'.$i] = @file_get_contents($testcase_dir.$i);
+					$problem['Problem']['testcase'.$i] = file_get_contents($testcase_dir.$i);
 				}
 				$this->set('element', 'problem_testcase');
 				$this->set('percentage', '100%');

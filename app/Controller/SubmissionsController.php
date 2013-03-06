@@ -25,7 +25,7 @@ class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form', 'Paginator');
 	public $components = array('Session');
-	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Testcase', 'Output');
+	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
 	public function beforeFilter() {
