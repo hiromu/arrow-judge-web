@@ -38,7 +38,7 @@
 <?php echo $this->Form->create('Problem'); ?>
 <div class="samples">
 	<label>Sample Input/Output</label>
-	<?php for($i = 1; $i <= min(count($problem['Problem']['sample_inputs']), count($problem['Problem']['sample_outputs'])); $i++): ?>
+	<?php for($i = 0; $i < $sample_limit; $i++): ?>
 		<div style="display: none">
 			<?php
 				echo sprintf('<label onclick="showField(this)"><i class="icon-chevron-down"></i>#%d</label>', $i);

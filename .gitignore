@@ -1,2 +1,5 @@
 /app/tmp/cache/*/**
+/app/Data/Testcase/*
+/app/Data/Output/*
+/app/Data/Answer/*
 .*.swp

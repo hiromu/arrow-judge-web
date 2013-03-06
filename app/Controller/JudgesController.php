@@ -29,15 +29,15 @@ class JudgesController extends AppController {
 			$judge['Problem']['modified'] = null;
 			$this->Problem->save($judge, true, array('status', 'modified'));
 
-			$tests = array();
-			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.index'));
-			foreach($testcases as $testcase) {
-				$tests[] = $testcase['Testcase']['testcase'];
+			$testcases = array();
+			$testcase_dir = ROOT.'/Data/Testcase/'.$judge['Problem']['id'];
+			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+				$testcases[] = file_get_contents($testcase_dir.'/'.$i);
 			}
 
 			$json = array();
 			$json['problem'] = '1';
-			$json['input'] = $tests;
+			$json['input'] = $testcases;
 			$json['memory'] = $judge['Problem']['memory'] * 1024;
 			foreach(array('id', 'cpu', 'source') as $key) {
 				$json[$key] = $judge['Problem'][$key];
@@ -55,22 +55,22 @@ class JudgesController extends AppController {
 			$judge['Submission']['modified'] = null;
 			$this->Submission->save($judge, true, array('status', 'modified'));
 
-			$tests = array();
-			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.index'));
-			foreach($testcases as $testcase) {
-				$tests[] = $testcase['Testcase']['testcase'];
+			$testcases = array();
+			$testcase_dir = ROOT.'/Data/Testcase/'.$judge['Problem']['id'];
+			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+				$testcases[] = file_get_contents($testcase_dir.'/'.$i);
 			}
 
-			$ans = array();
-			$answers = $this->Answer->find('all', array('conditions' => array('Answer.problem_id' => $judge['Problem']['id']), 'order' => 'Answer.index'));
-			foreach($answers as $answer) {
-				$ans[] = $answer['Answer']['answer'];
+			$answers = array();
+			$answer_dir = ROOT.'/Data/Answer/'.$judge['Problem']['id'];
+			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+				$answers[] = file_get_contents($answer_dir.'/'.$i);
 			}
 
 			$json = array();
 			$json['problem'] = '0';
-			$json['input'] = $tests;
-			$json['answer'] = $ans;
+			$json['input'] = $testcases;
+			$json['answer'] = $answers;
 			$json['cpu'] = $judge['Problem']['cpu'];
 			$json['memory'] = $judge['Problem']['memory'] * 1024;
 			foreach(array('id', 'source') as $key) {
@@ -128,8 +128,9 @@ class JudgesController extends AppController {
 
 		$result = array();
 		if($post['problem'] == '1') {
+			$answer_dir = ROOT.'/Data/Answer/'.$submission['id'].'/';
 			for($i = 0; $i < count($answers); $i++) {
-				$this->Answer->updateAll(array('answer' => '"'.$answers[$i].'"'), array('AND' => array('Answer.problem_id' => $submission['id'], 'Answer.index' => $i)));
+				file_put_contents($answer_dir.$i, $answers[$i]);
 			}
 			$result['Problem'] = $submission;
 			$this->Problem->save($result);
@@ -137,16 +138,10 @@ class JudgesController extends AppController {
 		} else {
 			$result['Submission'] = $submission;
 			$this->Submission->save($result);
+
+			$output_dir = ROOT.'/Data/Output/'.$submission['id'].'/';
 			for($i = 0; $i < count($outputs); $i++) {
-				$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $submission['id'], 'Output.index' => $i)));
-				if(!$output) {
-					$output = array();
-					$output['Output']['id'] = null;
-					$output['Output']['submission_id'] = $submission['id'];
-					$output['Output']['index'] = $i;
-				}
-				$output['Output']['output'] = $outputs[$i];
-				$this->Output->save($output);
+				file_put_contents($output_dir.$i, $outputs[$i]);
 			}
 
 			$problem = $this->Submission->findById($submission['id']);

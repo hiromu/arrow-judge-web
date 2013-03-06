@@ -32,8 +32,8 @@ class ProblemsController extends AppController {
 			$problem['Problem']['user_id'] = $this->Auth->user('id');
 			$problem['Problem']['cpu'] = 0;
 			$problem['Problem']['memory'] = 0;
-			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, 50, ''));
-			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, 50, ''));
+			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, $this->options['sample_limit'], ''));
+			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, $this->options['sample_limit'], ''));
 			$problem['Problem']['status'] = -1;
 
 			if($id) {
@@ -52,20 +52,25 @@ class ProblemsController extends AppController {
 			if($problem && $this->Problem->save($problem)) {
 				$problem_id = $this->Problem->getLastInsertID();
 
-				$testcase = array();
-				for($i = 0; $i < 100; $i++) {
-					$testcase[$i]['problem_id'] = $problem_id;
-					$testcase[$i]['index'] = $i;
+				$testcase_dir = ROOT.'/app/Data/Testcase/'.$problem_id;
+				if(file_exists($testcase_dir)) {
+					if(!is_dir($testcase_dir)) {
+						unlink($testcase_dir);
+						mkdir($testcase_dir);
+					}
+				} else {
+					mkdir($testcase_dir);
 				}
-				$this->Testcase->saveAll($testcase);
 
-				$answer = array();
-				for($i = 0; $i < 100; $i++) {
-					$this->Answer->create();
-					$answer[$i]['problem_id'] = $problem_id;
-					$answer[$i]['index'] = $i;
+				$answer_dir = ROOT.'/app/Data/Answer/'.$problem_id;
+				if(file_exists($answer_dir)) {
+					if(!is_dir($answer_dir)) {
+						unlink($answer_dir);
+						mkdir($answer_dir);
+					}
+				} else {
+					mkdir($answer_dir);
 				}
-				$this->Answer->saveAll($answer);
 
 				$this->redirect('setting/'.$problem_id.'/source');
 			}
@@ -96,18 +101,17 @@ class ProblemsController extends AppController {
 			} else if($phase == 'sample') {
 				$sample_inputs = array();
 				$sample_outputs = array();
-				for($i = 1; isset($problem['Problem']['sample_input'.$i]) && isset($problem['Problem']['sample_output'.$i]); $i++) {
+				for($i = 0; $i < $this->options['sample_limit']; $i++) {
 					$sample_inputs[] = $problem['Problem']['sample_input'.$i];
 					$sample_outputs[] = $problem['Problem']['sample_output'.$i];
 				}
-				$problem['Problem']['sample_inputs'] = json_encode($sample_inputs);
-				$problem['Problem']['sample_outputs'] = json_encode($sample_outputs);
 				if($this->Problem->save($problem)) {
 					$this->redirect('setting/'.$id.'/testcase');
 				}
 			 } else if($phase == 'testcase') {
-				for($i = 1; isset($problem['Problem']['testcase'.$i]); $i++) {
-					$this->Testcase->updateAll(array('testcase' => sprintf('"%s"', $problem['Problem']['testcase'.$i])), array('problem_id' => $id, 'index' => $i - 1));
+				$testcase_dir = ROOT.'/app/Data/Testcase/'.$id.'/';
+				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+					file_put_contents($testcase_dir.$i, $problem['Problem']['testcase'.$i]);
 				}
 				$problem['Problem']['status'] = 0;
 				if($this->Problem->save($problem)) {
@@ -134,18 +138,17 @@ class ProblemsController extends AppController {
 			} else if($phase == 'sample') {
 				$problem['Problem']['sample_inputs'] = json_decode($problem['Problem']['sample_inputs'], true);
 				$problem['Problem']['sample_outputs'] = json_decode($problem['Problem']['sample_outputs'], true);
-				for($i = 1; $i <= min(count($problem['Problem']['sample_inputs']), count($problem['Problem']['sample_outputs'])); $i++) {
-					$problem['Problem']['sample_input'.$i] = $problem['Problem']['sample_inputs'][$i - 1];
-					$problem['Problem']['sample_output'.$i] = $problem['Problem']['sample_outputs'][$i - 1];
+				for($i = 0; $i < $this->options['sample_limit']; $i++) {
+					$problem['Problem']['sample_input'.$i] = $problem['Problem']['sample_inputs'][$i];
+					$problem['Problem']['sample_output'.$i] = $problem['Problem']['sample_outputs'][$i];
 				}
 				$this->set('element', 'problem_sample');
 				$this->set('percentage', '75%');
 			} else if($phase == 'testcase') {
-				$testcase = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $id), 'order' => 'Testcase.index'));
+				$testcase_dir = ROOT.'/Data/Testcase/'.$id.'/';
 				$problem['Problem']['testcases'] = array();
-				for($i = 1; $i <= count($testcase); $i++) {
-					$problem['Problem']['testcases'][] = $testcase[$i - 1]['Testcase']['testcase'];
-					$problem['Problem']['testcase'.$i] = $testcase[$i - 1]['Testcase']['testcase'];
+				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+					$problem['Problem']['testcase'.$i] = @file_get_contents($testcase_dir.$i);
 				}
 				$this->set('element', 'problem_testcase');
 				$this->set('percentage', '100%');
@@ -259,15 +262,13 @@ class ProblemsController extends AppController {
 		}
 		$this->set('problem', $problem);
 
-		$testcase_id -= 1;
-
-		$input = $this->Testcase->find('first', array('conditions' => array('Testcase.problem_id' => $id, 'Testcase.index' => $testcase_id)));
+		$input = file_get_contents(ROOT.'/Data/Testcase/'.$id.'/'.$testcase_id);
 		if(!$input) {
 			$this->redirect('index');
 		}
 		$this->set('input', $input['Testcase']['testcase']);
 
-		$output = $this->Answer->find('first', array('conditions' => array('Answer.problem_id' => $id, 'Answer.index' => $testcase_id)));
+		$output = file_get_contents(ROOT.'/Data/Answer/'.$id.'/'.$testcase_id);
 		if(!$output) {
 			$this->redirect('index');
 		}

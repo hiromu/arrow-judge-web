@@ -38,7 +38,7 @@
 <?php echo $this->Form->create('Problem'); ?>
 <div class="testcases">
 	<label>Testcases</label>
-	<?php for($i = 1; $i <= count($problem['Problem']['testcases']); $i++): ?>
+	<?php for($i = 0; $i < $testcase_limit; $i++): ?>
 		<div style="display: none">
 			<?php
 				echo sprintf('<label onclick="showField(this)"><i class="icon-chevron-down"></i>#%d</label>', $i);

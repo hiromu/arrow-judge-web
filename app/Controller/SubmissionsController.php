@@ -242,21 +242,18 @@ class SubmissionsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = $this->Testcase->find('first', array('conditions' => array('Testcase.problem_id' => $submission['Problem']['id'], 'Testcase.index' => $testcase_id)));
+		$input = file_get_contents(ROOT.'/Data/Testcase/'.$submission['Problem']['id'].'/'.$testcase_id);
 		if(!$input) {
 			$this->redirect('index');
 		}
-		$input = $input['Testcase']['testcase'];
 		if(strlen($input) > $this->options['testcase_limit'] * 1024) {
 			$input = substr($input, 0, $this->options['testcase_limit'] * 1024).' ...';
 		}
 		$this->set('input', $input);
 
-		$output = $this->Output->find('first', array('conditions' => array('Output.submission_id' => $id, 'Output.index' => $testcase_id)));
+		$output = file_get_contents(ROOT.'/Data/Output/'.$id.'/'.$testcase_id);
 		if(!$output) {
 			$output = '';
-		} else {
-			$output = $output['Output']['output'];
 		}
 		if(strlen($output) > $this->options['testcase_limit'] * 1024) {
 			$output = substr($output, 0, $this->options['testcase_limit'] * 1024).' ...';
