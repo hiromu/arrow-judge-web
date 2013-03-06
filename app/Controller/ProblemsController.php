@@ -105,6 +105,8 @@ class ProblemsController extends AppController {
 					$sample_inputs[] = $problem['Problem']['sample_input'.$i];
 					$sample_outputs[] = $problem['Problem']['sample_output'.$i];
 				}
+				$problem['Problem']['sample_inputs'] = json_encode($sample_inputs);
+				$problem['Problem']['sample_outputs'] = json_encode($sample_outputs);
 				if($this->Problem->save($problem)) {
 					$this->redirect('setting/'.$id.'/testcase');
 				}
@@ -132,7 +134,7 @@ class ProblemsController extends AppController {
 					$coloring[$language['Language']['id']] = $language['Language']['coloring'];
 				}
 				$this->set('lang', $lang);
-				$this->set('coloring', json_encode($coloring, true));
+				$this->set('coloring', json_encode($coloring));
 				$this->set('element', 'problem_source');
 				$this->set('percentage', '50%');
 			} else if($phase == 'sample') {
