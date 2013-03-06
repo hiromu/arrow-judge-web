@@ -262,17 +262,17 @@ class ProblemsController extends AppController {
 		}
 		$this->set('problem', $problem);
 
-		$input = file_get_contents(ROOT.'/Data/Testcase/'.$id.'/'.$testcase_id);
+		$input = file_get_contents(ROOT.'/app/Data/Testcase/'.$id.'/'.$testcase_id);
 		if(!$input) {
 			$this->redirect('index');
 		}
-		$this->set('input', $input['Testcase']['testcase']);
+		$this->set('input', $input);
 
-		$output = file_get_contents(ROOT.'/Data/Answer/'.$id.'/'.$testcase_id);
+		$output = file_get_contents(ROOT.'/app/Data/Answer/'.$id.'/'.$testcase_id);
 		if(!$output) {
 			$this->redirect('index');
 		}
-		$this->set('output', $output['Answer']['answer']);
+		$this->set('output', $output);
 
 		$cpu = json_decode($problem['Problem']['submit_cpu']);
 		if(count($cpu) <= $testcase_id || !$cpu[$testcase_id]) {
