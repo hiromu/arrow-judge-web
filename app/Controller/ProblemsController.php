@@ -148,7 +148,6 @@ class ProblemsController extends AppController {
 				$this->set('percentage', '75%');
 			} else if($phase == 'testcase') {
 				$testcase_dir = ROOT.'/app/Data/Testcase/'.$id.'/';
-				$problem['Problem']['testcases'] = array();
 				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
 					$problem['Problem']['testcase'.$i] = file_get_contents($testcase_dir.$i);
 				}
@@ -263,6 +262,8 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 		$this->set('problem', $problem);
+
+		$testcase_id -= 1;
 
 		$input = file_get_contents(ROOT.'/app/Data/Testcase/'.$id.'/'.$testcase_id);
 		if(!$input) {
