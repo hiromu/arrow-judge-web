@@ -45,7 +45,8 @@ $status = json_decode($status, true);
 <?php elseif($problem['Problem']['status'] == 3 && $problem['Problem']['error']): ?>
 <h2>Execution Output<h2>
 <pre><?php echo h($problem['Problem']['error']); ?></pre>
-<?php elseif($problem['Problem']['status'] > 3): ?>
+<?php endif; ?>
+<?php elseif($problem['Problem']['status'] > 2): ?>
 <?php if(count($cpu) > 0): ?>
 <h1>Testcases</h1>
 <div class="statement">

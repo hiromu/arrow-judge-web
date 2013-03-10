@@ -271,9 +271,9 @@ class ProblemsController extends AppController {
 		}
 		$this->set('input', $input);
 
-		$output = file_get_contents(ROOT.'/app/Data/Answer/'.$id.'/'.$testcase_id);
+		$output = @file_get_contents(ROOT.'/app/Data/Answer/'.$id.'/'.$testcase_id);
 		if(!$output) {
-			$this->redirect('index');
+			$output = '';
 		}
 		$this->set('output', $output);
 

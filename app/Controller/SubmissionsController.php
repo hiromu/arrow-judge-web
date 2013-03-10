@@ -244,14 +244,14 @@ class SubmissionsController extends AppController {
 
 		$input = file_get_contents(ROOT.'/app/Data/Testcase/'.$submission['Problem']['id'].'/'.$testcase_id);
 		if(!$input) {
-			$this->redirect('index');
+			$this->redirect('detail', $id);
 		}
 		if(strlen($input) > $this->options['testcase_limit'] * 1024) {
 			$input = substr($input, 0, $this->options['testcase_limit'] * 1024).' ...';
 		}
 		$this->set('input', $input);
 
-		$output = file_get_contents(ROOT.'/app/Data/Output/'.$id.'/'.$testcase_id);
+		$output = @file_get_contents(ROOT.'/app/Data/Output/'.$id.'/'.$testcase_id);
 		if(!$output) {
 			$output = '';
 		}

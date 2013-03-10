@@ -32,7 +32,8 @@ if($contest_id) {
 <?php elseif($submission['Submission']['status'] == 3 && $submission['Submission']['error']): ?>
 <h2>Execution Output<h2>
 <pre><?php echo h($submission['Submission']['error']); ?></pre>
-<?php elseif($submission['Submission']['status'] > 3): ?>
+<?php endif; ?>
+<?php if($submission['Submission']['status'] > 2): ?>
 <?php if(count($cpu) > 0): ?>
 <h2>Testcases</h2>
 <div class="statement">

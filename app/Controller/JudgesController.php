@@ -112,7 +112,7 @@ class JudgesController extends AppController {
 				$submission['max_cpu'] = -1;
 				$submission['max_memory'] = -1;
 			}
-		} else if($post['status'] == 4 || $post['status'] == 5 || $post['status'] == 6) {
+		} else if($post['status'] == 3 || $post['status'] == 4 || $post['status'] == 5 || $post['status'] == 6) {
 			if($post['problem'] == '1') {
 				$answers = json_decode($post['output'], true);
 				$submission['submit_cpu'] = $post['cpu'];
