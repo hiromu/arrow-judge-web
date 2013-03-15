@@ -25,6 +25,7 @@ App::uses('Debugger', 'Utility');
 	echo $this->Form->input('email', array('type' => 'text'));
 	echo $this->Form->input('password', array('type' => 'password'));
 	echo $this->Form->input('confirm_password', array('type' => 'password'));
+	echo $this->Form->input('allow_email', array('type' => 'radio', 'legend' => 'Recieve contest notifications', 'options' => array('1' => 'Yes', '0' => 'No')));
 	echo $this->Form->end('Update');
 ?>
 </div>
