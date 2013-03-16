@@ -77,6 +77,12 @@
 			</div>
 		</div>
 		<div id="content">
+			<!--
+			<div class="alert alert-error">
+				<button class="close" data-dismiss="alert">×</button>
+				<a href="/problems/view//">Problem #  </a>の問題文に修正点がございました。お手数をお掛けして大変申し訳ございませんが、ご確認ください。
+			</div>
+			-->
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
