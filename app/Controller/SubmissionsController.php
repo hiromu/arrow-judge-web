@@ -95,12 +95,6 @@ class SubmissionsController extends AppController {
 				$contest = $this->Contest->findById($problem['Problem']['contest_id']);
 				if($contest) {
 					if(!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id')) {
-						$register = $this->Registration->find('first', array('conditions' => array('Registration.contest_id' => $problem['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
-						if(!$register) {
-							$this->Session->setFlash('You are not permitted to submit because you has not registered to this contest', 'error');
-							$submit = null;
-						}
-
 						$start_time = strtotime($problem['Contest']['start']);
 						if(time() < $start_time) {
 							$this->Session->setFlash('You are not permitted to submit because this contest has not started yet', 'error');
@@ -111,6 +105,25 @@ class SubmissionsController extends AppController {
 						if($end_time < time()) {
 							$this->Session->setFlash('You are not permitted to submit because this contest has already finished', 'error');
 							$submit = null;
+						}
+
+						$register = $this->Registration->find('first', array('conditions' => array('Registration.contest_id' => $problem['Problem']['contest_id'], 'Registration.user_id' => $this->Auth->user('id'))));
+						if(!$register) {
+							$register = array();
+							$register['Registration']['contest_id'] = $problem['Problem']['contest_id'];
+							$register['Registration']['user_id'] = $this->Auth->user('id');
+							$register['Registration']['solved'] = 0;
+							$register['Registration']['penalty'] = 0;
+
+							$score = array();
+							for($i = 0; $i < count($contest['Problem']); $i++) {
+								$score[$contest['Problem'][$i]['id']] = '';
+							}
+							$register['Registration']['score'] = json_encode($score);
+
+							if(!$this->Registration->save($register)) {
+								$submit = null;
+							}
 						}
 					} else {
 						$submit['Submission']['secret'] = 1;
