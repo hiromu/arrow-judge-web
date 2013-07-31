@@ -54,5 +54,8 @@ if($contest_id) {
 	echo $this->Html->link('Submit', '/submissions/submit/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-primary btn-large'));
 	echo $this->Html->link('Question', '/questions/index/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
 	echo $this->Html->link('Submissions', 'submission/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
+	if($problem['Problem']['user_id'] == $userid) {
+		echo $this->Html->link('Judge Result', 'judge/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
+	}
 ?>
 </div>
