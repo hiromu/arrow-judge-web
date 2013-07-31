@@ -212,7 +212,7 @@ class ProblemsController extends AppController {
 		$this->set('sample_outputs', $sample_outputs);
 	}
 
-	function submission($id = null, $contest_id = null) {
+	public function submission($id = null, $contest_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
@@ -252,7 +252,7 @@ class ProblemsController extends AppController {
 		$this->set('problem', $problem);
 	}
 
-	function testcase($id = null, $testcase_id = null) {
+	public function testcase($id = null, $testcase_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
@@ -290,5 +290,16 @@ class ProblemsController extends AppController {
 		$this->set('memory', $memory[$testcase_id]);
 
 		$this->set('testcase_id', $testcase_id);
+	}
+
+	public function delete($id = null) {
+		if(!$id) {
+			$this->redirect('index');
+		}
+
+		$problem = $this->Problem->findById($id);
+		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
+			$this->redirect('index');
+		}
 	}
 }

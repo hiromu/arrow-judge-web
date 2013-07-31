@@ -166,7 +166,7 @@ class SubmissionsController extends AppController {
 		$this->set('contest_id', $contest_id);
 	}
 
-	function search($contest_id = null) {
+	public function search($contest_id = null) {
 		if(!$this->request->query) {
 			$this->redirect('index');
 		}
@@ -225,7 +225,7 @@ class SubmissionsController extends AppController {
 		$this->set('lang', $lang);
 	}
 
-	function testcase($id = null, $testcase_id = null, $contest_id = null) {
+	public function testcase($id = null, $testcase_id = null, $contest_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
