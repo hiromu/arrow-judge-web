@@ -81,7 +81,7 @@ class ProblemsController extends AppController {
 		$this->set('problem', $problem);
 	}
 
-	public function setting($id = null, $phase = null) {
+	public function setting($id = null, $phase = null, $contest_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
@@ -91,12 +91,13 @@ class ProblemsController extends AppController {
 			$this->redirect('index');
 		}
 
+		$this->set('contest_id', $contest_id);
 		if($this->request->data) {
 			$problem = $this->request->data;
 			$problem['Problem']['id'] = $id;
 			if($phase == 'source') {
 				if($this->Problem->save($problem)) {
-					$this->redirect('setting/'.$id.'/sample');
+					$this->redirect('setting/'.$id.'/sample/'.$contest_id);
 				}
 			} else if($phase == 'sample') {
 				$sample_inputs = array();
@@ -108,7 +109,7 @@ class ProblemsController extends AppController {
 				$problem['Problem']['sample_inputs'] = json_encode($sample_inputs);
 				$problem['Problem']['sample_outputs'] = json_encode($sample_outputs);
 				if($this->Problem->save($problem)) {
-					$this->redirect('setting/'.$id.'/testcase');
+					$this->redirect('setting/'.$id.'/testcase/'.$contest_id);
 				}
 			 } else if($phase == 'testcase') {
 				$testcase_dir = ROOT.'/app/Data/Testcase/'.$id.'/';
@@ -117,12 +118,14 @@ class ProblemsController extends AppController {
 				}
 				$problem['Problem']['status'] = 0;
 				if($this->Problem->save($problem)) {
-					$this->redirect('judge/'.$id);
+					$this->redirect('judge/'.$id.'/'.$contest_id);
 				}
 			} else {
 				$problem['Problem']['status'] = -1;
 				if($this->Problem->save($problem)) {
-					$this->redirect('setting/'.$id.'/source');
+					$this->redirect('setting/'.$id.'/source/'.$phase);
+				} else if($phase) {
+					$this->set('contest_id', $phase);
 				}
 			}
 		} else {
@@ -156,13 +159,16 @@ class ProblemsController extends AppController {
 			} else {
 				$this->set('element', 'problem_statement');
 				$this->set('percentage', '25%');
+				if($phase) {
+					$this->set('contest_id', $phase);
+				}
 			}
 			$this->request->data = $problem;
 			$this->set('problem', $problem);
 		}
 	}
 
-	public function judge($id = null) {
+	public function judge($id = null, $contest_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
@@ -175,6 +181,7 @@ class ProblemsController extends AppController {
 
 		$this->set('cpu', json_decode($problem['Problem']['submit_cpu'], true));
 		$this->set('memory', json_decode($problem['Problem']['submit_memory'], true));
+		$this->set('contest_id', $contest_id);
 	}
 
 	public function view($id = null, $contest_id = null) {
@@ -292,14 +299,31 @@ class ProblemsController extends AppController {
 		$this->set('testcase_id', $testcase_id);
 	}
 
-	public function delete($id = null) {
+	public function delete($id = null, $contest_id = null) {
 		if(!$id) {
 			$this->redirect('index');
 		}
 
 		$problem = $this->Problem->findById($id);
+		if(!$problem) {
+			$this->redirect('index');
+		}
 		if($problem['Problem']['user_id'] != $this->Auth->user('id')) {
 			$this->redirect('index');
 		}
+
+		if($this->request->data) {
+			if($this->request->data['Problem']['id'] == $id) {
+				$this->Problem->delete($id);
+			}
+			if($contest_id) {
+				$this->redirect('/contests/problem/'.$contest_id);
+			} else {
+				$this->redirect('index');
+			}
+		}
+
+		$this->set('contest_id', $contest_id);
+		$this->set('problem', $problem);
 	}
 }

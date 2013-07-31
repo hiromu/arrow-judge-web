@@ -54,7 +54,7 @@
 <div class="submit submit-button">
 <?php
 	echo $this->Form->submit('Submit', array('div' => false));
-	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/source', array('class' => 'btn btn-large'));
+	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/source/'.$contest_id, array('class' => 'btn btn-large'));
 ?>
 </div>
 <script type="text/javascript">

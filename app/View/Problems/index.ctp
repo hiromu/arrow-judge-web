@@ -32,6 +32,7 @@ App::uses('Debugger', 'Utility');
 			<th>Memory Limit</th>
 			<th>Author</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,7 +45,9 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo $this->Html->link($private['User']['username'], '/users/index/'.$private['User']['id']); ?></td>
 			<?php if($private['Problem']['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$private['Problem']['id']); ?></td>
+			<td><?php echo $this->Html->link('Delete =>', 'delete/'.$private['Problem']['id']); ?></td>
 			<?php else: ?>
+			<td></td>
 			<td></td>
 			<?php endif; ?>
 		</tr>
@@ -64,6 +67,7 @@ App::uses('Debugger', 'Utility');
 			<th>Memory Limit</th>
 			<th>Author</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -76,7 +80,9 @@ App::uses('Debugger', 'Utility');
 			<td><?php echo $this->Html->link($public['User']['username'], '/users/index/'.$public['User']['id']); ?></td>
 			<?php if($public['Problem']['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', 'setting/'.$public['Problem']['id']); ?></td>
+			<td><?php echo $this->Html->link('Delete =>', 'delete/'.$public['Problem']['id']); ?></td>
 			<?php else: ?>
+			<td></td>
 			<td></td>
 			<?php endif; ?>
 		</tr>

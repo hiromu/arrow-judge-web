@@ -20,10 +20,20 @@ if($contest_id) {
 	echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $contest_id));
 }
 ?>
-<div class="append progress progress-striped active">
-	<div class="bar" style="width: <?php echo h($percentage); ?>;">
-		<p><?php echo h($percentage); ?></p>
-	</div>
+<h1><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
+<h2>Are you sure to delete this problem?</h2>
+<?
+	echo $this->Form->create('Problem');
+	echo $this->Form->input('id', array('type' => 'hidden', 'value' => $problem['Problem']['id']));
+?>
+<div class="submit submit-button">
+<?php
+	echo $this->Form->submit('Delete', array('div' => false));
+
+	if($contest_id) {
+		echo $this->Html->link('Cancel', '/contests/problem/'.$contest_id, array('class' => 'btn btn-large'));
+	} else {
+		echo $this->Html->link('Cancel', '/problems', array('class' => 'btn btn-large'));
+	}
+?>
 </div>
-<h1>Problem Setting <?php echo h(sprintf('#%d', $problem['Problem']['id'])); ?></h1>
-<?php echo $this->element($element); ?>

@@ -8,7 +8,7 @@
 <div class="submit submit-button">
 <?php
 	echo $this->Form->submit('Submit', array('div' => false));
-	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/statement', array('class' => 'btn btn-large'));
+	echo $this->Html->link('Back', '/problems/setting/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
 ?>
 </div>
 <script type="text/javascript">

@@ -17,6 +17,9 @@
  */
 App::uses('Debugger', 'Utility');
 $status = json_decode($status, true);
+if($contest_id) {
+	echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $contest_id));
+}
 ?>
 <table class="table table-striped">
 	<thead>

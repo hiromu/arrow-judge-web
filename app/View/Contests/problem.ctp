@@ -33,6 +33,7 @@ echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $conte
 			<th>CPU Limit</th>
 			<th>Memory Limit</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,7 +45,9 @@ echo $this->Element('contest', array('mode' => 'problem', 'contest_id' => $conte
 			<td><?php echo h($problem['memory']); ?> MB</td>
 			<?php if($problem['user_id'] == $userid): ?>
 			<td><?php echo $this->Html->link('Setting =>', '/problems/setting/'.$problem['id'].'/'.$contest['Contest']['id']); ?></td>
+			<td><?php echo $this->Html->link('Delete =>', '/problems/delete/'.$problem['id'].'/'.$contest['Contest']['id']); ?></td>
 			<?php else: ?>
+			<td></td>
 			<td></td>
 			<?php endif; ?>
 		</tr>

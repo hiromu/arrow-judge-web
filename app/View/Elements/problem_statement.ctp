@@ -9,7 +9,11 @@
 <div class="submit submit-button">
 <?php
 	echo $this->Form->submit('Submit', array('div' => false));
-	echo $this->Html->link('Cancel', '/problems', array('class' => 'btn btn-large'));
+	if($contest_id) {
+		echo $this->Html->link('Cancel', '/contests/problem/'.$contest_id, array('class' => 'btn btn-large'));
+	} else {
+		echo $this->Html->link('Cancel', '/problems', array('class' => 'btn btn-large'));
+	}
 ?>
 </div>
 <script type="text/javascript">
