@@ -26,7 +26,7 @@ class ProblemsController extends AppController {
 		$this->set('privates', $privates);
 	}
 
-	public function create($id = null) {
+	public function create($contest_id = null) {
 		if($this->request->data) {
 			$problem = $this->request->data;
 			$problem['Problem']['user_id'] = $this->Auth->user('id');
@@ -40,7 +40,7 @@ class ProblemsController extends AppController {
 				$contest = $this->Contest->findById($id);
 				if($contest) {
 					if($contest['Contest']['user_id'] == $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
-						$problem['Problem']['contest_id'] = $id;
+						$problem['Problem']['contest_id'] = $contest_id;
 						$problem['Problem']['public'] = 0;
 					} else {
 						$this->Session->setFlash(sprintf('Unable to add problem to %s', $contest['Contest']['name']), 'error');
@@ -77,8 +77,9 @@ class ProblemsController extends AppController {
 		}
 
 		$problem = array();
-		$problem['Problem']['contest_id'] = $id;
+		$problem['Problem']['contest_id'] = $contest_id;
 		$this->set('problem', $problem);
+		$this->set('contest_id', $contest_id);
 	}
 
 	public function setting($id = null, $phase = null, $contest_id = null) {
