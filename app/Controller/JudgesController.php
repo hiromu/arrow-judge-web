@@ -4,21 +4,21 @@ App::uses('AppController', 'Controller');
 class JudgesController extends AppController {
 	public $name = 'Judges';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Client', 'Contest', 'Registration');
+	public $uses = array('Problem', 'Submission', 'Server', 'Contest', 'Registration');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->layout = 'ajax';
 	}
 
-	public function index($client_id = null) {
-		if(!$client_id) {
+	public function index($server_id = null) {
+		if(!$server_id) {
 			$this->redirect('/');
 		}
 
-		$client = $this->Client->find('first', array('conditions' => array('client' => $client_id)));
-		if(!$client) {
-			$this->redirect('/');
+		$server = $this->Server->find('first', array('conditions' => array('server' => $server_id, 'status' => 1)));
+		if(!$server) {
+			throw new NotFoundException();
 		}
 
 		$limit = strftime('%Y-%m-%d %H:%M:%S', time() - $this->options['timeout']);
@@ -86,14 +86,14 @@ class JudgesController extends AppController {
 		$this->set('judge', '');
 	}
 
-	public function post($client_id = null) {
-		if(!$client_id) {
+	public function post($server_id = null) {
+		if(!$server_id) {
 			$this->redirect('/');
 		}
 
-		$client = $this->Client->find('first', array('conditions' => array('client' => $client_id)));
-		if(!$client) {
-			$this->redirect('/');
+		$server = $this->Server->find('first', array('conditions' => array('server' => $server_id, 'status' => 1)));
+		if(!$server) {
+			throw new NotFoundException();
 		}
 
 		$post = $this->request->data;

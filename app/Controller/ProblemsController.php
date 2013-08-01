@@ -36,8 +36,8 @@ class ProblemsController extends AppController {
 			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, $this->options['sample_limit'], ''));
 			$problem['Problem']['status'] = -1;
 
-			if($id) {
-				$contest = $this->Contest->findById($id);
+			if($contest_id) {
+				$contest = $this->Contest->findById($contest_id);
 				if($contest) {
 					if($contest['Contest']['user_id'] == $this->Auth->user('id') && $contest['Contest']['public'] == 0) {
 						$problem['Problem']['contest_id'] = $contest_id;
@@ -153,7 +153,7 @@ class ProblemsController extends AppController {
 			} else if($phase == 'testcase') {
 				$testcase_dir = ROOT.'/app/Data/Testcase/'.$id.'/';
 				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-					$problem['Problem']['testcase'.$i] = file_get_contents($testcase_dir.$i);
+					$problem['Problem']['testcase'.$i] = @file_get_contents($testcase_dir.$i);
 				}
 				$this->set('element', 'problem_testcase');
 				$this->set('percentage', '100%');

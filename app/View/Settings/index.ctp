@@ -16,6 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
+echo $this->Element('setting', array('mode' => 'general'));
 ?>
 <h1>Settings</h1>
 <?php
