@@ -1,5 +1,7 @@
 /app/tmp/cache/*/**
+/app/tmp/logs/*
 /app/Data/Testcase/*
 /app/Data/Output/*
 /app/Data/Answer/*
 .*.swp
+.ht*
