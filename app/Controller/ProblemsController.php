@@ -133,11 +133,7 @@ class ProblemsController extends AppController {
 			if($phase == 'source') {
 				$lang = array();
 				$coloring = array();
-<<<<<<< HEAD
-				foreach($this->Language->find('all') as $language) {
-=======
 				foreach($this->Language->find('all', array('conditions' => array('Language.status', 1))) as $language) {
->>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 					$lang[$language['Language']['id']] = $language['Language']['name'];
 					$coloring[$language['Language']['id']] = $language['Language']['coloring'];
 				}

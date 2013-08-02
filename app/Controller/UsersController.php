@@ -33,11 +33,7 @@ class UsersController extends AppController {
 		$this->set('user', $user);
 		$this->set('submissions', $submissions);
 
-<<<<<<< HEAD
-		$languages = $this->Language->find('all');
-=======
 		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
->>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 		$lang = array();
 		foreach($languages as $language) {
 			$lang[$language['Language']['id']] = $language['Language']['name'];
