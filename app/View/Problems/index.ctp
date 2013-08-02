@@ -17,12 +17,20 @@
  */
 App::uses('Debugger', 'Utility');
 ?>
+<<<<<<< HEAD
+=======
+<h1>Problem</h1>
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 <div class="append">
 	<i class="icon-plus-sign"></i>
 	<?php echo $this->Html->link('Add new problem', 'create'); ?>
 </div>
 <?php if(count($privates) > 0): ?>
+<<<<<<< HEAD
 <h1>Private Problems</h1>
+=======
+<h2>Private Problems</h2>
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -54,9 +62,13 @@ App::uses('Debugger', 'Utility');
 		<?php endforeach; ?>
 	</tbody>
 </table>
+<<<<<<< HEAD
 <h1>Public Problems</h1>
 <?php else: ?>
 <h1>Problems</h1>
+=======
+<h2>Public Problems</h2>
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 <?php endif; ?>
 <table class="table table-striped">
 	<thead>

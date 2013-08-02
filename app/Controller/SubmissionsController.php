@@ -39,7 +39,11 @@ class SubmissionsController extends AppController {
 		$submissions = $this->paginate('Submission', array('Submission.secret' => 0));
 		$this->set('submissions', $submissions);
 
+<<<<<<< HEAD
 		$languages = $this->Language->find('all');
+=======
+		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 		$lang = array();
 		foreach($languages as $language) {
 			$lang[$language['Language']['id']] = $language['Language']['name'];
@@ -153,7 +157,11 @@ class SubmissionsController extends AppController {
 			$this->set('latest', $latest['Submission']['language_id']);
 		}
 
+<<<<<<< HEAD
 		$languages = $this->Language->find('all');
+=======
+		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 		$lang = array();
 		$coloring = array();
 		foreach($languages as $language) {
@@ -217,7 +225,11 @@ class SubmissionsController extends AppController {
 		$this->set('contest_id', $contest_id);
 		$this->set('submissions', $submissions);
 
+<<<<<<< HEAD
 		$languages = $this->Language->find('all');
+=======
+		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 		$lang = array();
 		foreach($languages as $language) {
 			$lang[$language['Language']['id']] = $language['Language']['name'];

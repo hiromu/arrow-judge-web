@@ -1,5 +1,13 @@
 /app/tmp/cache/*/**
+<<<<<<< HEAD
+=======
+/app/tmp/logs/*
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
 /app/Data/Testcase/*
 /app/Data/Output/*
 /app/Data/Answer/*
 .*.swp
+<<<<<<< HEAD
+=======
+.ht*
+>>>>>>> 49a3a9e2c2db6c5c6fe448a15c2fc59b13f88d31
