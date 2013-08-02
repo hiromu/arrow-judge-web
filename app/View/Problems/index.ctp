@@ -17,12 +17,13 @@
  */
 App::uses('Debugger', 'Utility');
 ?>
+<h1>Problem</h1>
 <div class="append">
 	<i class="icon-plus-sign"></i>
 	<?php echo $this->Html->link('Add new problem', 'create'); ?>
 </div>
 <?php if(count($privates) > 0): ?>
-<h1>Private Problems</h1>
+<h2>Private Problems</h2>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -54,9 +55,7 @@ App::uses('Debugger', 'Utility');
 		<?php endforeach; ?>
 	</tbody>
 </table>
-<h1>Public Problems</h1>
-<?php else: ?>
-<h1>Problems</h1>
+<h2>Public Problems</h2>
 <?php endif; ?>
 <table class="table table-striped">
 	<thead>
