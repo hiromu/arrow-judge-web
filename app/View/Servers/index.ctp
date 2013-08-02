@@ -24,7 +24,7 @@ echo $this->Element('setting', array('mode' => 'server'));
 	<thead>
 		<tr>
 			<th>Hostname</th>
-			<th>IP Addresss</th>
+			<th>IP Address</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -45,7 +45,7 @@ echo $this->Element('setting', array('mode' => 'server'));
 	<thead>
 		<tr>
 			<th>Hostname</th>
-			<th>IP Addresss</th>
+			<th>IP Address</th>
 			<th></th>
 		</tr>
 	</thead>
