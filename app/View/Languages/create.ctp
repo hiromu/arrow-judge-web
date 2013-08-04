@@ -2,7 +2,7 @@
 App::uses('Debugger', 'Utility');
 
 $syntax = json_decode($syntax, true);
-$coloring = array()
+$coloring = array();
 foreach($syntax as $language => $color) {
 	$coloring[$color] = $color;
 }
