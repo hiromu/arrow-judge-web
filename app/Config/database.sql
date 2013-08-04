@@ -67,7 +67,7 @@ CREATE TABLE `languages` (
 
 LOCK TABLES `languages` WRITE;
 /*!40000 ALTER TABLE `languages` DISABLE KEYS */;
-INSERT INTO `languages` VALUES (1,'C','C (gcc 4.7.2)','c','c','gcc Main.c -o Main','./Main',1),(2,'C++','C++ (g++ 4.7.2)','cpp','cpp','g++ Main.cpp -o Main','./Main',1);
+INSERT INTO `languages` VALUES (1,'C','C (gcc)','c','c','gcc Main.c -o Main','./Main',1),(2,'C++','C++ (g++)','cpp','cpp','g++ Main.cpp -o Main','./Main',1);
 /*!40000 ALTER TABLE `languages` ENABLE KEYS */;
 UNLOCK TABLES;
 

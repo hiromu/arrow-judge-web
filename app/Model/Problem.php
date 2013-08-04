@@ -56,4 +56,3 @@ class Problem extends AppModel {
 		),
 	);
 }
-?>

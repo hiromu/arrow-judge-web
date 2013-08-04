@@ -64,4 +64,3 @@ class Contest extends AppModel {
 		return true;
 	}
 }
-?>

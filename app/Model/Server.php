@@ -25,4 +25,3 @@ class Server extends AppModel {
 		),
 	);
 }
-?>
