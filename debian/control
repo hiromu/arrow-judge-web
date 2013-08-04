@@ -10,8 +10,9 @@ Vcs-Git: https://github.com/hiromu/arrow-judge-web.git
 Package: arrow-judge-web
 Architecture: all
 Depends: libapache2-mod-php5 | libapache2-mod-php5filter | php5-cgi | php5-fpm | php5,
-    php5-cli,
-    php5-mysql | php5-mysqli | php5-mysqlnd
+ php5-cli,
+ php5-mysql | php5-mysqli | php5-mysqlnd,
+ ${misc:Depends}
 Recommends: apache2
 Description: Arrow-Judge is a open source online judge system.
  Arrow-Judge is a open source online judge system, released under MIT License.
