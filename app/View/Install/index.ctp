@@ -15,8 +15,10 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
-<?php if($ok): ?>
-<a class="btn btn-large btn-primary" href="secure">Install</a>
-<?php else: ?>
-<a class="btn btn-large btn-primary" href="/">Recheck</a>
-<?php endif; ?>
+<?php
+	if($ok) {
+		echo $this->Html->link('Install', '/secure', array('class' => 'btn btn-large btn-primary'));
+	} else {
+		echo $this->Html->link('Recheck', '/', array('class' => 'btn btn-large btn-primary'));
+	}
+?>
