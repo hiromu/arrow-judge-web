@@ -1,0 +1,24 @@
+#!/bin/sh
+# postrm script for arrow-judge-web
+
+set -e
+
+case "$1" in
+    purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+	if [ -d /etc/apache2/conf.d ] && [ -e /etc/apache2/conf.d/arrow-judge.conf ]; then
+                rm /etc/apache2/conf.d/arrow-judge.conf
+		if [ -x /usr/sbin/invoke-rc.d ]; then
+			invoke-rc.d apache2 reload 3>/dev/null || true
+		else
+			/etc/init.d/apache2 reload 3>/dev/null || true
+		fi
+	fi
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

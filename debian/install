@@ -1,0 +1,9 @@
+.htaccess	usr/share/arrow-judge
+index.php	usr/share/arrow-judge
+
+app		usr/share/arrow-judge
+lib		usr/share/arrow-judge
+plugins		usr/share/arrow-judge
+vendors		usr/share/arrow-judge
+
+debian/apache.conf	etc/arrow-judge
