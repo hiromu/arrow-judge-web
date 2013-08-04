@@ -546,6 +546,10 @@ p.error em {
 .success {
 	color: #fff;
 }
+td.error {
+	color: #f00;
+	font-weight: bold;
+}
 
 /**  Actions  **/
 .actions ul {

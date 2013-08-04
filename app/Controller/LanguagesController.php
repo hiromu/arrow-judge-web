@@ -33,19 +33,6 @@ class LanguagesController extends AppController {
 				$this->redirect('edit/'.$this->Language->getLastInsertID());
 			}
 		}
-
-		$coloring = array('' => '');
-		if($dh = opendir(ROOT.'/app/webroot/js/edit_area/reg_syntax')) {
-			while($file = readdir($dh)) {
-				$path = pathinfo($file);
-				if($path['extension'] == 'js') {
-					$coloring[$path['filename']] = $path['filename'];
-				}
-			}
-		}
-
-		ksort($coloring);
-		$this->set('coloring', $coloring);
 	}
 
 	public function edit($id = null) {
@@ -68,19 +55,6 @@ class LanguagesController extends AppController {
 		} else {
 			$this->request->data = $language;
 		}
-
-		$coloring = array('' => '');
-		if($dh = opendir(ROOT.'/app/webroot/js/edit_area/reg_syntax')) {
-			while($file = readdir($dh)) {
-				$path = pathinfo($file);
-				if($path['extension'] == 'js') {
-					$coloring[$path['filename']] = $path['filename'];
-				}
-			}
-		}
-
-		ksort($coloring);
-		$this->set('coloring', $coloring);
 	}
 
 	public function delete($id = null) {

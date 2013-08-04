@@ -16,6 +16,13 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('Debugger', 'Utility');
+
+$syntax = json_decode($syntax, true);
+$coloring = array()
+foreach($syntax as $language => $color) {
+	$coloring[$color] = $color;
+}
+
 echo $this->Element('setting', array('mode' => 'language'));
 ?>
 <h1>Programming Lanuage Settings</h1>

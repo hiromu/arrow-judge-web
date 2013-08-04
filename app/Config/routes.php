@@ -20,11 +20,14 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
+if(file_exists(TMP.'installed')) {
 	Router::connect('/', array('controller' => 'App', 'action' => 'index'));
 	CakePlugin::routes();
-
-/**
- * Load the CakePHP default routes. Remove this if you do not want to use
- * the built-in default routes.
- */
 	require CAKE . 'Config' . DS . 'routes.php';
+} else {
+	Router::connect('/', array('controller' => 'Install', 'action' => 'index'));
+	Router::connect('/secure', array('controller' => 'Install', 'action' => 'secure'));
+	Router::connect('/database', array('controller' => 'Install', 'action' => 'database'));
+	Router::connect('/runsql', array('controller' => 'Install', 'action' => 'runsql'));
+	Router::connect('/account', array('controller' => 'Install', 'action' => 'account'));
+}
