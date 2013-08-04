@@ -1,6 +1,7 @@
 <?php App::uses('Debugger', 'Utility'); ?>
 <?php echo $this->Element('setting', array('mode' => 'server')); ?>
 <h1>Judge Server Settings</h1>
+<?php if(count($deny) > 0): ?>
 <h2>Disabled Server</h2>
 <table class="table table-striped">
 	<thead>
@@ -22,6 +23,7 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
+<?php endif; ?>
 <h2>Enabled Server</h2>
 <table class="table table-striped">
 	<thead>
