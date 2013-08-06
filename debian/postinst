@@ -16,6 +16,8 @@ case "$1" in
                 /etc/init.d/apache2 reload 3>/dev/null || true
             fi
         fi
+
+	chown www-data /usr/share/arrow-judge/app/Config/core.php /usr/share/arrow-judge/app/Config/database.php /usr/share/arrow-judge/app/Data/Answer/ /usr/share/arrow-judge/app/Data/Output/ /usr/share/arrow-judge/app/Data/Testcase/ /usr/share/arrow-judge/app/tmp/ /usr/share/arrow-judge/app/tmp/cache/ /usr/share/arrow-judge/app/tmp/logs/error.log
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

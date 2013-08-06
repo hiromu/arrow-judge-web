@@ -1,3 +1,9 @@
+arrow-judge-web (1.0.0-1ppa2) precise; urgency=low
+
+  * Add permission settings to postinst (Closes: #0)
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Tue, 06 Aug 2013 20:38:17 +0900
+
 arrow-judge-web (1.0.0-1ppa1) precise; urgency=low
 
   * Initial release (Closes: #0)
