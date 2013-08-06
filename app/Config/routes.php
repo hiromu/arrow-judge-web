@@ -8,5 +8,6 @@ if(file_exists(TMP.'installed')) {
 	Router::connect('/secure', array('controller' => 'Install', 'action' => 'secure'));
 	Router::connect('/database', array('controller' => 'Install', 'action' => 'database'));
 	Router::connect('/runsql', array('controller' => 'Install', 'action' => 'runsql'));
+	Router::connect('/email', array('controller' => 'Install', 'action' => 'email'));
 	Router::connect('/account', array('controller' => 'Install', 'action' => 'account'));
 }
