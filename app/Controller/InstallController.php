@@ -1,6 +1,8 @@
 <?php
 App::uses('AppController', 'Controller');
-App::import('Model', 'ConnectionManager');
+App::uses('ConnectionManager', 'Model');
+App::uses('AbstractTransport', 'Network/Email');
+App::uses('SmtpTransport', 'Network/Email');
 
 class InstallController extends AppController {
 	public $name = 'Install';
@@ -15,7 +17,7 @@ class InstallController extends AppController {
 	}
 
 	public function index() {
-		$directories = array(APP.'Config'.DS.'core.php', APP.'Config'.DS.'database.php', APP.'Data'.DS.'Answer'.DS, APP.'Data'.DS.'Output'.DS, APP.'Data'.DS.'Testcase'.DS, TMP, TMP.'cache'.DS, TMP.'logs'.DS.'error.log');
+		$directories = array(APP.'Config'.DS.'core.php', APP.'Config'.DS.'database.php', APP.'Config'.DS.'email.php', APP.'Data'.DS.'Answer'.DS, APP.'Data'.DS.'Output'.DS, APP.'Data'.DS.'Testcase'.DS, TMP, TMP.'cache'.DS, TMP.'logs'.DS.'error.log');
 
 		$writable = array();
 		$ok = true;
@@ -75,7 +77,7 @@ EOF;
 				$this->Session->setFlash('Cannot connect to the database: '.mysql_error(), 'error');
 			}
 		} else if(@filesize($path) > 0) {
-			$this->Session->setFlash($path.' already exists', 'error');
+			$this->Session->setFlash($path.' is not empty', 'error');
 		}
 	}
 
@@ -92,7 +94,61 @@ EOF;
 			}
 		}
 
-		$this->redirect('/account');
+		$this->redirect('/email');
+	}
+
+	public function email() {
+		$path = APP.'Config'.DS.'email.php';
+
+		if($this->request->data) {
+			$email = $this->request->data['Email'];
+
+			if($email['ssl']) {
+				$email['host'] = 'ssl://'.$email['host'];
+			}
+			unset($email['ssl']);
+
+			if($email['tls']) {
+				$email['tls_value'] = 'true';
+			} else {
+				$email['tls_value'] = 'false';
+			}
+
+			try {
+				$mailer = new SmtpTransport();
+				$mailer->config($email);
+
+				$connect = new ReflectionMethod('SmtpTransport', '_connect');	
+				$connect->setAccessible(true);
+				$connect->invoke($mailer);
+				$auth = new ReflectionMethod('SmtpTransport', '_auth');
+				$auth->setAccessible(true);
+				$auth->invoke($mailer);
+
+				$data = <<<EOF
+<?php
+class EmailConfig {
+        public \$smtp = array(
+                'transport' => 'Smtp',
+                'host' => '{$email['host']}',
+                'port' => {$email['port']},
+                'username' => '{$email['username']}',
+                'password' => '{$email['password']}',
+		'tls' => {$email['tls_value']},
+                'timeout' => 30,
+
+        );
+}
+?>
+EOF;
+				file_put_contents($path, $data);
+				$this->redirect('/account');
+			} catch (SocketException $e) {
+				$this->Session->setFlash($e->getMessage(), 'error');
+			}
+		} else if(@filesize($path) > 0) {
+			$this->Session->setFlash($path.' is not empty', 'error');
+		}
 	}
 
 	public function account() {
