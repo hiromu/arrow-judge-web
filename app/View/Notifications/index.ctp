@@ -1,5 +1,5 @@
 <?php App::uses('Debugger', 'Utility'); ?>
-<?php echo $this->Element('contest_setting', array('mode' => 'setting', 'contest_id' => $contest_id)); ?>
+<?php echo $this->Element('contest_setting', array('mode' => 'notification', 'contest_id' => $contest_id)); ?>
 <h1>Notifications</h1>
 <div class="append">
 	<i class="icon-plus-sign"></i>
