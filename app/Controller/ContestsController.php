@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class ContestsController extends AppController {
 	public $name = 'Contests';
 	public $helpers = array('Form');
-	public $uses = array('Contest', 'User', 'Registration', 'Problem', 'Submission', 'Language');
+	public $uses = array('Contest', 'User', 'Registration', 'Problem', 'Submission', 'Language', 'Notification');
 	public $components = array('Session');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
@@ -136,6 +136,7 @@ class ContestsController extends AppController {
 		}
 
 		$this->set('contest', $contest);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest['Contest']['id']))));
 	}
 
 	public function submission($id = null) {
@@ -170,6 +171,8 @@ class ContestsController extends AppController {
 			$lang[$language['Language']['id']] = $language['Language']['name'];
 		}
 		$this->set('lang', $lang);
+
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest['Contest']['id']))));
 	}
 
 	public function standings($id = null) {
@@ -190,5 +193,6 @@ class ContestsController extends AppController {
 
 		$registration = $this->Registration->find('all', array('conditions' => array('Registration.contest_id' => $id), 'order' => array('Registration.solved' => 'desc', 'Registration.penalty' => 'asc')));
 		$this->set('registration', $registration);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest['Contest']['id']))));
 	}
 }

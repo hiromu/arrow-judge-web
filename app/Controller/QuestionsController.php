@@ -5,7 +5,7 @@ App::uses('CakeEmail', 'Network/Email');
 class QuestionsController extends AppController {
 	public $name = 'Questions';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Question');
+	public $uses = array('Problem', 'Question', 'Notification');
 	public $components = array('Email', 'Session');
 
 	public function beforeFilter() {
@@ -71,6 +71,8 @@ class QuestionsController extends AppController {
 			$questions = $this->Question->find('all', array('conditions' => array('Question.problem_id' => $id, 'Question.public' => 0),  'order' => 'Question.created DESC'));
 		}
 		$this->set('questions', $questions);
+
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function answer($id = null, $contest_id = null) {
@@ -113,6 +115,7 @@ class QuestionsController extends AppController {
 
 		$this->set('contest_id', $contest_id);
 		$this->set('question', $question);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function remove($id = null, $contest_id = null) {
@@ -141,5 +144,6 @@ class QuestionsController extends AppController {
 
 		$this->set('contest_id', $contest_id);
 		$this->set('question', $question);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 }
