@@ -5,7 +5,7 @@ class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form', 'Paginator');
 	public $components = array('Session');
-	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration');
+	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Notification');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
 	public function beforeFilter() {
@@ -57,6 +57,7 @@ class SubmissionsController extends AppController {
 		$this->set('submission', $submission);
 		$this->set('cpu', json_decode($submission['Submission']['cpu']));
 		$this->set('memory', json_decode($submission['Submission']['memory']));
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function submit($id = null, $contest_id = null) {
@@ -144,6 +145,7 @@ class SubmissionsController extends AppController {
 		$this->set('coloring', json_encode($coloring, true));
 		$this->set('problem', $problem);
 		$this->set('contest_id', $contest_id);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function search($contest_id = null) {
@@ -203,6 +205,8 @@ class SubmissionsController extends AppController {
 			$lang[$language['Language']['id']] = $language['Language']['name'];
 		}
 		$this->set('lang', $lang);
+
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function testcase($id = null, $testcase_id = null, $contest_id = null) {
@@ -266,5 +270,6 @@ class SubmissionsController extends AppController {
 		$this->set('memory', $memory[$testcase_id]);
 
 		$this->set('testcase_id', $testcase_id);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 }

@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class ProblemsController extends AppController {
 	public $name = 'Problems';
 	public $helpers = array('Form', 'Paginator');
-	public $uses = array('Contest', 'Problem', 'Language', 'Submission');
+	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Notification');
 	public $components = array('Session');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
@@ -72,7 +72,7 @@ class ProblemsController extends AppController {
 					mkdir($answer_dir);
 				}
 
-				$this->redirect('setting/'.$problem_id.'/source');
+				$this->redirect('setting/'.$problem_id.'/source/'.$contest_id);
 			}
 		}
 
@@ -80,6 +80,7 @@ class ProblemsController extends AppController {
 		$problem['Problem']['contest_id'] = $contest_id;
 		$this->set('problem', $problem);
 		$this->set('contest_id', $contest_id);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function setting($id = null, $phase = null, $contest_id = null) {
@@ -166,6 +167,7 @@ class ProblemsController extends AppController {
 			}
 			$this->request->data = $problem;
 			$this->set('problem', $problem);
+			$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 		}
 	}
 
@@ -183,6 +185,7 @@ class ProblemsController extends AppController {
 		$this->set('cpu', json_decode($problem['Problem']['submit_cpu'], true));
 		$this->set('memory', json_decode($problem['Problem']['submit_memory'], true));
 		$this->set('contest_id', $contest_id);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function view($id = null, $contest_id = null) {
@@ -218,6 +221,7 @@ class ProblemsController extends AppController {
 		$this->set('contest_id', $contest_id);
 		$this->set('sample_inputs', $sample_inputs);
 		$this->set('sample_outputs', $sample_outputs);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function submission($id = null, $contest_id = null) {
@@ -258,6 +262,7 @@ class ProblemsController extends AppController {
 		$this->set('submissions', $submissions);
 		$this->set('contest_id', $contest_id);
 		$this->set('problem', $problem);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 
 	public function testcase($id = null, $testcase_id = null) {
@@ -326,5 +331,6 @@ class ProblemsController extends AppController {
 
 		$this->set('contest_id', $contest_id);
 		$this->set('problem', $problem);
+		$this->set('notifications', $this->Notification->find('all', array('conditions' => array('Notification.active' => 1, 'Notification.contest_id' => $contest_id))));
 	}
 }

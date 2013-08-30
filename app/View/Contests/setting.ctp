@@ -1,4 +1,5 @@
 <?php App::uses('Debugger', 'Utility'); ?>
+<?php echo $this->Element('contest_setting', array('mode' => 'setting', 'contest_id' => $contest['Contest']['id'])); ?>
 <h1>Contest Settings</h1>
 <?php
 	echo $this->Form->create('Contest');
