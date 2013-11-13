@@ -1,5 +1,5 @@
 <?php App::uses('Debugger', 'Utility'); ?>
-<h1>Problem</h1>
+<h1>Problems</h1>
 <div class="append">
 	<i class="icon-plus-sign"></i>
 	<?php echo $this->Html->link('Add new problem', 'create'); ?>

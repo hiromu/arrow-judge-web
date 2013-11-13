@@ -9,7 +9,7 @@
 
 ## Installation
  * Extract the archive and upload to your server.
- * Visit your server with your browser and follow the instructions/
+ * Visit your server with your browser and follow the instructions
 
 ## Acknowledgement
 This project is supported by [IPA MITOH program](http://www.ipa.go.jp/english/humandev/third.html).
