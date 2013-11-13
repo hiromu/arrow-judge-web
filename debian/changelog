@@ -1,3 +1,9 @@
+arrow-judge-web (1.0.2-1ppa1ubuntu1) precise; urgency=low
+
+  * Fix several typos
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Thu, 14 Nov 2013 03:35:45 +0900
+
 arrow-judge-web (1.0.1-1ppa1) precise; urgency=low
 
   * Add notification management system (Closes: #0)
