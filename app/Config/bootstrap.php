@@ -129,3 +129,6 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+
+CakePlugin::load('HtmlPurifier', array('bootstrap' => true));
+Purifier::config('Default', array('HTML.Doctype' => 'XHTML 1.0 Transitional'));

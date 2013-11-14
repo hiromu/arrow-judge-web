@@ -35,6 +35,7 @@ class ProblemsController extends AppController {
 			$problem['Problem']['sample_inputs'] = json_encode(array_fill(0, $this->options['sample_limit'], ''));
 			$problem['Problem']['sample_outputs'] = json_encode(array_fill(0, $this->options['sample_limit'], ''));
 			$problem['Problem']['status'] = -1;
+			$problem['Problem']['statement'] = Purifier::clean($problem['Problem']['statement'], 'Default');
 
 			if($contest_id) {
 				$contest = $this->Contest->findById($contest_id);
@@ -124,6 +125,7 @@ class ProblemsController extends AppController {
 				}
 			} else {
 				$problem['Problem']['status'] = -1;
+				$problem['Problem']['statement'] = Purifier::clean($problem['Problem']['statement'], 'Default');
 				if($this->Problem->save($problem)) {
 					$this->redirect('setting/'.$id.'/source/'.$phase);
 				} else if($phase) {
