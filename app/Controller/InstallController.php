@@ -17,7 +17,7 @@ class InstallController extends AppController {
 	}
 
 	public function index() {
-		$directories = array(APP.'Config'.DS.'core.php', APP.'Config'.DS.'database.php', APP.'Config'.DS.'email.php', APP.'Data'.DS.'Answer'.DS, APP.'Data'.DS.'Output'.DS, APP.'Data'.DS.'Testcase'.DS, TMP, TMP.'cache'.DS, TMP.'logs'.DS.'error.log');
+		$directories = array(APP.'Config'.DS.'core.php', APP.'Config'.DS.'database.php', APP.'Config'.DS.'email.php', APP.'Data'.DS.'Answer'.DS, APP.'Data'.DS.'Output'.DS, APP.'Data'.DS.'Testcase'.DS, TMP, TMP.'cache'.DS, TMP.'logs'.DS.'error.log', APP.'Plugin'.DS.'HtmlPurifier'.DS.'Vendor'.DS.'HtmlPurifier'.DS.'library'.DS.'HTMLPurifier'.DS.'DefinitionCache'.DS.'Serializer');
 
 		$writable = array();
 		$ok = true;

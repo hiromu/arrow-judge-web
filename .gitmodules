@@ -1,0 +1,3 @@
+[submodule "app/Plugin/HtmlPurifier"]
+	path = app/Plugin/HtmlPurifier
+	url = https://github.com/hiromu/HtmlPurifier.git
