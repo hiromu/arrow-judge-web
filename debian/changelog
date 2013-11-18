@@ -1,4 +1,10 @@
-arrow-judge-web (1.0.2-1ppa1ubuntu1) precise; urgency=low
+arrow-judge-web (1.0.3-1ppa1) precise; urgency=low
+
+  * Apply HtmlPurifier to avoid XSS
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Tue, 19 Nov 2013 00:16:58 +0900
+
+arrow-judge-web (1.0.2-1ppa1) precise; urgency=low
 
   * Fix several typos
 
