@@ -239,7 +239,7 @@ class SubmissionsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = file_get_contents(ROOT.'/app/Data/Testcase/'.$submission['Problem']['id'].'/'.$testcase_id);
+		$input = file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$submission['Problem']['id'].DS.$testcase_id);
 		if(!$input) {
 			$this->redirect('detail', $id);
 		}
@@ -248,7 +248,7 @@ class SubmissionsController extends AppController {
 		}
 		$this->set('input', $input);
 
-		$output = @file_get_contents(ROOT.'/app/Data/Output/'.$id.'/'.$testcase_id);
+		$output = @file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Output'.DS.$id.DS.$testcase_id);
 		if(!$output) {
 			$output = '';
 		}
