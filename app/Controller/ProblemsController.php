@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class ProblemsController extends AppController {
 	public $name = 'Problems';
 	public $helpers = array('Form', 'Paginator');
-	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Notification');
+	public $uses = array('Contest', 'Problem', 'Language', 'Submission', 'Notification', 'Testcase');
 	public $components = array('Session');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'));
 
@@ -115,10 +115,6 @@ class ProblemsController extends AppController {
 					$this->redirect('setting/'.$id.'/testcase/'.$contest_id);
 				}
 			 } else if($phase == 'testcase') {
-				$testcase_dir = ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$id;
-				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-					file_put_contents($testcase_dir.DS.$i, $problem['Problem']['testcase'.$i]);
-				}
 				$problem['Problem']['status'] = 0;
 				if($this->Problem->save($problem)) {
 					$this->redirect('judge/'.$id.'/'.$contest_id);
@@ -154,10 +150,8 @@ class ProblemsController extends AppController {
 				$this->set('element', 'problem_sample');
 				$this->set('percentage', '75%');
 			} else if($phase == 'testcase') {
-				$testcase_dir = ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$id;
-				for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-					$problem['Problem']['testcase'.$i] = @file_get_contents($testcase_dir.DS.$i);
-				}
+				$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $id), 'order' => 'Testcase.id'));
+				$this->set('testcases' , $testcases);
 				$this->set('element', 'problem_testcase');
 				$this->set('percentage', '100%');
 			} else {
@@ -282,15 +276,22 @@ class ProblemsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$id.DS.$testcase_id);
+		$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $id), 'offset' => $testcase_id, 'limit' => 1));
+		$input = file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$id.DS.$testcases[0]['Testcase']['filename']);
 		if(!$input) {
 			$this->redirect('index');
+		}
+		if(strlen($input) > $this->options['testcase_limit'] * 1024) {
+			$input = substr($input, 0, $this->options['testcase_limit'] * 1024).' ...';
 		}
 		$this->set('input', $input);
 
 		$output = @file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Answer'.DS.$id.DS.$testcase_id);
 		if(!$output) {
 			$output = '';
+		}
+		if(strlen($output) > $this->options['testcase_limit'] * 1024) {
+			$output = substr($output, 0, $this->options['testcase_limit'] * 1024).' ...';
 		}
 		$this->set('output', $output);
 

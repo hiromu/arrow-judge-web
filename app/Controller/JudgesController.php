@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class JudgesController extends AppController {
 	public $name = 'Judges';
 	public $helpers = array('Form');
-	public $uses = array('Problem', 'Submission', 'Server', 'Contest', 'Registration');
+	public $uses = array('Problem', 'Submission', 'Server', 'Contest', 'Registration', 'Testcase');
 
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -29,15 +29,16 @@ class JudgesController extends AppController {
 			$judge['Problem']['modified'] = null;
 			$this->Problem->save($judge, true, array('status', 'modified'));
 
-			$testcases = array();
-			$testcase_dir = ROOT.DS.'app'.DS.'Data'.'Testcase'.DS.$judge['Problem']['id'];
-			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-				$testcases[] = file_get_contents($testcase_dir.DS.$i);
+			$inputs = array();
+			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.id'));
+			$testcase_dir = ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$judge['Problem']['id'];
+			foreach($testcases as $testcase) {
+				$inputs[] = file_get_contents($testcase_dir.DS.$testcase['Testcase']['filename']);
 			}
 
 			$json = array();
 			$json['problem'] = '1';
-			$json['input'] = $testcases;
+			$json['input'] = $inputs;
 			$json['memory'] = $judge['Problem']['memory'] * 1024;
 			foreach(array('id', 'cpu', 'source') as $key) {
 				$json[$key] = $judge['Problem'][$key];
@@ -55,21 +56,22 @@ class JudgesController extends AppController {
 			$judge['Submission']['modified'] = null;
 			$this->Submission->save($judge, true, array('status', 'modified'));
 
-			$testcases = array();
+			$inputs = array();
+			$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $judge['Problem']['id']), 'order' => 'Testcase.id'));
 			$testcase_dir = ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$judge['Problem']['id'];
-			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
-				$testcases[] = file_get_contents($testcase_dir.DS.$i);
+			foreach($testcases as $testcase) {
+				$inputs[] = file_get_contents($testcase_dir.DS.$testcase['Testcase']['filename']);
 			}
 
 			$answers = array();
 			$answer_dir = ROOT.DS.'app'.DS.'Data'.DS.'Answer'.DS.$judge['Problem']['id'];
-			for($i = 0; $i < $this->options['testcase_limit']; $i++) {
+			for($i = 0; $i < count($inputs); $i++) {
 				$answers[] = file_get_contents($answer_dir.DS.$i);
 			}
 
 			$json = array();
 			$json['problem'] = '0';
-			$json['input'] = $testcases;
+			$json['input'] = $inputs;
 			$json['answer'] = $answers;
 			$json['cpu'] = $judge['Problem']['cpu'];
 			$json['memory'] = $judge['Problem']['memory'] * 1024;

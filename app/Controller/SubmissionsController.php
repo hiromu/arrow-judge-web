@@ -5,7 +5,7 @@ class SubmissionsController extends AppController {
 	public $name = 'Submissions';
 	public $helpers = array('Form', 'Paginator');
 	public $components = array('Session');
-	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Notification');
+	public $uses = array('Problem', 'Submission', 'Language', 'Contest', 'Registration', 'Notification', 'Testcase');
 	public $paginate = array('limit' => 50, 'order' => array('Submission.created' => 'desc'), 'paramType' => 'querystring');
 
 	public function beforeFilter() {
@@ -239,7 +239,8 @@ class SubmissionsController extends AppController {
 
 		$testcase_id -= 1;
 
-		$input = file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$submission['Problem']['id'].DS.$testcase_id);
+		$testcases = $this->Testcase->find('all', array('conditions' => array('Testcase.problem_id' => $submission['Problem']['id']), 'offset' => $testcase_id, 'limit' => 1));
+		$input = file_get_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$submission['Problem']['id'].DS.$testcases[0]['Testcase']['filename']);
 		if(!$input) {
 			$this->redirect('detail', $id);
 		}
