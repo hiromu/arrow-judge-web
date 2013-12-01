@@ -1,3 +1,9 @@
+arrow-judge-web (1.0.4-1ppa1) precise; urgency=low
+
+  * Change editing testcases page
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Sun, 01 Dec 2013 15:08:16 +0900
+
 arrow-judge-web (1.0.3-1ppa1) precise; urgency=low
 
   * Apply HtmlPurifier to avoid XSS
