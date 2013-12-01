@@ -82,10 +82,7 @@ class ContestsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
-		if($contest['Contest']['user_id'] == $this->Auth->user('id')) {
-			$this->redirect('index');
-		}
-		if($contest['Contest']['public'] == 0) {
+		if($contest['Contest']['user_id'] == $this->Auth->user('id') || $contest['Contest']['public'] == 0) {
 			$this->redirect('index');
 		}
 

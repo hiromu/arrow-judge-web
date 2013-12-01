@@ -56,6 +56,7 @@ class NotificationsController extends AppController {
 		if(!$contest) {
 			$this->redirect('index');
 		}
+
 		$notification = $this->Notification->findById($id);
 		if(!$notification) {
 			$this->redirect('index');
