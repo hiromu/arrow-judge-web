@@ -19,11 +19,16 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($problem_id);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id')) { 
+		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
 		if($this->request->data) {
+			if(!$this->request->data['Testcase']['file']['error']) {
+				$this->request->data['Testcase']['testcase'] = file_get_contents($this->request->data['Testcase']['file']['tmp_name']);
+			}
+			var_dump($this->request->data);
+
 			$filename = uniqid();
 			if(file_put_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$problem_id.DS.$filename, $this->request->data['Testcase']['testcase'])) {
 				$this->request->data['Testcase']['problem_id'] = $problem_id;
@@ -51,11 +56,15 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id')) {
+		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
 		if($this->request->data) {
+			if(!$this->request->data['Testcase']['file']['error']) {
+				$this->request->data['Testcase']['testcase'] = file_get_contents($this->request->data['Testcase']['file']['tmp_name']);
+			}
+
 			if(file_put_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$problem['Problem']['id'].DS.$testcase['Testcase']['filename'], $this->request->data['Testcase']['testcase'])) {
 				$this->request->data['Testcase']['id'] = $id;
 				$this->request->data['Testcase']['length'] = strlen($this->request->data['Testcase']['testcase']);
@@ -86,7 +95,7 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id')) {
+		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
