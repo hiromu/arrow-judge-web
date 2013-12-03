@@ -130,9 +130,7 @@ class SubmissionsController extends AppController {
 		}
 
 		$latest = $this->Submission->find('first', array('conditions' => array('Submission.user_id' => $this->Auth->user('id')), 'order' => array('Submission.created' => 'DESC')));
-		if($latest) {
-			$this->set('latest', $latest['Submission']['language_id']);
-		}
+		$this->set('latest', $latest['Submission']['language_id']);
 
 		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
 		$lang = array();

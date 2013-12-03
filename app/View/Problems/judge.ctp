@@ -17,7 +17,7 @@ if($contest_id) {
 	</thead>
 	<tbody>
 		<tr>
-			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])), 'view/'.$problem['Problem']['id']); ?></td>
+			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])), 'view/'.$problem['Problem']['id'].'/'.$contest_id); ?></td>
 			<td><?php echo h($problem['Language']['name']); ?></td>
 			<td class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></td>
 			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
