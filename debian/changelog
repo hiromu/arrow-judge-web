@@ -1,3 +1,9 @@
+arrow-judge-web (1.0.5-1ppa1) precise; urgency=low
+
+  * Fix bugs about notification system and change display data to prevent side channel guessing
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Sat, 21 Dec 2013 00:30:15 +0900
+
 arrow-judge-web (1.0.4-1ppa1) precise; urgency=low
 
   * Change editing testcases page
