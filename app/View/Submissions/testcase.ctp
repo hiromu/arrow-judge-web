@@ -7,8 +7,8 @@ if($contest_id) {
 ?>
 <h1>Submission Detail</h1>
 <?php echo $this->Element('submissions', array('link_hide' => true, 'contest_id' => null, 'submissions' => array($submission))); ?>
-<h2>Testcase <?php echo h(sprintf('#%d', $testcase_id + 1)); ?></h2>
-<h3>CPU: <?php echo h(sprintf('%f sec', $cpu)); ?>, Memory: <?php echo h(sprintf('%d KB', $memory)); ?></h3>
+<h2>Testcase #<?php echo h($testcase_id + 1); ?></h2>
+<h3>CPU: <?php echo h(ceil($cpu * 1000) / 1000); ?> sec, Memory: <?php echo h(ceil($memory / 100) * 100); ?> KB</h3>
 <div class="row-fluid">
 	<div class="span6">
 		<pre><?php echo h($input); ?></pre>

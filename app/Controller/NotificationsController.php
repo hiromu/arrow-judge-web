@@ -14,12 +14,12 @@ class NotificationsController extends AppController {
 	}
 
 	public function index($contest_id = null) {
-		if(!$contest_id || !$this->Auth->user('admin')) {
+		if(!$contest_id) {
 			$this->redirect('/contests');
 		}
 
 		$contest = $this->Contest->findById($contest_id);
-		if(!$contest) {
+		if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
 			$this->redirect('/contests');
 		}
 
@@ -28,12 +28,12 @@ class NotificationsController extends AppController {
 	}
 
 	public function add($contest_id = null) {
-		if(!$contest_id || !$this->Auth->user('admin')) {
+		if(!$contest_id) {
 			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($contest_id);
-		if(!$contest) {
+		if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
 			$this->redirect('index');
 		}
 
@@ -48,12 +48,12 @@ class NotificationsController extends AppController {
 	}
 
 	public function delete($id = null, $contest_id = null) {
-		if(!$id || !$contest_id || !$this->Auth->user('admin')) {
+		if(!$id || !$contest_id) {
 			$this->redirect('index');
 		}
 
 		$contest = $this->Contest->findById($contest_id);
-		if(!$contest) {
+		if(!$contest || (!$this->Auth->user('admin') && $contest['Contest']['user_id'] != $this->Auth->user('id'))) {
 			$this->redirect('index');
 		}
 

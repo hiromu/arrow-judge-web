@@ -208,7 +208,11 @@ class ProblemsController extends AppController {
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
-				$this->redirect('index');
+				if($contest_id) {
+					$this->redirect('/contests/problem/'.$contest_id);
+				} else {
+					$this->redirect('index');
+				}
 			}
 		}
 
@@ -245,7 +249,11 @@ class ProblemsController extends AppController {
 				}
 			}
 			if($problem['Problem']['status'] != 6) {
-				$this->redirect('index');
+				if($contest_id) {
+					$this->redirect('/contests/problem/'.$contest_id);
+				} else {
+					$this->redirect('index');
+				}
 			}
 		}
 

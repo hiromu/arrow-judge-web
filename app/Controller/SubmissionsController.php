@@ -37,16 +37,20 @@ class SubmissionsController extends AppController {
 			$this->redirect('index');
 		}
 		if($submission['Problem']['public'] == 0) {
-			if(!$this->Auth->user('admin') && $submission['Submission']['user_id'] != $this->Auth->user('id')) {
+			if(!$this->Auth->user('admin')) {
 				if($submission['Problem']['contest_id']) {
 					$contest = $this->Contest->findById($submission['Problem']['contest_id']);
 					if(!$contest || $contest['Contest']['user_id'] != $this->Auth->user('id')) {
 						if(strtotime($contest['Contest']['end']) > time()) {
-							$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
-							$this->redirect('index');
+							if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
+								$this->Session->setFlash('You are not permitted to view submissions of the others during contest', 'error');
+								$this->redirect('index');
+							} else if($submission['Submission']['error']) {
+								$submission['Submission']['error'] = '- You are not permitted to view error messages during contest -';
+							}
 						}
 					}
-				} else {
+				} else if($submission['Submission']['user_id'] != $this->Auth->user('id')) {
 					$this->Session->setFlash('You are not permitted to view submissions of the secret problem', 'error');
 					$this->redirect('index');
 				}
@@ -130,9 +134,7 @@ class SubmissionsController extends AppController {
 		}
 
 		$latest = $this->Submission->find('first', array('conditions' => array('Submission.user_id' => $this->Auth->user('id')), 'order' => array('Submission.created' => 'DESC')));
-		if($latest) {
-			$this->set('latest', $latest['Submission']['language_id']);
-		}
+		$this->set('latest', $latest['Submission']['language_id']);
 
 		$languages = $this->Language->find('all', array('conditions' => array('Language.status', 1)));
 		$lang = array();
