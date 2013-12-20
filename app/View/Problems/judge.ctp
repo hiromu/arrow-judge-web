@@ -20,8 +20,8 @@ if($contest_id) {
 			<td><?php echo $this->Html->link(h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])), 'view/'.$problem['Problem']['id'].'/'.$contest_id); ?></td>
 			<td><?php echo h($problem['Language']['name']); ?></td>
 			<td class="status_<?php echo h($problem['Problem']['status']); ?>"><?php echo h($status[$problem['Problem']['status']]); ?></td>
-			<td><?php echo h($problem['Problem']['cpu']); ?> sec</td>
-			<td><?php echo h($problem['Problem']['memory']); ?> MB</td>
+			<td><?php echo h(ceil($problem['Problem']['cpu'] * 1000) / 1000); ?> sec</td>
+			<td><?php echo h(ceil($problem['Problem']['memory'] / 100) * 100); ?> MB</td>
 		</tr>
 	</tbody>
 </table>
@@ -46,9 +46,9 @@ if($contest_id) {
 		</tr>
 		<?php for($i = 0; $i < count($cpu); $i++): ?>
 		<tr>
-			<td><?php echo h(sprintf('#%d', $i + 1)); ?></td>
-			<td><?php echo h(sprintf('%f sec', $cpu[$i])); ?></td>
-			<td><?php echo h(sprintf('%d KB', $memory[$i])); ?></td>
+			<td>#<?php echo h($i + 1); ?></td>
+			<td><?php echo h(ceil($cpu[$i] * 1000) / 1000); ?> sec</td>
+			<td><?php echo h(ceil($memory[$i] / 100) * 100); ?> KB</td>
 			<td><?php echo $this->Html->link('Show =>', 'testcase/'.$problem['Problem']['id'].'/'.($i + 1)); ?></td>
 		</tr>
 		<?php endfor; ?>
