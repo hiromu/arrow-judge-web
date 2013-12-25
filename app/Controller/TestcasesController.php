@@ -27,7 +27,6 @@ class TestcasesController extends AppController {
 			if(!$this->request->data['Testcase']['file']['error']) {
 				$this->request->data['Testcase']['testcase'] = file_get_contents($this->request->data['Testcase']['file']['tmp_name']);
 			}
-			var_dump($this->request->data);
 
 			$filename = uniqid();
 			if(file_put_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$problem_id.DS.$filename, $this->request->data['Testcase']['testcase'])) {
