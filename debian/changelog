@@ -1,3 +1,9 @@
+arrow-judge-web (1.0.6-1ppa1) precise; urgency=low
+
+  * Fix a bug about problem deletion
+
+ -- Hiromu Yakura <hiromu1996@gmail.com>  Sun, 02 Feb 2014 21:09:30 +0900
+
 arrow-judge-web (1.0.5-1ppa1) precise; urgency=low
 
   * Fix bugs about notification system and change display data to prevent side channel guessing
