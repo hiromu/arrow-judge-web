@@ -33,7 +33,7 @@ class SubmissionsController extends AppController {
 		}
 
 		$submission = $this->Submission->findById($id);
-		if(!$submission) {
+		if(!$submission || $submission['Problem']['public'] == 2) {
 			$this->redirect('index');
 		}
 		if($submission['Problem']['public'] == 0) {
@@ -70,7 +70,7 @@ class SubmissionsController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($id);
-		if(!$problem) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
 			$this->redirect('/problems/index');
 		}
 
@@ -217,7 +217,7 @@ class SubmissionsController extends AppController {
 		}
 
 		$submission = $this->Submission->findById($id);
-		if(!$submission) {
+		if(!$submission || $submission['Problem']['public'] == 2) {
 			$this->redirect('index');
 		}
 		if($submission['Problem']['public'] == 0) {

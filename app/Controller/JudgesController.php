@@ -23,7 +23,7 @@ class JudgesController extends AppController {
 
 		$limit = strftime('%Y-%m-%d %H:%M:%S', time() - $this->options['timeout']);
 
-		$judge = $this->Problem->find('first', array('conditions' => array('OR' => array(array('AND' => array('Problem.status' => '1', 'Problem.modified < ' => $limit)), 'Problem.status' => '0')), 'order' => 'Problem.modified'));
+		$judge = $this->Problem->find('first', array('conditions' => array('Problem.public !=' => '2', array('OR' => array(array('AND' => array('Problem.status' => '1', 'Problem.modified < ' => $limit)), 'Problem.status' => '0'))), 'order' => 'Problem.modified'));
 		if($judge) {
 			$judge['Problem']['status'] = '1';
 			$judge['Problem']['modified'] = null;
@@ -50,7 +50,7 @@ class JudgesController extends AppController {
 			return;
 		}
 
-		$judge = $this->Submission->find('first', array('conditions' => array('OR' => array(array('AND' => array('Submission.status' => '1', 'Submission.modified < ' => $limit)), 'Submission.status' => '0')), 'order' => 'Submission.modified'));
+		$judge = $this->Submission->find('first', array('conditions' => array('Problem.public !=' => '2', array('OR' => array(array('AND' => array('Submission.status' => '1', 'Submission.modified < ' => $limit)), 'Submission.status' => '0'))), 'order' => 'Submission.modified'));
 		if($judge) {
 			$judge['Submission']['status'] = '1';
 			$judge['Submission']['modified'] = null;

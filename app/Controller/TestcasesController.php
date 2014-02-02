@@ -19,7 +19,10 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($problem_id);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
@@ -27,7 +30,6 @@ class TestcasesController extends AppController {
 			if(!$this->request->data['Testcase']['file']['error']) {
 				$this->request->data['Testcase']['testcase'] = file_get_contents($this->request->data['Testcase']['file']['tmp_name']);
 			}
-			var_dump($this->request->data);
 
 			$filename = uniqid();
 			if(file_put_contents(ROOT.DS.'app'.DS.'Data'.DS.'Testcase'.DS.$problem_id.DS.$filename, $this->request->data['Testcase']['testcase'])) {
@@ -56,7 +58,10 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
@@ -94,8 +99,11 @@ class TestcasesController extends AppController {
 			$this->redirect('/problems');
 		}
 
-		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		$problem = $this->Problem->findById($problem_id);
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
