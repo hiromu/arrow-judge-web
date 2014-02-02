@@ -21,7 +21,7 @@ class QuestionsController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($id);
-		if(!$problem) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
 			$this->redirect('/problems/index');
 		}
 		$this->set('problem', $problem);
@@ -81,7 +81,7 @@ class QuestionsController extends AppController {
 		}
 
 		$question = $this->Question->findById($id);
-		if(!$question) {
+		if(!$question || $question['Problem']['public'] == 2) {
 			$this->redirect('/problems/index');
 		}
 		if($question['Problem']['user_id'] != $this->Auth->user('id') && !$this->Auth->user('admin')) {
@@ -124,7 +124,7 @@ class QuestionsController extends AppController {
 		}
 
 		$question = $this->Question->findById($id);
-		if(!$question) {
+		if(!$question || $question['Problem']['public'] == 2) {
 			$this->redirect('/problems/index');
 		}
 		if($question['Problem']['user_id'] != $this->Auth->user('id') && !$this->Auth->user('admin')) {

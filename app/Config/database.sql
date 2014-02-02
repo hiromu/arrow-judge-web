@@ -119,7 +119,7 @@ CREATE TABLE `problems` (
   `sample_outputs` longtext NOT NULL,
   `language_id` int(11) DEFAULT NULL,
   `source` longtext NOT NULL,
-  `public` tinyint(1) NOT NULL DEFAULT '0',
+  `public` int(11) NOT NULL DEFAULT '0',
   `status` int(11) NOT NULL DEFAULT '0',
   `error` text NOT NULL,
   `submit_cpu` text NOT NULL,

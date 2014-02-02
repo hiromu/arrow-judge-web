@@ -19,7 +19,10 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($problem_id);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
@@ -55,7 +58,10 @@ class TestcasesController extends AppController {
 		}
 
 		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
@@ -93,8 +99,11 @@ class TestcasesController extends AppController {
 			$this->redirect('/problems');
 		}
 
-		$problem = $this->Problem->findById($testcase['Testcase']['problem_id']);
-		if(!$problem || $problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
+		$problem = $this->Problem->findById($problem_id);
+		if(!$problem || $problem['Problem']['public'] == 2) {
+			$this->redirect('/problems');
+		}
+		if($problem['Problem']['user_id'] != $this->Auth->user('id') || $problem['Problem']['status'] != -1) {
 			$this->redirect('/problems');
 		}
 
