@@ -331,8 +331,8 @@ CREATE TABLE `testcases` (
 --
 
 LOCK TABLES `testcases` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+/*!40000 ALTER TABLE `testcases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `testcases` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
