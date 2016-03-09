@@ -34,7 +34,7 @@ if($contest_id) {
 <?php endfor; ?>
 </div>
 <div class="submit-button">
-<?
+<?php
 	echo $this->Html->link('Submit', '/submissions/submit/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-primary btn-large'));
 	echo $this->Html->link('Question', '/questions/index/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
 	echo $this->Html->link('Submissions', 'submission/'.$problem['Problem']['id'].'/'.$contest_id, array('class' => 'btn btn-large'));
