@@ -6,7 +6,7 @@ if($contest_id) {
 ?>
 <h1><?php echo h(sprintf('#%d: %s', $problem['Problem']['id'], $problem['Problem']['name'])); ?></h1>
 <h2>Are you sure to delete this problem?</h2>
-<?
+<?php
 	echo $this->Form->create('Problem');
 	echo $this->Form->input('id', array('type' => 'hidden', 'value' => $problem['Problem']['id']));
 ?>
